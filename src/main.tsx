@@ -6,11 +6,10 @@ import "animate.css";
 import { ThemeProvider } from "./context/theme.context.tsx";
 import { NavigationProvider } from "./context/navigation.context.tsx";
 import { SidebarProvider } from "./context/sidebar.context.tsx";
-import { Themes } from "./types/themes.type.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ThemeProvider initialTheme={Themes.LIGHT}>
+    <ThemeProvider>
       <NavigationProvider>
         <SidebarProvider>
           <App />

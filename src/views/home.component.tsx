@@ -1,4 +1,3 @@
-import Avatar from "../assets/images/avatar.png";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Views } from "../context/navigation.context";
 import ViewLayout from "../layout/view-layout.component";
