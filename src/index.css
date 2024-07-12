@@ -71,11 +71,8 @@
 
 .main-background {
   background-color: var(--base-100);
-  background-image: radial-gradient(
-    var(--edge-200) 0.1rem,
-    var(--base-100) 0.1rem
-  );
-  /* animation: background 20s infinite linear; */
+  background-image: url("./assets/svg/bg.svg");
+  transition-property: background-size;
 }
 
 .fill-mode-backward {
