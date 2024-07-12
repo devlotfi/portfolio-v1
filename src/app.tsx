@@ -2,14 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { NavigationContext } from "./context/navigation.context";
 import TransitionLoading from "./components/transition-loading/transition-loading.component";
 import { EmptyView } from "./layout/empty-view.component";
-import FloatingMenuOverlay from "./layout/floating-menu-overlay.component";
-import SidebarOverlay from "./layout/sidebar-overlay.component";
 import { cn } from "./utils/cn";
 import ContactView from "./views/contact.component";
 import HomeView from "./views/home.component";
 import ProjectsView from "./views/projects.component";
 import SkillsView from "./views/skills.component";
 import StudiesView from "./views/studies.component";
+import NavbarOverlay from "./layout/navbar-overlay.component";
 
 const getShouldOffset = () => {
   return window.matchMedia("(min-width: 1024px)");
@@ -17,13 +16,13 @@ const getShouldOffset = () => {
 
 export default function App() {
   const { currentView, isMoving, isGlobalView } = useContext(NavigationContext);
-  const [shouldOffset, setShouldOffset] = useState<boolean>(
+  const [largeScreen, setLargeScreen] = useState<boolean>(
     getShouldOffset().matches
   );
 
   useEffect(() => {
     const handler = (e: MediaQueryListEvent) => {
-      setShouldOffset(e.matches);
+      setLargeScreen(e.matches);
     };
     getShouldOffset().addEventListener("change", handler);
 
@@ -35,8 +34,7 @@ export default function App() {
   return (
     <div className="flex h-screen w-screen bg-base-100">
       <TransitionLoading></TransitionLoading>
-      <SidebarOverlay></SidebarOverlay>
-      <FloatingMenuOverlay></FloatingMenuOverlay>
+      <NavbarOverlay></NavbarOverlay>
 
       <div
         className={cn(
@@ -49,11 +47,15 @@ export default function App() {
             transform: `translateX(${
               !isGlobalView
                 ? currentView.horizontalTranslation
-                : shouldOffset
-                ? "calc(-100vw + 7rem)"
+                : largeScreen
+                ? "calc(-100vw + 2.2rem)"
                 : "-100vw"
             }) translateY(${
-              !isGlobalView ? currentView.verticalTranslation : "-100vh"
+              !isGlobalView
+                ? currentView.verticalTranslation
+                : largeScreen
+                ? "-100vh"
+                : "calc(-100vh + 2rem)"
             }) scale(${isGlobalView ? "25%" : "100%"})`,
           }}
           className={cn(

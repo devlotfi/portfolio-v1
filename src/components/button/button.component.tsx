@@ -26,7 +26,7 @@ const variants = cva(
 );
 
 interface Props
-  extends BaseHTMLAttributes<HTMLDivElement>,
+  extends BaseHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof variants> {}
 
 const Button = ({
@@ -41,9 +41,12 @@ const Button = ({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       value={{ variant: variant as any, active: active as any }}
     >
-      <div className={cn(variants({ variant, className, active }))} {...props}>
+      <button
+        className={cn(variants({ variant, className, active }))}
+        {...props}
+      >
         {children}
-      </div>
+      </button>
     </ButtonContext.Provider>
   );
 };
