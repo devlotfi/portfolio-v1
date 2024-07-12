@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
-import LogoSVG from "../assets/svg/logo.component";
+import LogoSVG from "../components/svg/logo.component";
 import ButtonContent from "../components/button/button-content.component";
 import ButtonIcon from "../components/button/button-icon.component";
 import ButtonSlider from "../components/button/button-slider.component";
