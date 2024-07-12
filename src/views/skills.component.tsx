@@ -47,7 +47,7 @@ export default function SkillsView() {
           </Heading>
 
           <SkillCategory
-            style={{ animationDelay: `${DELAY * 0}s` }}
+            style={{ animationDelay: `${DELAY * 1}s` }}
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
                 <HeadingIcon>
@@ -74,7 +74,7 @@ export default function SkillsView() {
             </Skill>
           </SkillCategory>
           <SkillCategory
-            style={{ animationDelay: `${DELAY * 1}s` }}
+            style={{ animationDelay: `${DELAY * 2}s` }}
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
                 <HeadingIcon>
@@ -95,7 +95,7 @@ export default function SkillsView() {
             </Skill>
           </SkillCategory>
           <SkillCategory
-            style={{ animationDelay: `${DELAY * 2}s` }}
+            style={{ animationDelay: `${DELAY * 3}s` }}
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
                 <HeadingIcon>
@@ -119,7 +119,7 @@ export default function SkillsView() {
             </Skill>
           </SkillCategory>
           <SkillCategory
-            style={{ animationDelay: `${DELAY * 3}s` }}
+            style={{ animationDelay: `${DELAY * 4}s` }}
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
                 <HeadingIcon>
@@ -140,7 +140,7 @@ export default function SkillsView() {
             </Skill>
           </SkillCategory>
           <SkillCategory
-            style={{ animationDelay: `${DELAY * 4}s` }}
+            style={{ animationDelay: `${DELAY * 5}s` }}
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
                 <HeadingIcon>

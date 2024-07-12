@@ -28,6 +28,12 @@
   --edge-200: #728aa3;
 }
 
+::selection {
+  color: var(--base-100);
+  background-color: var(--edge-100);
+  text-decoration: dashed underline;
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
 }

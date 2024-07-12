@@ -23,7 +23,7 @@ const ViewLayout = ({
   view,
   ...props
 }: Props): JSX.Element => {
-  const { isGlobalView, currentView } = useContext(NavigationContext);
+  const { isGlobalView } = useContext(NavigationContext);
 
   return (
     <div className={cn(variants({ className }))} {...props}>
@@ -44,7 +44,7 @@ const ViewLayout = ({
         </div>
       </div>
       <div className="flex flex-col min-h-screen max-h-screen min-w-screen max-w-screen pl-0 pt-[3rem] lg:pt-0 lg:pl-[17rem] overflow-y-auto overflow-x-hidden z-10">
-        {currentView.view === view ? children : null}
+        {children}
       </div>
     </div>
   );
