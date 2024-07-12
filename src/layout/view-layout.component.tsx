@@ -28,6 +28,7 @@ const ViewLayout = ({
     setIsMoving,
     isGlobalView,
     setIsGlobalView,
+    currentView,
     setCurrentView,
   } = useContext(NavigationContext);
 
@@ -53,20 +54,16 @@ const ViewLayout = ({
         )}
       >
         <div className="flex relative flex-1 justify-center items-center flex-col bg-edge-100 border-[0.5rem] border-edge-100 duration-300 group-hover/view:translate-x-[3rem] group-hover/view:translate-y-[-3rem]">
-          <div className="group-hover/view:w-full top-0 left-0 duration-300 flex absolute bg-base-100 h-full w-0"></div>
-
           <FontAwesomeIcon
-            className="text-[130pt] z-20 group-hover/view:text-edge-100"
+            className="text-[130pt] z-20"
             icon={icon}
           ></FontAwesomeIcon>
-          <div className="flex text-[50pt] md:text-[80pt] z-20 group-hover/view:text-edge-100">
-            {view}
-          </div>
+          <div className="flex text-[50pt] md:text-[80pt] z-20">{view}</div>
         </div>
       </div>
 
       <div className="flex flex-col min-h-screen max-h-screen min-w-screen max-w-screen pl-0 pt-[3rem] lg:pt-0 lg:pl-[5rem] overflow-y-auto overflow-x-hidden z-10">
-        {children}
+        {currentView.view === view ? children : null}
       </div>
     </div>
   );

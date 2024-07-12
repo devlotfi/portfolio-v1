@@ -5,7 +5,7 @@ import { ButtonContext } from "./button.context";
 import { cn } from "../../utils/cn";
 
 const variants = cva(
-  "relative flex flex-1 bg-base-100 duration-150 min-h-[2.5rem] px-[1rem] items-center border group-hover/button:translate-x-[0.3rem] group-hover/button:translate-y-[-0.3rem]",
+  "relative flex flex-1 h-full bg-base-100 duration-150 min-h-[2.5rem] px-[1rem] items-center border group-hover/button:translate-x-[0.3rem] group-hover/button:translate-y-[-0.3rem]",
   {
     variants: {
       variant: {

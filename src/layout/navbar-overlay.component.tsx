@@ -45,7 +45,7 @@ export default function NavbarOverlay() {
   return (
     <div
       className={cn(
-        "fixed duration-300 top-0 left-0 lg:left-0 h-[3.5rem] lg:h-screen w-screen lg:w-[5rem] transition-transform flex lg:flex-col justify-between bg-base-100 z-50 border-b lg:border-r lg:border-b-0 border-edge-100 p-[0.5rem] overflow-y-auto overflow-x-visible animate-[sidebar_0.5s_ease]",
+        "fixed duration-300 top-0 left-0 lg:left-0 h-[3.8rem] lg:h-screen w-screen lg:w-[5rem] transition-transform flex lg:flex-col justify-between bg-base-100 z-50 border-b lg:border-r lg:border-b-0 border-edge-100 p-[0.5rem] animate-[sidebar_0.5s_ease]",
         !open && "left-[-5rem]"
       )}
     >
@@ -90,12 +90,55 @@ export default function NavbarOverlay() {
         ></LogoSVG>
       </div>
 
-      <Dropdown position="top-left" className="lg:w-full">
+      <Dropdown position="bottom-right">
         <Button
           tabIndex={0}
           className="w-full fill-mode-backward animate-[flipInX_1s_0.5s_ease]"
         >
-          <ButtonContent className="justify-center px-0">
+          <ButtonContent className="justify-center">
+            <ButtonIcon>
+              <FontAwesomeIcon icon={faPaintRoller}></FontAwesomeIcon>
+            </ButtonIcon>
+            <ButtonSlider></ButtonSlider>
+          </ButtonContent>
+        </Button>
+        <DropdownContent tabIndex={0} className="w-[4rem]">
+          <Button
+            onClick={() => setTheme(Themes.LIGHT)}
+            variant={theme === Themes.LIGHT ? "primary" : "edge-100"}
+            active={theme === Themes.LIGHT}
+            className="w-full"
+          >
+            <ButtonContent className="px-0 justify-center">
+              <ButtonIcon>
+                <FontAwesomeIcon icon={faSun}></FontAwesomeIcon>
+              </ButtonIcon>
+
+              <ButtonSlider></ButtonSlider>
+            </ButtonContent>
+          </Button>
+          <Button
+            onClick={() => setTheme(Themes.DARK)}
+            variant={theme === Themes.DARK ? "primary" : "edge-100"}
+            active={theme === Themes.DARK}
+            className="w-full"
+          >
+            <ButtonContent className="px-0 justify-center">
+              <ButtonIcon>
+                <FontAwesomeIcon icon={faMoon}></FontAwesomeIcon>
+              </ButtonIcon>
+
+              <ButtonSlider></ButtonSlider>
+            </ButtonContent>
+          </Button>
+        </DropdownContent>
+      </Dropdown>
+      <Dropdown position="top-left" className="hidden lg:flex lg:w-full">
+        <Button
+          tabIndex={0}
+          className="w-full fill-mode-backward animate-[flipInX_1s_0.5s_ease]"
+        >
+          <ButtonContent className="justify-center lg:px-0">
             <ButtonIcon>
               <FontAwesomeIcon icon={faPaintRoller}></FontAwesomeIcon>
             </ButtonIcon>
