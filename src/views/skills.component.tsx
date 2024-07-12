@@ -48,7 +48,6 @@ export default function SkillsView() {
 
           <SkillCategory
             style={{ animationDelay: `${DELAY * 0}s` }}
-            className="animate-[lightSpeedInLeft_1s_ease] fill-mode-backward"
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
                 <HeadingIcon>
@@ -76,7 +75,6 @@ export default function SkillsView() {
           </SkillCategory>
           <SkillCategory
             style={{ animationDelay: `${DELAY * 1}s` }}
-            className="animate-[lightSpeedInLeft_1s_ease] fill-mode-backward"
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
                 <HeadingIcon>
@@ -98,7 +96,6 @@ export default function SkillsView() {
           </SkillCategory>
           <SkillCategory
             style={{ animationDelay: `${DELAY * 2}s` }}
-            className="animate-[lightSpeedInLeft_1s_ease] fill-mode-backward"
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
                 <HeadingIcon>
@@ -123,7 +120,6 @@ export default function SkillsView() {
           </SkillCategory>
           <SkillCategory
             style={{ animationDelay: `${DELAY * 3}s` }}
-            className="animate-[lightSpeedInLeft_1s_ease] fill-mode-backward"
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
                 <HeadingIcon>
@@ -145,7 +141,6 @@ export default function SkillsView() {
           </SkillCategory>
           <SkillCategory
             style={{ animationDelay: `${DELAY * 4}s` }}
-            className="animate-[lightSpeedInLeft_1s_ease] fill-mode-backward"
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
                 <HeadingIcon>
