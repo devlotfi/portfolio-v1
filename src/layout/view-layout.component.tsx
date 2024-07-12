@@ -33,12 +33,14 @@ const ViewLayout = ({
           isGlobalView && "opacity-100"
         )}
       >
-        <div className="flex flex-col text-base-100">
+        <div className="flex flex-col text-base-100 space-y-7">
           <FontAwesomeIcon
             className="text-[120pt]"
             icon={icon}
           ></FontAwesomeIcon>
-          <div className="flex text-[50pt] md:text-[80pt]">{view}</div>
+          <div className="flex text-[50pt] md:text-[80pt] pl-[1rem] border-l-[0.3rem] border-b-[0.3rem] border-base-100">
+            {view}
+          </div>
         </div>
       </div>
       <div className="flex flex-col min-h-screen max-h-screen min-w-screen max-w-screen pl-0 pt-[3rem] lg:pt-0 lg:pl-[17rem] overflow-y-auto overflow-x-hidden z-10">

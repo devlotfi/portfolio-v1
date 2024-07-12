@@ -69,7 +69,6 @@
     var(--edge-200) 0.1rem,
     var(--base-100) 0.1rem
   );
-  background-size: 3rem 3rem;
   /* animation: background 20s infinite linear; */
 }
 
