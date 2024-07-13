@@ -4,10 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { Views, NavigationContext } from "../context/navigation.context";
 import { cn } from "../utils/cn";
+import TransitionAudio from "../assets/audio/transition.wav";
 
-const variants = cva(
-  "flex relative flex-col min-h-screen max-h-screen min-w-screen max-w-screen"
-);
+const variants = cva("flex relative flex-col h-screen w-screen");
 
 interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
@@ -41,6 +40,9 @@ const ViewLayout = ({
       setTimeout(() => {
         setIsMoving(false);
       }, 700);
+
+      const transitionAudio = new Audio(TransitionAudio);
+      transitionAudio.play();
     }
   };
 

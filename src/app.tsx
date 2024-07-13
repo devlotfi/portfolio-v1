@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { NavigationContext } from "./context/navigation.context";
 import TransitionLoading from "./components/transition-loading/transition-loading.component";
 import { EmptyView } from "./layout/empty-view.component";
@@ -15,14 +15,16 @@ const getShouldOffset = () => {
 };
 
 export default function App() {
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const [isMouseDown, setIsMouseDown] = useState<boolean>(false);
   const { currentView, isMoving, isGlobalView } = useContext(NavigationContext);
-  const [largeScreen, setLargeScreen] = useState<boolean>(
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(
     getShouldOffset().matches
   );
 
   useEffect(() => {
     const handler = (e: MediaQueryListEvent) => {
-      setLargeScreen(e.matches);
+      setIsLargeScreen(e.matches);
     };
     getShouldOffset().addEventListener("change", handler);
 
@@ -31,29 +33,67 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const mouseMoveHandler = (e: MouseEvent) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.top = `${e.clientY}px`;
+        cursorRef.current.style.left = `${e.clientX}px`;
+      }
+    };
+
+    const mouseDownHandler = () => {
+      setIsMouseDown(true);
+    };
+
+    const mouseUpHandler = () => {
+      setIsMouseDown(false);
+    };
+
+    window.addEventListener("mousemove", mouseMoveHandler);
+    window.addEventListener("mousedown", mouseDownHandler);
+    window.addEventListener("mouseup", mouseUpHandler);
+
+    return () => {
+      window.removeEventListener("mousemove", mouseMoveHandler);
+      window.removeEventListener("mousedown", mouseDownHandler);
+      window.removeEventListener("mouseup", mouseUpHandler);
+    };
+  }, []);
+
   return (
-    <div className="flex h-screen w-screen bg-base-100">
+    <div className="group/cursor">
       <TransitionLoading></TransitionLoading>
       <NavbarOverlay></NavbarOverlay>
 
       <div
         className={cn(
-          "flex flex-1 main-background bg-center overflow-hidden duration-1000 bg-[length:57rem_auto]",
+          "flex h-screen w-screen bg-base-100 flex-1 main-background bg-center overflow-hidden duration-1000 bg-[length:57rem_auto]",
           isGlobalView && "bg-[length:27rem_auto]"
         )}
       >
+        <div
+          ref={cursorRef}
+          id="cursor"
+          className={cn(
+            "hidden fixed group-hover/cursor:flex h-[2rem] w-[2rem] duration-75 transition-[height,width] bg-edge-100 border-base-100 border z-[1000]  pointer-events-none translate-x-[0.7rem] translate-y-[0.7rem]",
+            isMouseDown && "h-[1.5rem] w-[1.5rem]"
+          )}
+        >
+          <div className="flex bg-edge-100 border-base-100 border h-[0.7rem] w-[0.7rem] mt-[-0.7rem] ml-[-0.7rem]"></div>
+        </div>
+
         <div
           style={{
             transform: `translateX(${
               !isGlobalView
                 ? currentView.horizontalTranslation
-                : largeScreen
+                : isLargeScreen
                 ? "calc(-100vw + 2.2rem)"
                 : "-100vw"
             }) translateY(${
               !isGlobalView
                 ? currentView.verticalTranslation
-                : largeScreen
+                : isLargeScreen
                 ? "-100vh"
                 : "calc(-100vh + 2rem)"
             }) scale(${isGlobalView ? "25%" : "100%"})`,

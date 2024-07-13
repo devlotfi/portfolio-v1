@@ -16,6 +16,7 @@ import { NavigationContext } from "../context/navigation.context";
 import { ThemeContext } from "../context/theme.context";
 import { Themes } from "../types/themes.type";
 import { cn } from "../utils/cn";
+import TransitionAudio from "../assets/audio/transition.wav";
 
 export default function NavbarOverlay() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -39,6 +40,9 @@ export default function NavbarOverlay() {
           setIsMoving(false);
         }, 700);
       }
+
+      const transitionAudio = new Audio(TransitionAudio);
+      transitionAudio.play();
     }
   };
 
