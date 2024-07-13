@@ -47,7 +47,7 @@ export default function SkillsView() {
           </Heading>
 
           <SkillCategory
-            style={{ animationDelay: `${DELAY * 1}s` }}
+            style={{ animationDelay: `${DELAY * 0}s` }}
             className="animate-[fadeInLeft_0.7s_ease] fill-mode-backward"
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
@@ -75,7 +75,7 @@ export default function SkillsView() {
             </Skill>
           </SkillCategory>
           <SkillCategory
-            style={{ animationDelay: `${DELAY * 2}s` }}
+            style={{ animationDelay: `${DELAY * 1}s` }}
             className="animate-[fadeInLeft_0.7s_ease] fill-mode-backward"
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
@@ -97,7 +97,7 @@ export default function SkillsView() {
             </Skill>
           </SkillCategory>
           <SkillCategory
-            style={{ animationDelay: `${DELAY * 3}s` }}
+            style={{ animationDelay: `${DELAY * 2}s` }}
             className="animate-[fadeInLeft_0.7s_ease] fill-mode-backward"
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
@@ -122,7 +122,7 @@ export default function SkillsView() {
             </Skill>
           </SkillCategory>
           <SkillCategory
-            style={{ animationDelay: `${DELAY * 4}s` }}
+            style={{ animationDelay: `${DELAY * 3}s` }}
             className="animate-[fadeInLeft_0.7s_ease] fill-mode-backward"
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">
@@ -144,7 +144,7 @@ export default function SkillsView() {
             </Skill>
           </SkillCategory>
           <SkillCategory
-            style={{ animationDelay: `${DELAY * 5}s` }}
+            style={{ animationDelay: `${DELAY * 4}s` }}
             className="animate-[fadeInLeft_0.7s_ease] fill-mode-backward"
             heading={
               <Heading className="text-[20pt] mb-[1rem]" variant="edge-100">

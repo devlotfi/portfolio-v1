@@ -90,7 +90,7 @@ export default function NavbarOverlay() {
         ></LogoSVG>
       </div>
 
-      <Dropdown position="bottom-right">
+      <Dropdown position="bottom-right" className="flax lg:hidden">
         <Button
           tabIndex={0}
           className="w-full fill-mode-backward animate-[flipInX_1s_0.5s_ease]"
