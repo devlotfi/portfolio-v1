@@ -62,9 +62,7 @@ const ViewLayout = ({
         </div>
       </div>
 
-      <div className="flex flex-col min-h-screen max-h-screen min-w-screen max-w-screen pl-0 pt-[3rem] lg:pt-0 lg:pl-[5rem] overflow-y-auto overflow-x-hidden z-10">
-        {currentView.view === view ? children : null}
-      </div>
+      {currentView.view === view ? children : null}
     </div>
   );
 };

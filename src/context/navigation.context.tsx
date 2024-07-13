@@ -1,8 +1,9 @@
 import { createContext, PropsWithChildren, useState } from "react";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export enum Views {
   GLOBAL = "GLOBAL",
-  HOME = "HOME",
+  ABOUT = "ABOUT",
   PROJECTS = "PROJECTS",
   SKILLS = "SKILLS",
   CONTACT = "CONTACT",
@@ -16,8 +17,8 @@ export interface NavigationView {
 }
 
 const viewsMap = new Map<Views, NavigationView>();
-viewsMap.set(Views.HOME, {
-  view: Views.HOME,
+viewsMap.set(Views.ABOUT, {
+  view: Views.ABOUT,
   horizontalTranslation: "-100vw",
   verticalTranslation: "-100vh",
 });
@@ -52,7 +53,7 @@ interface NavigationContext {
 }
 
 const initialValue: NavigationContext = {
-  currentView: viewsMap.get(Views.HOME) as NavigationView,
+  currentView: viewsMap.get(Views.ABOUT) as NavigationView,
   setCurrentView() {},
   isGlobalView: false,
   setIsGlobalView() {},
