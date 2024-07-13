@@ -38,8 +38,8 @@ export default function App() {
 
       <div
         className={cn(
-          "flex flex-1 main-background bg-center overflow-hidden duration-1000 bg-[length:50rem_auto]",
-          isGlobalView && "bg-[length:20rem_auto]"
+          "flex flex-1 main-background bg-center overflow-hidden duration-1000 bg-[length:57rem_auto]",
+          isGlobalView && "bg-[length:27rem_auto]"
         )}
       >
         <div
