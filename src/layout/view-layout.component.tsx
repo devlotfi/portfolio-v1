@@ -53,12 +53,14 @@ const ViewLayout = ({
           isGlobalView && "opacity-100 pointer-events-auto"
         )}
       >
-        <div className="flex relative flex-1 justify-center items-center flex-col bg-edge-100 border-[0.5rem] border-edge-100 duration-300 group-hover/view:translate-x-[3rem] group-hover/view:translate-y-[-3rem]">
+        <div className="flex relative flex-1 justify-center items-center flex-col bg-edge-100 border-[0.5rem] border-edge-100 duration-300 lg:group-hover/view:translate-x-[3rem] lg:group-hover/view:translate-y-[-3rem]">
           <FontAwesomeIcon
             className="text-[130pt] z-20"
             icon={icon}
           ></FontAwesomeIcon>
-          <div className="flex text-[50pt] md:text-[80pt] z-20">{view}</div>
+          <div className="flex text-[50pt] border-l-[0.5rem] border-b-[0.5rem] pl-[1rem] border-base-100 md:text-[80pt] z-20">
+            {view}
+          </div>
         </div>
       </div>
 
