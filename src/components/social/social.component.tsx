@@ -9,7 +9,7 @@ interface Props {
 
 export default function Social({ children, href }: PropsWithChildren<Props>) {
   return (
-    <a href={href}>
+    <a href={href} target="_blank">
       <Button>
         <ButtonContent className="flex-col justify-center h-[3.8rem] w-[3.8rem]">
           <div className="flex h-[2.5rem] w-[2.5rem] z-10">{children}</div>

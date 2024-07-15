@@ -1,10 +1,9 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { BaseHTMLAttributes } from "react";
-
-import { HeadingContext } from "./heading.context";
+import { BaseHTMLAttributes, useContext } from "react";
 import { cn } from "../../utils/cn";
+import { TextInputContext } from "./text-input.context";
 
-const variants = cva("flex items-center bg-base-100 space-x-3", {
+const variants = cva("flex absolute left-[0.5rem] text-[10pt]", {
   variants: {
     variant: {
       primary: "text-primary-100",
@@ -23,18 +22,20 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-export default function Heading({
-  variant,
+export default function TextInputLabel({
   className,
   children,
   ...props
 }: Props) {
+  const { variant } = useContext(TextInputContext);
+
   return (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    <HeadingContext.Provider value={{ variant: variant as any }}>
-      <div className={cn(variants({ variant, className }))} {...props}>
-        {children}
-      </div>
-    </HeadingContext.Provider>
+    <div
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      className={cn(variants({ variant: variant as any, className }))}
+      {...props}
+    >
+      {children}
+    </div>
   );
 }

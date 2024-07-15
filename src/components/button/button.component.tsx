@@ -1,5 +1,5 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { BaseHTMLAttributes } from "react";
+import { ButtonHTMLAttributes } from "react";
 
 import { ButtonContext } from "./button.context";
 import { cn } from "../../utils/cn";
@@ -18,7 +18,37 @@ const variants = cva(
       active: {
         true: "text-base-100",
       },
+      inverted: {
+        true: "text-base-100",
+      },
     },
+    compoundVariants: [
+      {
+        variant: "edge-100",
+        inverted: true,
+        class: "hover:text-edge-100",
+      },
+      {
+        variant: "primary",
+        inverted: true,
+        class: "hover:text-primary-100",
+      },
+      {
+        variant: "error",
+        inverted: true,
+        class: "hover:text-error-100",
+      },
+      {
+        variant: "warning",
+        inverted: true,
+        class: "hover:text-warning-100",
+      },
+      {
+        variant: "success",
+        inverted: true,
+        class: "hover:text-success-100",
+      },
+    ],
     defaultVariants: {
       variant: "edge-100",
     },
@@ -26,7 +56,7 @@ const variants = cva(
 );
 
 interface Props
-  extends BaseHTMLAttributes<HTMLButtonElement>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof variants> {}
 
 export default function Button({
@@ -34,15 +64,20 @@ export default function Button({
   className,
   children,
   active,
+  inverted,
   ...props
 }: Props) {
   return (
     <ButtonContext.Provider
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      value={{ variant: variant as any, active: active as any }}
+      value={{
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        variant: variant as any,
+        active: active as boolean,
+        inverted: inverted as boolean,
+      }}
     >
       <button
-        className={cn(variants({ variant, className, active }))}
+        className={cn(variants({ variant, className, active, inverted }))}
         {...props}
       >
         {children}

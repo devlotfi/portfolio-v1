@@ -18,7 +18,37 @@ const variants = cva(
       active: {
         true: "translate-x-[0.3rem] translate-y-[-0.3rem]",
       },
+      inverted: {
+        true: "",
+      },
     },
+    compoundVariants: [
+      {
+        variant: "edge-100",
+        inverted: true,
+        class: "bg-edge-100",
+      },
+      {
+        variant: "primary",
+        inverted: true,
+        class: "bg-primary-100",
+      },
+      {
+        variant: "warning",
+        inverted: true,
+        class: "bg-warning-100",
+      },
+      {
+        variant: "error",
+        inverted: true,
+        class: "bg-error-100",
+      },
+      {
+        variant: "success",
+        inverted: true,
+        class: "bg-success-100",
+      },
+    ],
     defaultVariants: {
       variant: "edge-100",
     },
@@ -34,13 +64,18 @@ export default function ButtonContent({
   children,
   ...props
 }: Props) {
-  const { variant, active } = useContext(ButtonContext);
+  const { variant, active, inverted } = useContext(ButtonContext);
 
   return (
     <div
       className={cn(
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        variants({ variant: (variant as any) || "edge-100", className, active })
+        variants({
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          variant: (variant as any) || "edge-100",
+          className,
+          active,
+          inverted,
+        })
       )}
       {...props}
     >

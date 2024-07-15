@@ -18,6 +18,9 @@ const variants = cva(
       active: {
         true: "w-full",
       },
+      inverted: {
+        true: "bg-base-100",
+      },
     },
     defaultVariants: {
       variant: "edge-100",
@@ -30,12 +33,14 @@ interface Props
     VariantProps<typeof variants> {}
 
 export default function ButtonSlider({ className, children, ...props }: Props) {
-  const { variant, active } = useContext(ButtonContext);
+  const { variant, active, inverted } = useContext(ButtonContext);
 
   return (
     <div
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      className={cn(variants({ variant: variant as any, className, active }))}
+      className={cn(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        variants({ variant: variant as any, className, active, inverted })
+      )}
       {...props}
     >
       {children}
