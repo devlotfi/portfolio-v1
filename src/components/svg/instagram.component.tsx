@@ -8,11 +8,11 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const InstagramSVG = ({
+export default function InstagramSVG({
   className,
   fillColor,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   return (
     <svg
       viewBox="0 0 2502 2500"
@@ -27,5 +27,4 @@ const InstagramSVG = ({
       />
     </svg>
   );
-};
-export default InstagramSVG;
+}

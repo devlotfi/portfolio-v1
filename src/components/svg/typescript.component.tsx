@@ -8,11 +8,11 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const TypescriptSVG = ({
+export default function TypescriptSVG({
   className,
   fillColor,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   return (
     <svg
       viewBox="0 0 2500 2500"
@@ -36,5 +36,4 @@ const TypescriptSVG = ({
       </defs>
     </svg>
   );
-};
-export default TypescriptSVG;
+}

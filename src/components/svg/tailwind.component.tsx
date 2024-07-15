@@ -8,11 +8,7 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const TailwindSVG = ({
-  className,
-  fillColor,
-  ...props
-}: Props): JSX.Element => {
+export default function TailwindSVG({ className, fillColor, ...props }: Props) {
   return (
     <svg
       viewBox="0 0 4167 2500"
@@ -27,5 +23,4 @@ const TailwindSVG = ({
       />
     </svg>
   );
-};
-export default TailwindSVG;
+}

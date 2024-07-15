@@ -8,11 +8,11 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const SpringBootSVG = ({
+export default function SpringBootSVG({
   className,
   fillColor,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   return (
     <svg
       viewBox="0 0 2503 2500"
@@ -34,5 +34,4 @@ const SpringBootSVG = ({
       </defs>
     </svg>
   );
-};
-export default SpringBootSVG;
+}

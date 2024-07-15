@@ -8,7 +8,7 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const PythonSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
+export default function PythonSVG({ className, fillColor, ...props }: Props) {
   return (
     <svg
       viewBox="0 0 2473 2500"
@@ -27,5 +27,4 @@ const PythonSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
       />
     </svg>
   );
-};
-export default PythonSVG;
+}

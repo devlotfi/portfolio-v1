@@ -29,13 +29,13 @@ interface Props
   extends BaseHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof variants> {}
 
-const Button = ({
+export default function Button({
   variant,
   className,
   children,
   active,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   return (
     <ButtonContext.Provider
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -49,5 +49,4 @@ const Button = ({
       </button>
     </ButtonContext.Provider>
   );
-};
-export default Button;
+}

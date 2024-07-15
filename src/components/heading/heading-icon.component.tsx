@@ -23,7 +23,7 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-const HeadingIcon = ({ className, children, ...props }: Props): JSX.Element => {
+export default function HeadingIcon({ className, children, ...props }: Props) {
   const { variant } = useContext(HeadingContext);
 
   return (
@@ -35,5 +35,4 @@ const HeadingIcon = ({ className, children, ...props }: Props): JSX.Element => {
       {children}
     </div>
   );
-};
-export default HeadingIcon;
+}

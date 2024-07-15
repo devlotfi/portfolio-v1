@@ -23,12 +23,12 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-const Heading = ({
+export default function Heading({
   variant,
   className,
   children,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   return (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <HeadingContext.Provider value={{ variant: variant as any }}>
@@ -37,5 +37,4 @@ const Heading = ({
       </div>
     </HeadingContext.Provider>
   );
-};
-export default Heading;
+}

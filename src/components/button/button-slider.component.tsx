@@ -29,11 +29,7 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-const ButtonSlider = ({
-  className,
-  children,
-  ...props
-}: Props): JSX.Element => {
+export default function ButtonSlider({ className, children, ...props }: Props) {
   const { variant, active } = useContext(ButtonContext);
 
   return (
@@ -45,5 +41,4 @@ const ButtonSlider = ({
       {children}
     </div>
   );
-};
-export default ButtonSlider;
+}

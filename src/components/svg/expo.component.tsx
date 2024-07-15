@@ -8,7 +8,7 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const ExpoSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
+export default function ExpoSVG({ className, fillColor, ...props }: Props) {
   return (
     <svg
       viewBox="0 0 2802 2500"
@@ -23,5 +23,4 @@ const ExpoSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
       />
     </svg>
   );
-};
-export default ExpoSVG;
+}

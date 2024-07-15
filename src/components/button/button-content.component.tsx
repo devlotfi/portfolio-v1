@@ -29,11 +29,11 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-const ButtonContent = ({
+export default function ButtonContent({
   className,
   children,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   const { variant, active } = useContext(ButtonContext);
 
   return (
@@ -47,5 +47,4 @@ const ButtonContent = ({
       {children}
     </div>
   );
-};
-export default ButtonContent;
+}

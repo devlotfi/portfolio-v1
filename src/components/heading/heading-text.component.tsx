@@ -22,7 +22,7 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-const HeadingText = ({ className, children, ...props }: Props): JSX.Element => {
+export default function HeadingText({ className, children, ...props }: Props) {
   const { variant } = useContext(HeadingContext);
 
   return (
@@ -34,5 +34,4 @@ const HeadingText = ({ className, children, ...props }: Props): JSX.Element => {
       {children}
     </div>
   );
-};
-export default HeadingText;
+}

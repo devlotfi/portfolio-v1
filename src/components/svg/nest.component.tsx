@@ -8,7 +8,7 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const NestSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
+export default function NestSVG({ className, fillColor, ...props }: Props) {
   return (
     <svg
       viewBox="0 0 2588 2500"
@@ -25,5 +25,4 @@ const NestSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
       />
     </svg>
   );
-};
-export default NestSVG;
+}

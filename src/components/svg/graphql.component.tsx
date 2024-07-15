@@ -8,7 +8,7 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const GraphqlSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
+export default function GraphqlSVG({ className, fillColor, ...props }: Props) {
   return (
     <svg
       viewBox="0 0 2225 2500"
@@ -79,5 +79,4 @@ const GraphqlSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
       />
     </svg>
   );
-};
-export default GraphqlSVG;
+}

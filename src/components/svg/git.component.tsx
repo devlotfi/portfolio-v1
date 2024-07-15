@@ -8,7 +8,7 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const GitSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
+export default function GitSVG({ className, fillColor, ...props }: Props) {
   return (
     <svg
       viewBox="0 0 2501 2500"
@@ -23,5 +23,4 @@ const GitSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
       />
     </svg>
   );
-};
-export default GitSVG;
+}

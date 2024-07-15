@@ -21,16 +21,15 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-const ButtonText = ({
+export default function ButtonText({
   variant,
   className,
   children,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   return (
     <div className={cn(variants({ variant, className }))} {...props}>
       {children}
     </div>
   );
-};
-export default ButtonText;
+}

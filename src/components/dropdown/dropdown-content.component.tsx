@@ -25,11 +25,11 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-const DropdownContent = ({
+export default function DropdownContent({
   className,
   children,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   const { position } = useContext(DropdownContext);
 
   return (
@@ -41,5 +41,4 @@ const DropdownContent = ({
       {children}
     </div>
   );
-};
-export default DropdownContent;
+}

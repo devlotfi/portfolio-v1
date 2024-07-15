@@ -21,16 +21,15 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-const ButtonIcon = ({
+export default function ButtonIcon({
   variant,
   className,
   children,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   return (
     <div className={cn(variants({ variant, className }))} {...props}>
       {children}
     </div>
   );
-};
-export default ButtonIcon;
+}

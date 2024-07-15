@@ -8,7 +8,7 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const FigmaSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
+export default function FigmaSVG({ className, fillColor, ...props }: Props) {
   return (
     <svg
       viewBox="0 0 1667 2500"
@@ -39,5 +39,4 @@ const FigmaSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
       />
     </svg>
   );
-};
-export default FigmaSVG;
+}

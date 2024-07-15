@@ -8,7 +8,7 @@ interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;
 }
 
-const DjangoSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
+export default function DjangoSVG({ className, fillColor, ...props }: Props) {
   return (
     <svg
       viewBox="0 0 1943 2500"
@@ -37,5 +37,4 @@ const DjangoSVG = ({ className, fillColor, ...props }: Props): JSX.Element => {
       />
     </svg>
   );
-};
-export default DjangoSVG;
+}

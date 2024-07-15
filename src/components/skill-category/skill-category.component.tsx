@@ -10,12 +10,12 @@ interface Props
   heading: JSX.Element;
 }
 
-const SkillCategory = ({
+export default function SkillCategory({
   className,
   children,
   heading,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   return (
     <div className={cn(variants({ className }))} {...props}>
       <div className="flex flex-col flex-1 translate-x-[0.5rem] translate-y-[-0.5rem] bg-base-100 items-start border border-edge-100 p-[1rem]">
@@ -24,5 +24,4 @@ const SkillCategory = ({
       </div>
     </div>
   );
-};
-export default SkillCategory;
+}

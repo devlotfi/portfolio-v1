@@ -22,12 +22,12 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-const Dropdown = ({
+export default function Dropdown({
   position,
   className,
   children,
   ...props
-}: Props): JSX.Element => {
+}: Props) {
   return (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <DropdownContext.Provider value={{ position: position as any }}>
@@ -36,5 +36,4 @@ const Dropdown = ({
       </div>
     </DropdownContext.Provider>
   );
-};
-export default Dropdown;
+}
