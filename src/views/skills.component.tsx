@@ -32,9 +32,6 @@ import Skill from "../components/skill/skill.component";
 import { Views } from "../context/navigation.context";
 import ViewLayout from "../layout/view-layout.component";
 import ViewContent from "../layout/view-content.component";
-import Button from "../components/button/button.component";
-import ButtonContent from "../components/button/button-content.component";
-import ButtonSlider from "../components/button/button-slider.component";
 
 const DELAY = 0.3;
 
@@ -63,28 +60,20 @@ export default function SkillsView() {
                 </Heading>
               }
             >
-              <Button>
-                <ButtonContent className="flex-col justify-center h-[7rem] w-[7rem]">
-                  <HtmlSVG
-                    fillColor="fill-edge-100 group-hover/button:fill-base-100"
-                    className="h-[3.8rem] w-[3.8rem] z-10"
-                  ></HtmlSVG>
-                  <div className="flex z-10">HTML</div>
-
-                  <ButtonSlider></ButtonSlider>
-                </ButtonContent>
-              </Button>
+              <Skill name="HTML">
+                <HtmlSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></HtmlSVG>
+              </Skill>
               <Skill name="CSS">
-                <CssSVG color="var(--edge-100)"></CssSVG>
+                <CssSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></CssSVG>
               </Skill>
               <Skill name="Typescript">
-                <TypescriptSVG color="var(--edge-100)"></TypescriptSVG>
+                <TypescriptSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></TypescriptSVG>
               </Skill>
               <Skill name="Python">
-                <PythonSVG color="var(--edge-100)"></PythonSVG>
+                <PythonSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></PythonSVG>
               </Skill>
               <Skill name="Java">
-                <JavaSVG color="var(--edge-100)"></JavaSVG>
+                <JavaSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></JavaSVG>
               </Skill>
             </SkillCategory>
             <SkillCategory
@@ -100,13 +89,13 @@ export default function SkillsView() {
               }
             >
               <Skill name="React JS">
-                <ReactSVG color="var(--edge-100)"></ReactSVG>
+                <ReactSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></ReactSVG>
               </Skill>
               <Skill name="React Native">
-                <ReactSVG color="var(--edge-100)"></ReactSVG>
+                <ReactSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></ReactSVG>
               </Skill>
               <Skill name="Tailwind CSS">
-                <TailwindSVG color="var(--edge-100)"></TailwindSVG>
+                <TailwindSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></TailwindSVG>
               </Skill>
             </SkillCategory>
             <SkillCategory
@@ -122,16 +111,16 @@ export default function SkillsView() {
               }
             >
               <Skill name="Node JS">
-                <NodeSVG color="var(--edge-100)"></NodeSVG>
+                <NodeSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></NodeSVG>
               </Skill>
               <Skill name="Nest JS">
-                <NestSVG color="var(--edge-100)"></NestSVG>
+                <NestSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></NestSVG>
               </Skill>
               <Skill name="Django">
-                <DjangoSVG color="var(--edge-100)"></DjangoSVG>
+                <DjangoSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></DjangoSVG>
               </Skill>
               <Skill name="Spring Boot">
-                <SpringBootSVG color="var(--edge-100)"></SpringBootSVG>
+                <SpringBootSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></SpringBootSVG>
               </Skill>
             </SkillCategory>
             <SkillCategory
@@ -147,13 +136,13 @@ export default function SkillsView() {
               }
             >
               <Skill name="VS Code">
-                <VscodeSVG color="var(--edge-100)"></VscodeSVG>
+                <VscodeSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></VscodeSVG>
               </Skill>
               <Skill name="Postman">
-                <PostmanSVG color="var(--edge-100)"></PostmanSVG>
+                <PostmanSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></PostmanSVG>
               </Skill>
               <Skill name="Figma">
-                <FigmaSVG color="var(--edge-100)"></FigmaSVG>
+                <FigmaSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></FigmaSVG>
               </Skill>
             </SkillCategory>
             <SkillCategory
@@ -169,13 +158,13 @@ export default function SkillsView() {
               }
             >
               <Skill name="Graphql">
-                <GraphqlSVG color="var(--edge-100)"></GraphqlSVG>
+                <GraphqlSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GraphqlSVG>
               </Skill>
               <Skill name="Git">
-                <GitSVG color="var(--edge-100)"></GitSVG>
+                <GitSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GitSVG>
               </Skill>
               <Skill name="Linux">
-                <LinuxSVG color="var(--edge-100)"></LinuxSVG>
+                <LinuxSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></LinuxSVG>
               </Skill>
             </SkillCategory>
           </div>

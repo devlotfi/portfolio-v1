@@ -22,7 +22,7 @@ export default function HomeView() {
     <ViewLayout view={Views.ABOUT} icon={faUser}>
       <ViewContent>
         <div className="flex flex-col relative min-h-full justify-start items-center lg:justify-center p-[1.5rem] md:p-0">
-          <div className="flex w-full md:max-w-[90%] xl:max-w-[55rem] md:h-[20rem] mt-[3rem] lg:mt-0 bg-edge-100 animate-[fadeInRight_1s_ease] fill-mode-backward">
+          <div className="flex w-full md:max-w-[90%] xl:max-w-[55rem] md:min-h-[20rem] mt-[3rem] lg:mt-0 bg-edge-100 animate-[fadeInRight_1s_ease] fill-mode-backward">
             <div className="flex flex-1 p-[1.5rem] md:p-[2rem] border translate-x-[0.5rem] translate-y-[-0.5rem] md:translate-x-[1rem] md:translate-y-[-1rem] border-edge-100 bg-base-100">
               <div className="flex flex-col md:flex-row flex-1 space-y-7 md:space-y-0 md:space-x-7">
                 <img
@@ -69,12 +69,12 @@ export default function HomeView() {
 
         <div
           id="about"
-          className="flex min-h-full justify-center items-start"
+          className="flex scroll-mt-[3rem] min-h-full justify-center items-start"
           ref={aboutSectionRef}
         >
           <div className="flex flex-col bg-base-100 mt-[3rem] items-start lg:flex-row md:border border-edge-100 p-[1rem] w-full md:max-w-[90%] xl:max-w-[55rem] space-y-5 lg:space-y-0 lg:space-x-5 text-edge-100">
             <img
-              className="h-[15rem] min-w-[15rem] border border-edge-100 translate-x-[0.3rem] translate-y-[-0.3rem] bg-base-100"
+              className="h-[15rem] min-w-[15rem] border border-edge-100 bg-base-100"
               src={Profile}
               alt="profile"
             />
