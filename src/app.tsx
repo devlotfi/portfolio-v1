@@ -9,6 +9,7 @@ import ProjectsView from "./views/projects.component";
 import SkillsView from "./views/skills.component";
 import StudiesView from "./views/studies.component";
 import NavbarOverlay from "./layout/navbar-overlay.component";
+import ClickAudio from "./assets/audio/click.wav";
 
 const getShouldOffset = () => {
   return window.matchMedia("(min-width: 1024px)");
@@ -42,6 +43,8 @@ export default function App() {
     };
 
     const mouseDownHandler = () => {
+      const clickAudio = new Audio(ClickAudio);
+      clickAudio.play();
       setIsMouseDown(true);
     };
 

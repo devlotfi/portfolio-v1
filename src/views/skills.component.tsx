@@ -32,6 +32,9 @@ import Skill from "../components/skill/skill.component";
 import { Views } from "../context/navigation.context";
 import ViewLayout from "../layout/view-layout.component";
 import ViewContent from "../layout/view-content.component";
+import Button from "../components/button/button.component";
+import ButtonContent from "../components/button/button-content.component";
+import ButtonSlider from "../components/button/button-slider.component";
 
 const DELAY = 0.3;
 
@@ -60,9 +63,17 @@ export default function SkillsView() {
                 </Heading>
               }
             >
-              <Skill name="HTML">
-                <HtmlSVG color="var(--edge-100)"></HtmlSVG>
-              </Skill>
+              <Button>
+                <ButtonContent className="flex-col justify-center h-[7rem] w-[7rem]">
+                  <HtmlSVG
+                    fillColor="fill-edge-100 group-hover/button:fill-base-100"
+                    className="h-[3.8rem] w-[3.8rem] z-10"
+                  ></HtmlSVG>
+                  <div className="flex z-10">HTML</div>
+
+                  <ButtonSlider></ButtonSlider>
+                </ButtonContent>
+              </Button>
               <Skill name="CSS">
                 <CssSVG color="var(--edge-100)"></CssSVG>
               </Skill>

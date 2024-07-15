@@ -1,8 +1,4 @@
-import {
-  faAngleDoubleDown,
-  faInfoCircle,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faInfoCircle, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Views } from "../context/navigation.context";
 import ViewLayout from "../layout/view-layout.component";
 import Developer from "../assets/svg/developer.svg";
@@ -17,6 +13,7 @@ import HeadingIcon from "../components/heading/heading-icon.component";
 import HeadingText from "../components/heading/heading-text.component";
 import Heading from "../components/heading/heading.component";
 import { useRef } from "react";
+import ButtonText from "../components/button/button-text.component";
 
 export default function HomeView() {
   const aboutSectionRef = useRef<HTMLDivElement>(null);
@@ -24,7 +21,7 @@ export default function HomeView() {
   return (
     <ViewLayout view={Views.ABOUT} icon={faUser}>
       <ViewContent>
-        <div className="flex scroll-p-48 relative min-h-full justify-center items-start lg:items-center p-[1.5rem] md:p-0">
+        <div className="flex flex-col relative min-h-full justify-start items-center lg:justify-center p-[1.5rem] md:p-0">
           <div className="flex w-full md:max-w-[90%] xl:max-w-[55rem] md:h-[20rem] mt-[3rem] lg:mt-0 bg-edge-100 animate-[fadeInRight_1s_ease] fill-mode-backward">
             <div className="flex flex-1 p-[1.5rem] md:p-[2rem] border translate-x-[0.5rem] translate-y-[-0.5rem] md:translate-x-[1rem] md:translate-y-[-1rem] border-edge-100 bg-base-100">
               <div className="flex flex-col md:flex-row flex-1 space-y-7 md:space-y-0 md:space-x-7">
@@ -34,7 +31,7 @@ export default function HomeView() {
                   alt="developer"
                 />
 
-                <div className="flex flex-1 flex-col">
+                <div className="flex flex-1 items-start  flex-col">
                   <div className="flex text-[17pt] md:text-[20pt] text-edge-100 animate-[fadeInUp_0.7s_0.3s_ease] fill-mode-backward">
                     Hello, i am
                   </div>
@@ -44,27 +41,30 @@ export default function HomeView() {
                   <div className="flex text-[15pt] md:text-[20pt] text-edge-100 animate-[fadeInUp_0.7s_1s_ease] fill-mode-backward">
                     I am a Full-Stack Web & Mobile developer
                   </div>
+                  <Button
+                    onClick={() => {
+                      if (aboutSectionRef.current) {
+                        aboutSectionRef.current.scrollIntoView({
+                          behavior: "smooth",
+                        });
+                      }
+                    }}
+                    variant="primary"
+                    className="mt-[1rem] fill-mode-backward animate-[flipInX_1s_0.5s_ease]"
+                  >
+                    <ButtonContent>
+                      <ButtonIcon>
+                        <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>
+                      </ButtonIcon>
+                      <ButtonText>About me</ButtonText>
+
+                      <ButtonSlider></ButtonSlider>
+                    </ButtonContent>
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
-
-          <Button
-            onClick={() => {
-              if (aboutSectionRef.current) {
-                aboutSectionRef.current.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-            variant="edge-100"
-            className="h-[3.5rem] w-[3.5rem] absolute bottom-[10rem] lg:bottom-[3.5rem] fill-mode-backward animate-[flipInX_1s_0.5s_ease]"
-          >
-            <ButtonContent className="justify-center">
-              <ButtonIcon>
-                <FontAwesomeIcon icon={faAngleDoubleDown}></FontAwesomeIcon>
-              </ButtonIcon>
-              <ButtonSlider></ButtonSlider>
-            </ButtonContent>
-          </Button>
         </div>
 
         <div
