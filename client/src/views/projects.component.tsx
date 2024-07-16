@@ -24,7 +24,7 @@ export default function ProjectsView() {
       <h1>lol</h1>
       <div
         dangerouslySetInnerHTML={{
-          __html: md,
+          __html: md!,
         }}
         className="markdown-body"
       ></div>
