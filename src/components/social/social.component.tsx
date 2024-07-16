@@ -1,15 +1,19 @@
-import { PropsWithChildren } from "react";
+import { AnchorHTMLAttributes } from "react";
 import ButtonContent from "../button/button-content.component";
 import ButtonSlider from "../button/button-slider.component";
 import Button from "../button/button.component";
+import { VariantProps, cva } from "class-variance-authority";
+import { cn } from "../../utils/cn";
 
-interface Props {
-  href: string;
-}
+const variants = cva("flex");
 
-export default function Social({ children, href }: PropsWithChildren<Props>) {
+interface Props
+  extends AnchorHTMLAttributes<HTMLAnchorElement>,
+    VariantProps<typeof variants> {}
+
+export default function Social({ className, children, ...props }: Props) {
   return (
-    <a href={href} target="_blank">
+    <a className={cn(variants({ className }))} {...props}>
       <Button>
         <ButtonContent className="flex-col justify-center h-[3.8rem] w-[3.8rem]">
           <div className="flex h-[2.5rem] w-[2.5rem] z-10">{children}</div>

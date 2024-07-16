@@ -38,13 +38,19 @@ export default function ContactView() {
               <Social href="mailto:debbal.lotfi.dev@gmail.com">
                 <GmailSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GmailSVG>
               </Social>
-              <Social href="https://github.com/devlotfi">
+              <Social href="https://github.com/devlotfi" target="_blank">
                 <GithubSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GithubSVG>
               </Social>
-              <Social href="https://www.facebook.com/lotfi.debbal/">
+              <Social
+                href="https://www.facebook.com/lotfi.debbal/"
+                target="_blank"
+              >
                 <FacebookSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></FacebookSVG>
               </Social>
-              <Social href="https://www.instagram.com/lotfi_debbal/">
+              <Social
+                href="https://www.instagram.com/lotfi_debbal/"
+                target="_blank"
+              >
                 <InstagramSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></InstagramSVG>
               </Social>
             </div>
