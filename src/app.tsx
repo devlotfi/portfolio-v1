@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { NavigationContext } from "./context/navigation.context";
+import { NavigationContext, Views } from "./context/navigation.context";
 import TransitionLoading from "./components/transition-loading/transition-loading.component";
 import { EmptyView } from "./layout/empty-view.component";
 import { cn } from "./utils/cn";
@@ -10,6 +10,14 @@ import SkillsView from "./views/skills.component";
 import StudiesView from "./views/studies.component";
 import NavbarOverlay from "./layout/navbar-overlay.component";
 import ClickAudio from "./assets/audio/click.wav";
+import {
+  faAt,
+  faGraduationCap,
+  faListCheck,
+  faStar,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import ViewLayout from "./layout/view-layout.component";
 
 const getShouldOffset = () => {
   return window.matchMedia("(min-width: 1024px)");
@@ -106,17 +114,27 @@ export default function App() {
             isMoving && "duration-700"
           )}
         >
-          <SkillsView></SkillsView>
+          <ViewLayout view={Views.SKILLS} icon={faStar}>
+            <SkillsView></SkillsView>
+          </ViewLayout>
           <EmptyView></EmptyView>
-          <ProjectsView></ProjectsView>
+          <ViewLayout view={Views.PROJECTS} icon={faListCheck}>
+            <ProjectsView></ProjectsView>
+          </ViewLayout>
 
           <EmptyView></EmptyView>
-          <HomeView></HomeView>
+          <ViewLayout view={Views.ABOUT} icon={faUser}>
+            <HomeView></HomeView>
+          </ViewLayout>
           <EmptyView></EmptyView>
 
-          <StudiesView></StudiesView>
+          <ViewLayout view={Views.STUDIES} icon={faGraduationCap}>
+            <StudiesView></StudiesView>
+          </ViewLayout>
           <EmptyView></EmptyView>
-          <ContactView></ContactView>
+          <ViewLayout view={Views.CONTACT} icon={faAt}>
+            <ContactView></ContactView>
+          </ViewLayout>
         </div>
       </div>
     </div>

@@ -1,11 +1,14 @@
-import { faListCheck } from "@fortawesome/free-solid-svg-icons";
-import ViewLayout from "../layout/view-layout.component";
-import { Views } from "../context/navigation.context";
+import { useEffect } from "react";
+import ViewContent from "../layout/view-content.component";
 
 export default function ProjectsView() {
+  useEffect(() => {
+    console.log("lolllll");
+  }, []);
+
   return (
-    <ViewLayout view={Views.PROJECTS} icon={faListCheck}>
+    <ViewContent>
       <h1>lol</h1>
-    </ViewLayout>
+    </ViewContent>
   );
 }

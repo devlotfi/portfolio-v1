@@ -1,11 +1,9 @@
-import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import ViewLayout from "../layout/view-layout.component";
-import { Views } from "../context/navigation.context";
+import ViewContent from "../layout/view-content.component";
 
 export default function StudiesView() {
   return (
-    <ViewLayout view={Views.STUDIES} icon={faGraduationCap}>
+    <ViewContent>
       <h1>lol</h1>
-    </ViewLayout>
+    </ViewContent>
   );
 }
