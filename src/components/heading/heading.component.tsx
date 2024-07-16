@@ -4,7 +4,7 @@ import { BaseHTMLAttributes } from "react";
 import { HeadingContext } from "./heading.context";
 import { cn } from "../../utils/cn";
 
-const variants = cva("flex items-center bg-base-100 space-x-3", {
+const variants = cva("flex items-center space-x-3", {
   variants: {
     variant: {
       primary: "text-primary-100",

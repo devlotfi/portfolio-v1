@@ -53,7 +53,7 @@ interface NavigationContext {
 }
 
 const initialValue: NavigationContext = {
-  currentView: viewsMap.get(Views.ABOUT) as NavigationView,
+  currentView: viewsMap.get(Views.ABOUT)!,
   setCurrentView() {},
   isGlobalView: false,
   setIsGlobalView() {},
