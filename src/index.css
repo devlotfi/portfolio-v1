@@ -78,8 +78,11 @@
 
 .main-background {
   background-color: var(--base-100);
-  background-image: url("./assets/svg/bg.svg");
   transition-property: background-size;
+  background-image: radial-gradient(
+    var(--edge-200) 0.1rem,
+    var(--base-100) 0.1rem
+  );
 }
 
 .fill-mode-backward {
