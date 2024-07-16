@@ -1,10 +1,10 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { BaseHTMLAttributes, useContext } from "react";
+import { BaseHTMLAttributes } from "react";
 import { cn } from "../../utils/cn";
-import { TextInputContext } from "./text-input.context";
+import { TextAreaContext } from "./text-area.context";
 
 const variants = cva(
-  "flex flex-1 bg-base-100 duration-300 border border-edge-100 has-[:focus]:translate-x-[0.5rem] has-[:focus]:translate-y-[1.1rem] z-10",
+  "group/text-input relative flex bg-base-100 border border-edge-100 mb-[2.8rem]",
   {
     variants: {
       variant: {
@@ -22,23 +22,23 @@ const variants = cva(
 );
 
 interface Props
-  extends BaseHTMLAttributes<HTMLDivElement>,
+  extends BaseHTMLAttributes<HTMLLabelElement>,
     VariantProps<typeof variants> {}
 
-export default function TextInputContent({
+export default function TextArea({
+  variant,
   className,
   children,
   ...props
 }: Props) {
-  const { variant } = useContext(TextInputContext);
-
   return (
-    <div
+    <TextAreaContext.Provider
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      className={cn(variants({ variant: variant as any, className }))}
-      {...props}
+      value={{ variant: variant as any }}
     >
-      {children}
-    </div>
+      <label className={cn(variants({ variant, className }))} {...props}>
+        {children}
+      </label>
+    </TextAreaContext.Provider>
   );
 }

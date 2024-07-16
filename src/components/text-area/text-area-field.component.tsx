@@ -1,5 +1,5 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { InputHTMLAttributes } from "react";
+import { TextareaHTMLAttributes } from "react";
 import { cn } from "../../utils/cn";
 
 const variants = cva(
@@ -13,6 +13,9 @@ const variants = cva(
         warning: "border-warning-100 text-warning-100",
         "edge-100": "border-edge-100 text-edge-100",
       },
+      active: {
+        true: "text-base-100",
+      },
     },
     defaultVariants: {
       variant: "edge-100",
@@ -21,15 +24,19 @@ const variants = cva(
 );
 
 interface Props
-  extends InputHTMLAttributes<HTMLInputElement>,
+  extends TextareaHTMLAttributes<HTMLTextAreaElement>,
     VariantProps<typeof variants> {}
 
-export default function TextInputField({
+export default function TextAreaField({
   variant,
   className,
+  active,
   ...props
 }: Props) {
   return (
-    <input className={cn(variants({ variant, className }))} {...props}></input>
+    <textarea
+      className={cn(variants({ variant, className, active }))}
+      {...props}
+    ></textarea>
   );
 }

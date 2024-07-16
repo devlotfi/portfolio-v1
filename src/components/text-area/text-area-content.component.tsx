@@ -1,7 +1,7 @@
 import { VariantProps, cva } from "class-variance-authority";
 import { BaseHTMLAttributes, useContext } from "react";
 import { cn } from "../../utils/cn";
-import { TextInputContext } from "./text-input.context";
+import { TextAreaContext } from "./text-area.context";
 
 const variants = cva(
   "flex flex-1 bg-base-100 duration-300 border border-edge-100 has-[:focus]:translate-x-[0.5rem] has-[:focus]:translate-y-[1.1rem] z-10",
@@ -25,12 +25,12 @@ interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-export default function TextInputContent({
+export default function TextAreaContent({
   className,
   children,
   ...props
 }: Props) {
-  const { variant } = useContext(TextInputContext);
+  const { variant } = useContext(TextAreaContext);
 
   return (
     <div
