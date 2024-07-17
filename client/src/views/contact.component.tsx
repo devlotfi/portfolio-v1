@@ -95,7 +95,10 @@ export default function ContactView() {
                     <TextAreaIcon>
                       <FontAwesomeIcon icon={faFileText}></FontAwesomeIcon>
                     </TextAreaIcon>
-                    <TextAreaField placeholder="Content"></TextAreaField>
+                    <TextAreaField
+                      rows={5}
+                      placeholder="Content"
+                    ></TextAreaField>
                     <TextAreaMessage>Error</TextAreaMessage>
                   </TextAreaContent>
                 </TextArea>

@@ -1,33 +1,17 @@
-import { useEffect, useState } from "react";
 import ViewContent from "../layout/view-content.component";
+import { useQuery } from "@tanstack/react-query";
+import { CATEGORIES } from "../react-query/queries";
 
 export default function ProjectsView() {
-  const [md, setMd] = useState<string | null>(null);
-
-  useEffect(() => {
-    (async () => {
-      const res = await fetch(
-        "https://api.github.com/repos/devlotfi/local-todolist/readme",
-        {
-          headers: {
-            accept: "application/vnd.github.html+json",
-          },
-        }
-      );
-      const data = await res.text();
-      setMd(data);
-    })();
-  }, []);
+  const { data } = useQuery({
+    queryFn: CATEGORIES,
+    queryKey: [CATEGORIES.name],
+  });
 
   return (
     <ViewContent>
-      <h1>lol</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: md!,
-        }}
-        className="markdown-body"
-      ></div>
+      <h1>{import.meta.env.VITE_API_URL}</h1>
+      <h1>{JSON.stringify(data)}</h1>
     </ViewContent>
   );
 }
