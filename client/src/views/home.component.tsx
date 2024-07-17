@@ -27,7 +27,6 @@ export default function HomeView() {
                 src={Developer}
                 alt="developer"
               />
-
               <div className="flex flex-1 items-start  flex-col">
                 <div className="flex text-[17pt] md:text-[20pt] text-edge-100 animate-[fadeInUp_0.7s_0.3s_ease] fill-mode-backward">
                   Hello, i am

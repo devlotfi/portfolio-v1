@@ -56,6 +56,12 @@ export interface components {
             readonly id: string;
             name: string;
         };
+        Contact: {
+            /** Format: email */
+            email: string;
+            subject: string;
+            message: string;
+        };
         PaginatedProjectSerilizerList: {
             /** @example 123 */
             count: number;
@@ -121,7 +127,13 @@ export interface operations {
             path?: never;
             cookie?: never;
         };
-        requestBody?: never;
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["Contact"];
+                "application/x-www-form-urlencoded": components["schemas"]["Contact"];
+                "multipart/form-data": components["schemas"]["Contact"];
+            };
+        };
         responses: {
             /** @description No response body */
             200: {
@@ -138,6 +150,8 @@ export interface operations {
                 categories?: string[];
                 /** @description A page number within the paginated result set. */
                 page?: number;
+                /** @description A search term. */
+                search?: string;
             };
             header?: never;
             path?: never;
