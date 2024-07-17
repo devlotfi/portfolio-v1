@@ -45,7 +45,7 @@ import AlertIcon from "../components/alert/alert-icon.component";
 import AlertText from "../components/alert/alert-text.component";
 
 const validationSchema = yup.object({
-  email: yup.string(),
+  email: yup.string().email().required(),
   subject: yup.string().min(3).max(512).required(),
   message: yup.string().min(3).max(2048).required(),
 });
@@ -72,7 +72,7 @@ export default function ContactView() {
     <ViewLayout view={Views.CONTACT} icon={faAt}>
       <ViewContent>
         <div className="flex flex-1 justify-center md:items-center pt-[1rem]">
-          <div className="flex flex-col md:flex-row md:justify-center items-center space-y-5 md:space-y-0 md:space-x-5 w-full">
+          <div className="flex flex-col pb-[3rem] md:flex-row md:justify-center items-center space-y-5 md:space-y-0 md:space-x-5 w-full">
             <div className="flex md:flex-col space-x-3 md:space-x-0 md:space-y-3">
               <Social href="mailto:debbal.lotfi.dev@gmail.com">
                 <GmailSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GmailSVG>
