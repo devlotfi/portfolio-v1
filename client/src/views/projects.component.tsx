@@ -1,23 +1,55 @@
 import ViewContent from "../layout/view-content.component";
 import { useQuery } from "@tanstack/react-query";
-import { CATEGORIES } from "../react-query/queries";
-import LoadingIndicator from "../components/loading-indicator/loading-indicator.component";
+import { CATEGORIES, PROJECTS } from "../react-query/queries";
+import PageLoading from "../components/page-loading/page-loading.component";
+import Heading from "../components/heading/heading.component";
+import HeadingIcon from "../components/heading/heading-icon.component";
+import HeadingText from "../components/heading/heading-text.component";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faListCheck } from "@fortawesome/free-solid-svg-icons";
+import ProjectSearch from "../components/project-search/project-search.component";
+import Project from "../components/project/project.component";
+import { cn } from "../utils/cn";
 
 export default function ProjectsView() {
-  const { data } = useQuery({
+  const { data: dataCategories, isLoading: isLoadingCategories } = useQuery({
     queryFn: CATEGORIES,
     queryKey: [CATEGORIES.name],
   });
 
+  const { data: dataProjects, isLoading: isLoadingProjects } = useQuery({
+    queryFn: PROJECTS,
+    queryKey: [
+      PROJECTS.name,
+      {
+        categories: [],
+        page: 1,
+        search: "",
+      },
+    ],
+  });
+
   return (
-    <ViewContent>
-      <h1>{import.meta.env.VITE_API_URL}</h1>
-      <h1>{JSON.stringify(data)}</h1>
-      <LoadingIndicator
-        dotProps={{
-          style: { height: "2rem", width: '2rem' },
-        }}
-      ></LoadingIndicator>
+    <ViewContent className="items-center">
+      <PageLoading loading={isLoadingCategories}>
+        <div className="flex flex-col w-full p-[1rem] space-y-7 flex-1 lg:max-w-screen-lg">
+          <Heading className="text-[20pt]" variant="primary">
+            <HeadingIcon>
+              <FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>
+            </HeadingIcon>
+            <HeadingText>Projects</HeadingText>
+          </Heading>
+          <ProjectSearch categories={dataCategories!}></ProjectSearch>
+
+          <PageLoading loading={isLoadingProjects}>
+            <div className={cn("flex flex-wrap justify-between")}>
+              {dataProjects?.results.map((project) => {
+                return <Project key={project.id} project={project}></Project>;
+              })}
+            </div>
+          </PageLoading>
+        </div>
+      </PageLoading>
     </ViewContent>
   );
 }

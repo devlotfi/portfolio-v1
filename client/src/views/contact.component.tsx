@@ -50,6 +50,12 @@ const validationSchema = yup.object({
   message: yup.string().min(3).max(2048).required(),
 });
 
+const SOCIALS_ANIMATION_DELAY = 0.2;
+const SOCIALS_ANIMATION_DURATION = 0.5;
+
+const FORM_ANIMATION_DELAY = 0.2;
+const FORM_ANIMATION_DURATION = 0.5;
+
 export default function ContactView() {
   const { mutate, isPending, isSuccess, isError } = useMutation({
     mutationFn: CONTACT,
@@ -74,19 +80,44 @@ export default function ContactView() {
         <div className="flex flex-1 justify-center md:items-center pt-[1rem]">
           <div className="flex flex-col pb-[3rem] md:flex-row md:justify-center items-center space-y-5 md:space-y-0 md:space-x-5 w-full">
             <div className="flex md:flex-col space-x-3 md:space-x-0 md:space-y-3">
-              <Social href="mailto:debbal.lotfi.dev@gmail.com">
+              <Social
+                className="animate-[fadeInLeft_ease] fill-mode-backward"
+                style={{
+                  animationDelay: `${SOCIALS_ANIMATION_DELAY * 1}s`,
+                  animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
+                }}
+                href="mailto:debbal.lotfi.dev@gmail.com"
+              >
                 <GmailSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GmailSVG>
               </Social>
-              <Social href="https://github.com/devlotfi" target="_blank">
+              <Social
+                className="animate-[fadeInLeft_ease] fill-mode-backward"
+                style={{
+                  animationDelay: `${SOCIALS_ANIMATION_DELAY * 2}s`,
+                  animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
+                }}
+                href="https://github.com/devlotfi"
+                target="_blank"
+              >
                 <GithubSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GithubSVG>
               </Social>
               <Social
+                className="animate-[fadeInLeft_ease] fill-mode-backward"
+                style={{
+                  animationDelay: `${SOCIALS_ANIMATION_DELAY * 3}s`,
+                  animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
+                }}
                 href="https://www.facebook.com/lotfi.debbal/"
                 target="_blank"
               >
                 <FacebookSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></FacebookSVG>
               </Social>
               <Social
+                className="animate-[fadeInLeft_ease] fill-mode-backward"
+                style={{
+                  animationDelay: `${SOCIALS_ANIMATION_DELAY * 4}s`,
+                  animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
+                }}
                 href="https://www.instagram.com/lotfi_debbal/"
                 target="_blank"
               >
@@ -95,7 +126,14 @@ export default function ContactView() {
             </div>
             <div className="flex w-full max-w-[38rem] flex-col md:border-b md:border-l border-edge-100">
               <form className="p-[1rem]" onSubmit={handleSubmit}>
-                <Heading className="text-[20pt] mb-[1rem]" variant="primary">
+                <Heading
+                  className="text-[20pt] mb-[1rem] animate-[flipInX_ease] fill-mode-backward"
+                  style={{
+                    animationDelay: `${FORM_ANIMATION_DELAY * 1}s`,
+                    animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                  }}
+                  variant="primary"
+                >
                   <HeadingIcon>
                     <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
                   </HeadingIcon>
@@ -103,6 +141,11 @@ export default function ContactView() {
                 </Heading>
 
                 <TextInput
+                  className="animate-[fadeInRight_ease] fill-mode-backward"
+                  style={{
+                    animationDelay: `${FORM_ANIMATION_DELAY * 1}s`,
+                    animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                  }}
                   variant={errors.email && touched.email ? "error" : "edge-100"}
                 >
                   <TextInputLabel>E-mail</TextInputLabel>
@@ -124,6 +167,11 @@ export default function ContactView() {
                   </TextInputContent>
                 </TextInput>
                 <TextInput
+                  className="animate-[fadeInRight_ease] fill-mode-backward"
+                  style={{
+                    animationDelay: `${FORM_ANIMATION_DELAY * 2}s`,
+                    animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                  }}
                   variant={
                     errors.subject && touched.subject ? "error" : "edge-100"
                   }
@@ -146,6 +194,11 @@ export default function ContactView() {
                   </TextInputContent>
                 </TextInput>
                 <TextArea
+                  className="animate-[fadeInRight_ease] fill-mode-backward"
+                  style={{
+                    animationDelay: `${FORM_ANIMATION_DELAY * 3}s`,
+                    animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                  }}
                   variant={
                     errors.message && touched.message ? "error" : "edge-100"
                   }
@@ -192,7 +245,11 @@ export default function ContactView() {
                   inverted
                   variant="primary"
                   type="submit"
-                  className="w-full"
+                  className="w-full animate-[fadeInRight_ease] fill-mode-backward"
+                  style={{
+                    animationDelay: `${FORM_ANIMATION_DELAY * 4}s`,
+                    animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                  }}
                 >
                   <ButtonContent>
                     <ButtonIcon>

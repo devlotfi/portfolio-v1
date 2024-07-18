@@ -18,6 +18,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import ViewLayout from "./layout/view-layout.component";
+import { ProjectListProvider } from "./context/project-list.context";
 
 const getShouldOffset = () => {
   return window.matchMedia("(min-width: 1024px)");
@@ -119,7 +120,9 @@ export default function App() {
           </ViewLayout>
           <EmptyView></EmptyView>
           <ViewLayout view={Views.PROJECTS} icon={faListCheck}>
-            <ProjectsView></ProjectsView>
+            <ProjectListProvider>
+              <ProjectsView></ProjectsView>
+            </ProjectListProvider>
           </ViewLayout>
 
           <EmptyView></EmptyView>

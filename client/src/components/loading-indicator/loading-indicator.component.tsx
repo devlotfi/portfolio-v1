@@ -28,7 +28,11 @@ interface Props
     VariantProps<typeof dotVariants>;
 }
 
-const LoaderDots = ({ className, dotProps, ...props }: Props): JSX.Element => {
+const LoadingIndicator = ({
+  className,
+  dotProps,
+  ...props
+}: Props): JSX.Element => {
   return (
     <div className={cn(variants({ className }))} {...props}>
       <div
@@ -64,4 +68,4 @@ const LoaderDots = ({ className, dotProps, ...props }: Props): JSX.Element => {
     </div>
   );
 };
-export default LoaderDots;
+export default LoadingIndicator;
