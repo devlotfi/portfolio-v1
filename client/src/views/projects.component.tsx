@@ -10,8 +10,13 @@ import { faListCheck } from "@fortawesome/free-solid-svg-icons";
 import ProjectSearch from "../components/project-search/project-search.component";
 import Project from "../components/project/project.component";
 import { cn } from "../utils/cn";
+import ProjectDetails from "../components/project/project-details.component";
+import { useContext } from "react";
+import { ProjectListContext } from "../context/project-list.context";
 
 export default function ProjectsView() {
+  const { showDetails } = useContext(ProjectListContext);
+
   const { data: dataCategories, isLoading: isLoadingCategories } = useQuery({
     queryFn: CATEGORIES,
     queryKey: [CATEGORIES.name],
@@ -30,7 +35,9 @@ export default function ProjectsView() {
   });
 
   return (
-    <ViewContent className="items-center">
+    <ViewContent
+      className={cn("items-center relative", showDetails && "overflow-hidden")}
+    >
       <PageLoading loading={isLoadingCategories}>
         <div className="flex flex-col w-full p-[1rem] space-y-7 flex-1 lg:max-w-screen-lg">
           <Heading className="text-[20pt]" variant="primary">
@@ -49,6 +56,7 @@ export default function ProjectsView() {
             </div>
           </PageLoading>
         </div>
+        <ProjectDetails></ProjectDetails>
       </PageLoading>
     </ViewContent>
   );
