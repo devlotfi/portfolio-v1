@@ -6,8 +6,6 @@ interface ProjectListContext {
   setSelectedProject: (
     project: components["schemas"]["ProjectSerilizer"] | null
   ) => void;
-  showDetails: boolean;
-  setShowDetails: (value: boolean) => void;
 
   search: string;
   setSearch: (value: string) => void;
@@ -22,8 +20,6 @@ interface ProjectListContext {
 const initialValues: ProjectListContext = {
   selectedProject: null,
   setSelectedProject() {},
-  showDetails: false,
-  setShowDetails() {},
   search: "",
   setSearch() {},
   categories: [],
@@ -42,9 +38,6 @@ export function ProjectListProvider({ children }: PropsWithChildren) {
   const [selectedProject, setSelectedProject] = useState<
     components["schemas"]["ProjectSerilizer"] | null
   >(initialValues.selectedProject);
-  const [showDetails, setShowDetails] = useState<boolean>(
-    initialValues.showDetails
-  );
   const [search, setSearch] = useState<string>(initialValues.search);
   const [categories, setCategories] = useState<
     Array<components["schemas"]["CategorySerilizer"]>
@@ -73,8 +66,6 @@ export function ProjectListProvider({ children }: PropsWithChildren) {
       value={{
         selectedProject,
         setSelectedProject,
-        showDetails,
-        setShowDetails,
         search,
         setSearch,
         categories,

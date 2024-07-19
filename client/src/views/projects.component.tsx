@@ -10,13 +10,12 @@ import { faListCheck } from "@fortawesome/free-solid-svg-icons";
 import ProjectSearch from "../components/project/project-search.component";
 import Project from "../components/project/project.component";
 import { cn } from "../utils/cn";
-import ProjectDetails from "../components/project/project-details.component";
 import { useContext } from "react";
 import { ProjectListContext } from "../context/project-list.context";
 import ProjectPagination from "../components/project/project-pagination.component";
 
 export default function ProjectsView() {
-  const { showDetails, search, categories, page } =
+  const { selectedProject, search, categories, page } =
     useContext(ProjectListContext);
 
   const { data: dataCategories, isLoading: isLoadingCategories } = useQuery({
@@ -41,8 +40,8 @@ export default function ProjectsView() {
   return (
     <ViewContent
       className={cn(
-        "items-center relative overflow-x-hidden",
-        showDetails && "overflow-hidden"
+        "items-center relative overflow-x-hidden snap-y snap-mandatory",
+        selectedProject && "overflow-hidden"
       )}
     >
       <PageLoading loading={isLoadingCategories}>
@@ -66,7 +65,6 @@ export default function ProjectsView() {
             ></ProjectPagination>
           </PageLoading>
         </div>
-        <ProjectDetails></ProjectDetails>
       </PageLoading>
     </ViewContent>
   );
