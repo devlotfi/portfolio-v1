@@ -21,7 +21,7 @@ export default function ProjectDetails({ className, ...props }: Props) {
   return (
     <div
       className={cn(
-        "flex flex-col fixed overflow-y-auto top-[3.8rem] lg:top-0 pb-[3rem] right-0 lg:pt-0 h-screen max-h-[calc(100vh-3.8rem)] lg:max-h-screen w-0 bg-base-100 z-40 duration-500",
+        "flex flex-col fixed overflow-x-hidden overflow-y-auto top-[3.8rem] lg:top-0 pb-[3rem] right-0 lg:pt-0 h-screen max-h-[calc(100vh-3.8rem)] lg:max-h-screen w-0 bg-base-100 z-40 duration-500",
         showDetails && "translate-x-0 w-screen lg:w-[calc(100vw-5rem)]",
         className
       )}
