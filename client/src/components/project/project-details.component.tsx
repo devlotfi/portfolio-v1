@@ -21,14 +21,14 @@ export default function ProjectDetails({ className, ...props }: Props) {
   return (
     <div
       className={cn(
-        "flex flex-col fixed overflow-x-hidden overflow-y-auto top-[3.8rem] lg:top-0 pb-[3rem] right-0 lg:pt-0 h-screen max-h-[calc(100vh-3.8rem)] lg:max-h-screen w-0 bg-base-100 z-40 duration-500",
+        "flex flex-col fixed overflow-x-hidden overflow-y-auto top-[3.8rem] lg:top-0 right-0 lg:pt-0 h-screen max-h-[calc(100vh-3.8rem)] lg:max-h-screen w-0 bg-base-100 z-40 duration-500",
         showDetails && "translate-x-0 w-screen lg:w-[calc(100vw-5rem)]",
         className
       )}
       {...props}
     >
-      <div className="flex sticky top-0 bg-base-100 justify-between items-center border-b border-edge-100 p-[0.5rem]">
-        <div className="flex items-center space-x-3 justify-start">
+      <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sticky top-0 bg-base-100 justify-between sm:items-center border-b border-edge-100 p-[0.5rem]">
+        <div className="flex items-center space-x-3 justify-between sm:justify-start">
           <div className="flex border border-edge-100">
             <div className="flex border border-edge-100 bg-base-100 p-[0.5rem] translate-x-[0.3rem] translate-y-[-0.3em]">
               <img
@@ -44,7 +44,7 @@ export default function ProjectDetails({ className, ...props }: Props) {
           </div>
         </div>
 
-        <div className="flex space-x-2">
+        <div className="flex justify-between sm:justify-start space-x-2">
           {selectedProject?.deployment ? (
             <a href={selectedProject.deployment} target="_blank">
               <Button onClick={() => setShowDetails(false)}>
@@ -84,7 +84,7 @@ export default function ProjectDetails({ className, ...props }: Props) {
         </div>
       </div>
       {selectedProject ? (
-        <div className="flex justify-center main-background bg-[length:3rem_3rem]">
+        <div className="flex flex-1 justify-center main-background bg-[length:3rem_3rem]">
           <ProjectReadme project={selectedProject}></ProjectReadme>
         </div>
       ) : null}

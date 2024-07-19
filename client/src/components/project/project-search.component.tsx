@@ -1,4 +1,4 @@
-import { FormHTMLAttributes, useState } from "react";
+import { FormHTMLAttributes, useContext, useState } from "react";
 import { cn } from "../../utils/cn";
 import { faCaretDown, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,13 +16,14 @@ import ButtonText from "../button/button-text.component";
 import ButtonIcon from "../button/button-icon.component";
 import { components } from "../../__generated__/schema";
 import ProjectSearchCategory from "./project-search-category.component";
+import { ProjectListContext } from "../../context/project-list.context";
 
 interface Props extends FormHTMLAttributes<HTMLFormElement> {
   categories: Array<components["schemas"]["CategorySerilizer"]>;
 }
 
 const validationSchema = yup.object({
-  search: yup.string().required(),
+  search: yup.string(),
 });
 
 export default function ProjectSearch({
@@ -30,6 +31,7 @@ export default function ProjectSearch({
   categories,
   ...props
 }: Props) {
+  const { setSearch } = useContext(ProjectListContext);
   const [showCategories, setShowCategories] = useState<boolean>(false);
 
   const { values, handleChange, handleSubmit } = useFormik({
@@ -38,7 +40,7 @@ export default function ProjectSearch({
     },
     validationSchema,
     onSubmit(values) {
-      console.log(values);
+      setSearch(values.search);
     },
   });
 

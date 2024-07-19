@@ -7,15 +7,17 @@ import HeadingIcon from "../components/heading/heading-icon.component";
 import HeadingText from "../components/heading/heading-text.component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faListCheck } from "@fortawesome/free-solid-svg-icons";
-import ProjectSearch from "../components/project-search/project-search.component";
+import ProjectSearch from "../components/project/project-search.component";
 import Project from "../components/project/project.component";
 import { cn } from "../utils/cn";
 import ProjectDetails from "../components/project/project-details.component";
 import { useContext } from "react";
 import { ProjectListContext } from "../context/project-list.context";
+import ProjectPagination from "../components/project/project-pagination.component";
 
 export default function ProjectsView() {
-  const { showDetails } = useContext(ProjectListContext);
+  const { showDetails, search, categories, page } =
+    useContext(ProjectListContext);
 
   const { data: dataCategories, isLoading: isLoadingCategories } = useQuery({
     queryFn: CATEGORIES,
@@ -28,9 +30,9 @@ export default function ProjectsView() {
     queryKey: [
       PROJECTS.name,
       {
-        categories: [],
-        page: 1,
-        search: "",
+        categories: categories.map((category) => category.id),
+        page,
+        search,
       },
     ],
     refetchOnWindowFocus: false,
@@ -59,6 +61,9 @@ export default function ProjectsView() {
                 return <Project key={project.id} project={project}></Project>;
               })}
             </div>
+            <ProjectPagination
+              count={dataProjects?.count as number}
+            ></ProjectPagination>
           </PageLoading>
         </div>
         <ProjectDetails></ProjectDetails>
