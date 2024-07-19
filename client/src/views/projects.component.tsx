@@ -20,6 +20,7 @@ export default function ProjectsView() {
   const { data: dataCategories, isLoading: isLoadingCategories } = useQuery({
     queryFn: CATEGORIES,
     queryKey: [CATEGORIES.name],
+    refetchOnWindowFocus: false,
   });
 
   const { data: dataProjects, isLoading: isLoadingProjects } = useQuery({
@@ -32,6 +33,7 @@ export default function ProjectsView() {
         search: "",
       },
     ],
+    refetchOnWindowFocus: false,
   });
 
   return (

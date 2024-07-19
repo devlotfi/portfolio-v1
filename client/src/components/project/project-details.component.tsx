@@ -1,7 +1,7 @@
 import { BaseHTMLAttributes, useContext } from "react";
 import { cn } from "../../utils/cn";
 import { ProjectListContext } from "../../context/project-list.context";
-import { faBackward } from "@fortawesome/free-solid-svg-icons";
+import { faBackward, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ButtonContent from "../button/button-content.component";
 import ButtonIcon from "../button/button-icon.component";
@@ -9,6 +9,8 @@ import ButtonSlider from "../button/button-slider.component";
 import ButtonText from "../button/button-text.component";
 import Button from "../button/button.component";
 import ProjectReadme from "./project-readme.component";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 interface Props extends BaseHTMLAttributes<HTMLDivElement> {}
 
@@ -42,19 +44,49 @@ export default function ProjectDetails({ className, ...props }: Props) {
           </div>
         </div>
 
-        <Button inverted onClick={() => setShowDetails(false)}>
-          <ButtonContent>
-            <ButtonIcon>
-              <FontAwesomeIcon icon={faBackward}></FontAwesomeIcon>
-            </ButtonIcon>
-            <ButtonText>Back</ButtonText>
+        <div className="flex space-x-2">
+          {selectedProject?.deployment ? (
+            <a href={selectedProject.deployment} target="_blank">
+              <Button onClick={() => setShowDetails(false)}>
+                <ButtonContent>
+                  <ButtonIcon>
+                    <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>
+                  </ButtonIcon>
 
-            <ButtonSlider></ButtonSlider>
-          </ButtonContent>
-        </Button>
+                  <ButtonSlider></ButtonSlider>
+                </ButtonContent>
+              </Button>
+            </a>
+          ) : null}
+          <a href={selectedProject?.repository} target="_blank">
+            <Button onClick={() => setShowDetails(false)}>
+              <ButtonContent>
+                <ButtonIcon>
+                  <FontAwesomeIcon
+                    icon={faGithub as IconProp}
+                  ></FontAwesomeIcon>
+                </ButtonIcon>
+
+                <ButtonSlider></ButtonSlider>
+              </ButtonContent>
+            </Button>
+          </a>
+          <Button inverted onClick={() => setShowDetails(false)}>
+            <ButtonContent>
+              <ButtonIcon>
+                <FontAwesomeIcon icon={faBackward}></FontAwesomeIcon>
+              </ButtonIcon>
+              <ButtonText>Back</ButtonText>
+
+              <ButtonSlider></ButtonSlider>
+            </ButtonContent>
+          </Button>
+        </div>
       </div>
       {selectedProject ? (
-        <ProjectReadme project={selectedProject}></ProjectReadme>
+        <div className="flex justify-center">
+          <ProjectReadme project={selectedProject}></ProjectReadme>
+        </div>
       ) : null}
     </div>
   );

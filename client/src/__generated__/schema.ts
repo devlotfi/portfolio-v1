@@ -87,7 +87,7 @@ export interface components {
             /** Format: uri */
             thumbnail: string;
             /** Format: uri */
-            repository?: string | null;
+            repository: string;
             /** Format: uri */
             deployment?: string | null;
             categories: string[];

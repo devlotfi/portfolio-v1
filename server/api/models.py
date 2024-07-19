@@ -18,7 +18,7 @@ class Project(models.Model):
     description = models.TextField()
     icon = models.URLField()
     thumbnail = models.URLField()
-    repository = models.URLField(null=True, blank=True)
+    repository = models.URLField()
     deployment = models.URLField(null=True, blank=True)
 
     def __str__(self) -> str:
