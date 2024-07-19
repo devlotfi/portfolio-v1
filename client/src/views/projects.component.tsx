@@ -38,7 +38,10 @@ export default function ProjectsView() {
 
   return (
     <ViewContent
-      className={cn("items-center relative", showDetails && "overflow-hidden")}
+      className={cn(
+        "items-center relative overflow-x-hidden",
+        showDetails && "overflow-hidden"
+      )}
     >
       <PageLoading loading={isLoadingCategories}>
         <div className="flex flex-col w-full p-[1rem] space-y-7 flex-1 lg:max-w-screen-lg">

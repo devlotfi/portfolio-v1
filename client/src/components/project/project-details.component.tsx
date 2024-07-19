@@ -21,8 +21,8 @@ export default function ProjectDetails({ className, ...props }: Props) {
   return (
     <div
       className={cn(
-        "flex flex-col absolute overflow-y-auto mt-[3.8rem] lg:mt-0 pb-[3rem] top-0 lg:pt-0 h-full max-h-[calc(100%-3.8rem)] lg:max-h-full w-full lg:w-[calc(100%-5rem)] bg-base-100 z-40 duration-500 translate-x-[100%]",
-        showDetails && "translate-x-0",
+        "flex flex-col fixed overflow-y-auto top-[3.8rem] lg:top-0 pb-[3rem] right-0 lg:pt-0 h-screen max-h-[calc(100vh-3.8rem)] lg:max-h-screen w-0 bg-base-100 z-40 duration-500",
+        showDetails && "translate-x-0 w-screen lg:w-[calc(100vw-5rem)]",
         className
       )}
       {...props}
@@ -84,7 +84,7 @@ export default function ProjectDetails({ className, ...props }: Props) {
         </div>
       </div>
       {selectedProject ? (
-        <div className="flex justify-center">
+        <div className="flex justify-center main-background bg-[length:3rem_3rem]">
           <ProjectReadme project={selectedProject}></ProjectReadme>
         </div>
       ) : null}
