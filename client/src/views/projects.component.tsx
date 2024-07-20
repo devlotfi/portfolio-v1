@@ -10,11 +10,12 @@ import { faListCheck } from "@fortawesome/free-solid-svg-icons";
 import ProjectSearch from "../components/project/project-search.component";
 import Project from "../components/project/project.component";
 import { cn } from "../utils/cn";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ProjectListContext } from "../context/project-list.context";
 import ProjectPagination from "../components/project/project-pagination.component";
 
 export default function ProjectsView() {
+  const listRef = useRef<HTMLDivElement>(null);
   const { selectedProject, search, categories, page } =
     useContext(ProjectListContext);
 
@@ -37,22 +38,28 @@ export default function ProjectsView() {
     refetchOnWindowFocus: false,
   });
 
+  useEffect(() => {
+    listRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+  }, [selectedProject]);
+
   return (
     <ViewContent
-      className={cn(
-        "items-center relative overflow-x-hidden snap-y snap-mandatory",
-        selectedProject && "overflow-hidden"
-      )}
+      reactRef={listRef}
+      className={cn("items-center relative overflow-x-hidden")}
     >
       <PageLoading loading={isLoadingCategories}>
         <div className="flex flex-col w-full p-[1rem] space-y-7 flex-1 lg:max-w-screen-lg">
-          <Heading className="text-[20pt]" variant="primary">
-            <HeadingIcon>
-              <FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>
-            </HeadingIcon>
-            <HeadingText>Projects</HeadingText>
-          </Heading>
-          <ProjectSearch categories={dataCategories!}></ProjectSearch>
+          {!selectedProject ? (
+            <>
+              <Heading className="text-[20pt]" variant="primary">
+                <HeadingIcon>
+                  <FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>
+                </HeadingIcon>
+                <HeadingText>Projects</HeadingText>
+              </Heading>
+              <ProjectSearch categories={dataCategories!}></ProjectSearch>
+            </>
+          ) : null}
 
           <PageLoading loading={isLoadingProjects}>
             <div className={cn("flex flex-wrap justify-between")}>
@@ -60,9 +67,12 @@ export default function ProjectsView() {
                 return <Project key={project.id} project={project}></Project>;
               })}
             </div>
-            <ProjectPagination
-              count={dataProjects?.count as number}
-            ></ProjectPagination>
+
+            {!selectedProject ? (
+              <ProjectPagination
+                count={dataProjects?.count as number}
+              ></ProjectPagination>
+            ) : null}
           </PageLoading>
         </div>
       </PageLoading>

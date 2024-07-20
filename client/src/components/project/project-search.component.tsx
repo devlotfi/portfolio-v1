@@ -90,7 +90,7 @@ export default function ProjectSearch({
           showCategories && "flex "
         )}
       >
-        {categories.map((category) => (
+        {categories?.map((category) => (
           <ProjectSearchCategory
             key={category.id}
             category={category}

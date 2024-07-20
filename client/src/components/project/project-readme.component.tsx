@@ -21,7 +21,7 @@ export default function ProjectReadme({ className, project, ...props }: Props) {
 
   return (
     <PageLoading loading={isLoading}>
-      <div className="flex p-[2rem] w-full max-w-[980px]">
+      <div className="flex p-[1.5rem] w-full max-w-[980px]">
         <div
           dangerouslySetInnerHTML={{
             __html: DOMPurify.sanitize(data!),

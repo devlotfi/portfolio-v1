@@ -10,6 +10,8 @@ import ButtonIcon from "../button/button-icon.component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackward } from "@fortawesome/free-solid-svg-icons";
 import ButtonText from "../button/button-text.component";
+import Heading from "../heading/heading.component";
+import HeadingText from "../heading/heading-text.component";
 
 interface Props extends BaseHTMLAttributes<HTMLDivElement> {
   project: components["schemas"]["ProjectSerilizer"];
@@ -21,7 +23,7 @@ export default function Project({ className, project, ...props }: Props) {
     useContext(ProjectListContext);
 
   const handleCardClick = () => {
-    if (!selectedProject) {
+    if (selectedProject?.id !== project.id) {
       setSelectedProject(project);
     }
   };
@@ -33,7 +35,7 @@ export default function Project({ className, project, ...props }: Props) {
       className={cn(
         "flex w-full h-[25rem] md:w-[48%] mb-[1rem] border bg-edge-100 border-edge-100 duration-300",
         selectedProject?.id === project.id &&
-          "!w-full h-[calc(100vh-3.8rem)] lg:h-[100vh] snap-center scroll-mt-[3.8rem] lg:scroll-mt-0 border-l border-r border-b-0 border-t-0",
+          "!w-full h-auto snap-center scroll-mt-[3.8rem] lg:scroll-mt-0 order-first",
         className
       )}
       {...props}
@@ -67,8 +69,16 @@ export default function Project({ className, project, ...props }: Props) {
             </div>
 
             <div className="flex flex-col text-edge-100">
-              <div className="flex">{project.name}</div>
-              <div className="flex">{project.description}</div>
+              <Heading>
+                <HeadingText className="pl-[0.3rem]">
+                  {project.name}
+                </HeadingText>
+              </Heading>
+              {selectedProject?.id !== project.id ? (
+                <div className="flex text-[10pt] opacity-70">
+                  {project.description}
+                </div>
+              ) : null}
             </div>
           </div>
 
