@@ -65,7 +65,7 @@ const ViewLayout = ({
             className="text-[130pt] z-20"
             icon={icon}
           ></FontAwesomeIcon>
-          <div className="flex text-[50pt] pl-[1rem] border-base-100 md:text-[80pt] z-20">
+          <div className="flex text-[35pt] pl-[1rem] border-base-100 md:text-[80pt] z-20">
             {view}
           </div>
         </div>
