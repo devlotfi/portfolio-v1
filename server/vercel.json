@@ -1,4 +1,5 @@
 {
+  "buildCommand": "pip install poetry && poetry install",
   "builds": [
     {
       "src": "server/wsgi.py",
