@@ -39,7 +39,7 @@ export default function ProjectPagination({
 
   return (
     <div className={cn("flex w-full justify-center", className)} {...props}>
-      <div className="flex">{renderPageNumbers()}</div>
+      <div className="flex space-x-2">{renderPageNumbers()}</div>
     </div>
   );
 }

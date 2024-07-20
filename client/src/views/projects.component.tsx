@@ -40,7 +40,7 @@ export default function ProjectsView() {
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: 0, behavior: "smooth" });
-  }, [selectedProject]);
+  }, [selectedProject, page]);
 
   return (
     <ViewContent
