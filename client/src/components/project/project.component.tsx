@@ -36,6 +36,7 @@ export default function Project({ className, project, ...props }: Props) {
         "flex w-full h-[25rem] md:w-[48%] mb-[1rem] border bg-edge-100 border-edge-100 duration-300",
         selectedProject?.id === project.id &&
           "!w-full h-auto snap-center scroll-mt-[3.8rem] lg:scroll-mt-0 order-first",
+        selectedProject && selectedProject.id !== project.id && "hidden",
         className
       )}
       {...props}
