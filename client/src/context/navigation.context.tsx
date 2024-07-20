@@ -7,7 +7,7 @@ export enum Views {
   PROJECTS = "PROJECTS",
   SKILLS = "SKILLS",
   CONTACT = "CONTACT",
-  STUDIES = "STUDIES",
+  EXPERIENCE = "EXPERIENCE",
 }
 
 export interface NavigationView {
@@ -32,8 +32,8 @@ viewsMap.set(Views.PROJECTS, {
   horizontalTranslation: "-200vw",
   verticalTranslation: "0vh",
 });
-viewsMap.set(Views.STUDIES, {
-  view: Views.STUDIES,
+viewsMap.set(Views.EXPERIENCE, {
+  view: Views.EXPERIENCE,
   horizontalTranslation: "0vw",
   verticalTranslation: "-200vh",
 });

@@ -7,12 +7,12 @@ import ContactView from "./views/contact.component";
 import HomeView from "./views/home.component";
 import ProjectsView from "./views/projects.component";
 import SkillsView from "./views/skills.component";
-import StudiesView from "./views/studies.component";
+import ExperienceView from "./views/experience.component";
 import NavbarOverlay from "./layout/navbar-overlay.component";
 import ClickAudio from "./assets/audio/click.wav";
 import {
   faAt,
-  faGraduationCap,
+  faBriefcase,
   faListCheck,
   faStar,
   faUser,
@@ -131,8 +131,8 @@ export default function App() {
           </ViewLayout>
           <EmptyView></EmptyView>
 
-          <ViewLayout view={Views.STUDIES} icon={faGraduationCap}>
-            <StudiesView></StudiesView>
+          <ViewLayout view={Views.EXPERIENCE} icon={faBriefcase}>
+            <ExperienceView></ExperienceView>
           </ViewLayout>
           <EmptyView></EmptyView>
           <ViewLayout view={Views.CONTACT} icon={faAt}>
