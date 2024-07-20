@@ -70,11 +70,11 @@ export default function HomeView() {
 
       <div
         id="about"
-        className="flex scroll-mt-[3rem] pt-[3rem] min-h-full justify-center items-start"
+        className="flex scroll-mt-[3rem] mt-[3rem] min-h-full justify-center items-start"
         ref={aboutSectionRef}
       >
-        <div className="flex border border-edge-100">
-          <div className="flex flex-col p-[1rem] translate-x-[0.5rem] translate-y-[-0.5rem] bg-base-100 items-start lg:flex-row md:border border-edge-100 w-full md:max-w-[90%] xl:max-w-[55rem] space-y-5 lg:space-y-0 lg:space-x-5 text-edge-100">
+        <div className="flex md:border border-edge-100 md:max-w-[90%] xl:max-w-[55rem]">
+          <div className="flex flex-col p-[1rem] translate-x-[0.5rem] translate-y-[-0.5rem] bg-base-100 items-start lg:flex-row md:border border-edge-100 space-y-5 lg:space-y-0 lg:space-x-5 text-edge-100">
             <img
               className="h-[15rem] min-w-[15rem] border border-edge-100 bg-base-100"
               src={Profile}
