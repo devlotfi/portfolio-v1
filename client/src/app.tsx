@@ -87,12 +87,10 @@ export default function App() {
           ref={cursorRef}
           id="cursor"
           className={cn(
-            "hidden fixed group-hover/cursor:flex h-[2rem] w-[2rem] duration-75 transition-[height,width] bg-edge-100 border-base-100 border z-[1000]  pointer-events-none translate-x-[0.7rem] translate-y-[0.7rem]",
+            "hidden fixed group-hover/cursor:flex origin-center h-[1rem] w-[1rem] duration-75 transition-[height,width] bg-edge-100 border-base-100 border z-[1000] pointer-events-none",
             isMouseDown && "h-[1.5rem] w-[1.5rem]"
           )}
-        >
-          <div className="flex bg-edge-100 border-base-100 border h-[0.7rem] w-[0.7rem] mt-[-0.7rem] ml-[-0.7rem]"></div>
-        </div>
+        ></div>
 
         <div
           style={{
