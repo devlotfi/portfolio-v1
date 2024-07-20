@@ -16,7 +16,7 @@ import Heading from "../components/heading/heading.component";
 import { useRef } from "react";
 import ButtonText from "../components/button/button-text.component";
 
-export default function HomeView() {
+export default function AboutView() {
   const aboutSectionRef = useRef<HTMLDivElement>(null);
 
   return (

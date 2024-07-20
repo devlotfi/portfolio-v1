@@ -4,7 +4,7 @@ import TransitionLoading from "./components/transition-loading/transition-loadin
 import { EmptyView } from "./layout/empty-view.component";
 import { cn } from "./utils/cn";
 import ContactView from "./views/contact.component";
-import HomeView from "./views/home.component";
+import AboutView from "./views/home.component";
 import ProjectsView from "./views/projects.component";
 import SkillsView from "./views/skills.component";
 import ExperienceView from "./views/experience.component";
@@ -127,7 +127,7 @@ export default function App() {
 
           <EmptyView></EmptyView>
           <ViewLayout view={Views.ABOUT} icon={faUser}>
-            <HomeView></HomeView>
+            <AboutView></AboutView>
           </ViewLayout>
           <EmptyView></EmptyView>
 
