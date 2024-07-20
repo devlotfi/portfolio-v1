@@ -1,4 +1,3 @@
-import { VariantProps, cva } from "class-variance-authority";
 import { BaseHTMLAttributes, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
@@ -6,11 +5,7 @@ import { Views, NavigationContext } from "../context/navigation.context";
 import { cn } from "../utils/cn";
 import TransitionAudio from "../assets/audio/transition.wav";
 
-const variants = cva("flex relative flex-col h-screen w-screen");
-
-interface Props
-  extends BaseHTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof variants> {
+interface Props extends BaseHTMLAttributes<HTMLDivElement> {
   view: Views;
   icon: IconProp;
 }
@@ -47,11 +42,14 @@ const ViewLayout = ({
   };
 
   return (
-    <div className={cn(variants({ className }))} {...props}>
+    <div
+      className={cn("flex relative flex-col h-screen w-screen", className)}
+      {...props}
+    >
       <div
         onClick={navigateToView}
         className={cn(
-          "group/view flex absolute top-0 left-0 lg:left-[5rem] bg-base-100 h-screen w-screen lg:w-[calc(100vw-5rem)] border-[0.5rem] border-edge-100 text-base-100 group-hover/view:text-edge-100 z-50 cursor-pointer pointer-events-none opacity-0 duration-700 transition-opacity",
+          "group/view flex absolute top-0 left-0 bg-base-100 h-screen w-screen border-[0.5rem] border-edge-100 text-base-100 group-hover/view:text-edge-100 z-50 cursor-pointer pointer-events-none opacity-0 duration-700 transition-opacity",
           isGlobalView && "opacity-100 pointer-events-auto"
         )}
       >
@@ -71,7 +69,7 @@ const ViewLayout = ({
         </div>
       </div>
 
-      {currentView.view === view ? children : null}
+      <div className="flex">{currentView.view === view ? children : null}</div>
     </div>
   );
 };
