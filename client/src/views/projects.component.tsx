@@ -19,6 +19,8 @@ import ButtonIcon from "../components/button/button-icon.component";
 import ButtonSlider from "../components/button/button-slider.component";
 import ButtonText from "../components/button/button-text.component";
 import Button from "../components/button/button.component";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export default function ProjectsView() {
   const listRef = useRef<HTMLDivElement>(null);
@@ -90,15 +92,29 @@ export default function ProjectsView() {
               </div>
             </div>
 
-            <Button inverted onClick={() => setSelectedProject(null)}>
-              <ButtonContent>
-                <ButtonIcon>
-                  <FontAwesomeIcon icon={faBackward}></FontAwesomeIcon>
-                </ButtonIcon>
-                <ButtonText>Back</ButtonText>
-                <ButtonSlider></ButtonSlider>
-              </ButtonContent>
-            </Button>
+            <div className="flex flex-col-reverse items-end sm:items-start space-y-1 space-y-reverse sm:space-y-0 sm:space-x-2 sm:flex-row">
+              <a href={selectedProject.repository}>
+                <Button>
+                  <ButtonContent>
+                    <ButtonIcon>
+                      <FontAwesomeIcon
+                        icon={faGithub as IconProp}
+                      ></FontAwesomeIcon>
+                    </ButtonIcon>
+                    <ButtonSlider></ButtonSlider>
+                  </ButtonContent>
+                </Button>
+              </a>
+              <Button inverted onClick={() => setSelectedProject(null)}>
+                <ButtonContent>
+                  <ButtonIcon>
+                    <FontAwesomeIcon icon={faBackward}></FontAwesomeIcon>
+                  </ButtonIcon>
+                  <ButtonText>Back</ButtonText>
+                  <ButtonSlider></ButtonSlider>
+                </ButtonContent>
+              </Button>
+            </div>
           </div>
           <ProjectReadme project={selectedProject}></ProjectReadme>
         </div>
