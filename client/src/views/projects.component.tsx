@@ -54,7 +54,7 @@ export default function ProjectsView() {
       className="items-center relative overflow-x-hidden"
     >
       {selectedProject ? (
-        <div className="w-full animate-[fadeInRight_0.7s_ease] fill-mode-backward">
+        <div className="flex flex-col items-center w-full animate-[fadeInRight_0.7s_ease] fill-mode-backward">
           <div className="flex w-full bg-base-100 justify-between items-center p-[0.7rem] sticky top-0 border-b border-edge-100">
             <div className="flex flex-col sm:flex-row items-start sm:items-start sm:space-x-3 sm:justify-start">
               <div className="flex border border-edge-100">
