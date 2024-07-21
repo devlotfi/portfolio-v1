@@ -22,8 +22,14 @@ import Button from "../components/button/button.component";
 
 export default function ProjectsView() {
   const listRef = useRef<HTMLDivElement>(null);
-  const { selectedProject, setSelectedProject, search, categories, page } =
-    useContext(ProjectListContext);
+  const {
+    selectedProject,
+    setSelectedProject,
+    search,
+    categories,
+    page,
+    setPage,
+  } = useContext(ProjectListContext);
 
   const { data: dataCategories, isLoading: isLoadingCategories } = useQuery({
     queryFn: CATEGORIES,
@@ -48,15 +54,19 @@ export default function ProjectsView() {
     listRef.current?.scrollTo({ top: 0, behavior: "smooth" });
   }, [page]);
 
+  useEffect(() => {
+    setPage(1);
+  }, [categories, search, setPage]);
+
   return (
     <ViewContent
       reactRef={listRef}
       className="items-center relative overflow-x-hidden"
     >
       {selectedProject ? (
-        <div className="flex flex-col items-center w-full animate-[fadeInRight_0.7s_ease] fill-mode-backward">
+        <div className="flex flex-col items-center w-full animate-[fadeInRight_0.7s_ease]">
           <div className="flex w-full bg-base-100 justify-between items-center p-[0.7rem] sticky top-0 border-b border-edge-100">
-            <div className="flex flex-col sm:flex-row items-start sm:items-start sm:space-x-3 sm:justify-start">
+            <div className="flex flex-col sm:flex-row animate-[flipInX_0.7s_0.2s_ease] fill-mode-backward items-start sm:items-start sm:space-x-3 sm:justify-start">
               <div className="flex border border-edge-100">
                 <div className="flex border border-edge-100 bg-base-100 p-[0.5rem] translate-x-[0.3rem] translate-y-[-0.3em]">
                   <img
@@ -96,13 +106,19 @@ export default function ProjectsView() {
         <>
           <PageLoading loading={isLoadingCategories}>
             <div className="flex flex-col w-full p-[1rem] space-y-7 flex-1 lg:max-w-screen-lg">
-              <Heading className="text-[20pt]" variant="primary">
+              <Heading
+                className="text-[20pt] animate-[flipInX_0.7s_ease]"
+                variant="primary"
+              >
                 <HeadingIcon>
                   <FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>
                 </HeadingIcon>
                 <HeadingText>Projects</HeadingText>
               </Heading>
-              <ProjectSearch categories={dataCategories!}></ProjectSearch>
+              <ProjectSearch
+                className="animate-[flipInX_0.7s_ease]"
+                categories={dataCategories!}
+              ></ProjectSearch>
 
               <PageLoading loading={isLoadingProjects}>
                 <div className={"flex flex-wrap justify-between"}>
