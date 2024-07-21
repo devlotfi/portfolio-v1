@@ -103,39 +103,32 @@ export default function ProjectsView() {
           <ProjectReadme project={selectedProject}></ProjectReadme>
         </div>
       ) : (
-        <>
+        <div className="flex flex-col w-full p-[1rem] space-y-7 flex-1 lg:max-w-screen-lg">
+          <Heading className="text-[20pt] w-full" variant="primary">
+            <HeadingIcon>
+              <FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>
+            </HeadingIcon>
+            <HeadingText>Projects</HeadingText>
+          </Heading>
           <PageLoading loading={isLoadingCategories}>
-            <div className="flex flex-col w-full p-[1rem] space-y-7 flex-1 lg:max-w-screen-lg">
-              <Heading
-                className="text-[20pt] animate-[flipInX_0.7s_ease]"
-                variant="primary"
-              >
-                <HeadingIcon>
-                  <FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>
-                </HeadingIcon>
-                <HeadingText>Projects</HeadingText>
-              </Heading>
-              <ProjectSearch
-                className="animate-[flipInX_0.7s_ease]"
-                categories={dataCategories!}
-              ></ProjectSearch>
+            <ProjectSearch
+              className="animate-[flipInX_0.7s_ease]"
+              categories={dataCategories!}
+            ></ProjectSearch>
 
-              <PageLoading loading={isLoadingProjects}>
-                <div className={"flex flex-wrap justify-between"}>
-                  {dataProjects?.results.map((project) => {
-                    return (
-                      <Project key={project.id} project={project}></Project>
-                    );
-                  })}
-                </div>
+            <PageLoading loading={isLoadingProjects}>
+              <div className={"flex flex-wrap justify-between"}>
+                {dataProjects?.results.map((project) => {
+                  return <Project key={project.id} project={project}></Project>;
+                })}
+              </div>
 
-                <ProjectPagination
-                  count={dataProjects?.count as number}
-                ></ProjectPagination>
-              </PageLoading>
-            </div>
+              <ProjectPagination
+                count={dataProjects?.count as number}
+              ></ProjectPagination>
+            </PageLoading>
           </PageLoading>
-        </>
+        </div>
       )}
     </ViewContent>
   );
