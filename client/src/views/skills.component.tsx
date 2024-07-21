@@ -62,19 +62,34 @@ export default function SkillsView() {
             }
           >
             <Skill name="HTML">
-              <HtmlSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></HtmlSVG>
+              <HtmlSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></HtmlSVG>
             </Skill>
             <Skill name="CSS">
-              <CssSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></CssSVG>
+              <CssSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></CssSVG>
             </Skill>
             <Skill name="Typescript">
-              <TypescriptSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></TypescriptSVG>
+              <TypescriptSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></TypescriptSVG>
             </Skill>
             <Skill name="Python">
-              <PythonSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></PythonSVG>
+              <PythonSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></PythonSVG>
             </Skill>
             <Skill name="Java">
-              <JavaSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></JavaSVG>
+              <JavaSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></JavaSVG>
             </Skill>
           </SkillCategory>
           <SkillCategory
@@ -93,13 +108,22 @@ export default function SkillsView() {
             }
           >
             <Skill name="React JS">
-              <ReactSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></ReactSVG>
+              <ReactSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></ReactSVG>
             </Skill>
             <Skill name="React Native">
-              <ReactSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></ReactSVG>
+              <ReactSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></ReactSVG>
             </Skill>
             <Skill name="Tailwind CSS">
-              <TailwindSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></TailwindSVG>
+              <TailwindSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></TailwindSVG>
             </Skill>
           </SkillCategory>
           <SkillCategory
@@ -118,16 +142,28 @@ export default function SkillsView() {
             }
           >
             <Skill name="Node JS">
-              <NodeSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></NodeSVG>
+              <NodeSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></NodeSVG>
             </Skill>
             <Skill name="Nest JS">
-              <NestSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></NestSVG>
+              <NestSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></NestSVG>
             </Skill>
             <Skill name="Django">
-              <DjangoSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></DjangoSVG>
+              <DjangoSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></DjangoSVG>
             </Skill>
             <Skill name="Spring Boot">
-              <SpringBootSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></SpringBootSVG>
+              <SpringBootSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></SpringBootSVG>
             </Skill>
           </SkillCategory>
           <SkillCategory
@@ -146,13 +182,22 @@ export default function SkillsView() {
             }
           >
             <Skill name="VS Code">
-              <VscodeSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></VscodeSVG>
+              <VscodeSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></VscodeSVG>
             </Skill>
             <Skill name="Postman">
-              <PostmanSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></PostmanSVG>
+              <PostmanSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></PostmanSVG>
             </Skill>
             <Skill name="Figma">
-              <FigmaSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></FigmaSVG>
+              <FigmaSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></FigmaSVG>
             </Skill>
           </SkillCategory>
           <SkillCategory
@@ -171,13 +216,22 @@ export default function SkillsView() {
             }
           >
             <Skill name="Graphql">
-              <GraphqlSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GraphqlSVG>
+              <GraphqlSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></GraphqlSVG>
             </Skill>
             <Skill name="Git">
-              <GitSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GitSVG>
+              <GitSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></GitSVG>
             </Skill>
             <Skill name="Linux">
-              <LinuxSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></LinuxSVG>
+              <LinuxSVG
+                className="max-h-full max-w-full"
+                fillColor="fill-edge-100 group-hover/button:fill-base-100"
+              ></LinuxSVG>
             </Skill>
           </SkillCategory>
         </div>
