@@ -9,7 +9,6 @@ import ProjectsView from "./views/projects.component";
 import SkillsView from "./views/skills.component";
 import ExperienceView from "./views/experience.component";
 import NavbarOverlay from "./layout/navbar-overlay.component";
-import ClickAudio from "./assets/audio/click.wav";
 import {
   faAt,
   faBriefcase,
@@ -52,8 +51,6 @@ export default function App() {
     };
 
     const mouseDownHandler = () => {
-      const clickAudio = new Audio(ClickAudio);
-      clickAudio.play();
       setIsMouseDown(true);
     };
 
@@ -77,12 +74,7 @@ export default function App() {
       <TransitionLoading></TransitionLoading>
       <NavbarOverlay></NavbarOverlay>
 
-      <div
-        className={cn(
-          "flex h-screen w-screen bg-base-100 flex-1 main-background bg-center overflow-hidden duration-1000 bg-[length:3rem_3rem]",
-          isGlobalView && "bg-[length:4.5rem_4.5rem]"
-        )}
-      >
+      <div className="flex h-screen w-screen bg-base-100 flex-1 main-background bg-center overflow-hidden duration-1000 bg-[length:3rem_3rem]">
         <div
           ref={cursorRef}
           id="cursor"
