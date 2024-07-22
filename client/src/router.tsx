@@ -5,17 +5,12 @@ import SkillsView from "./views/skills.component";
 import ProjectsView from "./views/projects.component";
 import ExperienceView from "./views/experience.component";
 import ContactView from "./views/contact.component";
-import { NavigationProvider } from "./context/navigation.context";
 
 export const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: (
-        <NavigationProvider>
-          <App></App>
-        </NavigationProvider>
-      ),
+      element: <App></App>,
       children: [
         {
           path: "/",
@@ -41,6 +36,6 @@ export const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/portfolio-v1/",
+    basename: "/portfolio-v1",
   }
 );
