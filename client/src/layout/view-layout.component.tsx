@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { Views, NavigationContext } from "../context/navigation.context";
 import { cn } from "../utils/cn";
+import { useNavigate } from "react-router-dom";
 
 interface Props extends BaseHTMLAttributes<HTMLDivElement> {
+  path: string;
   view: Views;
   icon: IconProp;
 }
@@ -14,21 +16,18 @@ const ViewLayout = ({
   children,
   icon,
   view,
+  path,
   ...props
 }: Props): JSX.Element => {
-  const {
-    isMoving,
-    setIsMoving,
-    isGlobalView,
-    setIsGlobalView,
-    currentView,
-    setCurrentView,
-  } = useContext(NavigationContext);
+  const navigate = useNavigate();
+
+  const { isMoving, setIsMoving, isGlobalView, setIsGlobalView, currentView } =
+    useContext(NavigationContext);
 
   const navigateToView = () => {
     if (!isMoving) {
       setIsMoving(true);
-      setCurrentView(view);
+      navigate(path);
       setIsGlobalView(false);
 
       setTimeout(() => {
