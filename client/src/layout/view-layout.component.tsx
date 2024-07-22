@@ -1,13 +1,13 @@
 import { BaseHTMLAttributes, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { Views, NavigationContext } from "../context/navigation.context";
+import { NavigationContext } from "../context/navigation.context";
 import { cn } from "../utils/cn";
-import { useNavigate } from "react-router-dom";
+import { useMatch, useNavigate } from "react-router-dom";
 
 interface Props extends BaseHTMLAttributes<HTMLDivElement> {
   path: string;
-  view: Views;
+  name: string;
   icon: IconProp;
 }
 
@@ -15,13 +15,14 @@ const ViewLayout = ({
   className,
   children,
   icon,
-  view,
   path,
+  name,
   ...props
 }: Props): JSX.Element => {
   const navigate = useNavigate();
+  const isActive = useMatch(path);
 
-  const { isMoving, setIsMoving, isGlobalView, setIsGlobalView, currentView } =
+  const { isMoving, setIsMoving, isGlobalView, setIsGlobalView } =
     useContext(NavigationContext);
 
   const navigateToView = () => {
@@ -51,7 +52,7 @@ const ViewLayout = ({
         <div
           className={cn(
             "flex relative flex-1 justify-center items-center flex-col bg-edge-100 border-[0.5rem] border-edge-100 duration-300 lg:group-hover/view:translate-x-[2rem] lg:group-hover/view:translate-y-[-2rem]",
-            currentView.view === view && "text-primary-100"
+            isActive && "text-primary-100"
           )}
         >
           <FontAwesomeIcon
@@ -59,12 +60,12 @@ const ViewLayout = ({
             icon={icon}
           ></FontAwesomeIcon>
           <div className="flex text-[35pt] pl-[1rem] border-base-100 md:text-[80pt] z-20">
-            {view}
+            {name}
           </div>
         </div>
       </div>
 
-      <div className="flex">{currentView.view === view ? children : null}</div>
+      <div className="flex">{isActive ? children : null}</div>
     </div>
   );
 };

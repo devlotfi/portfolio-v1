@@ -1,51 +1,13 @@
 import { createContext, PropsWithChildren, useState } from "react";
+import { useMatch } from "react-router-dom";
 
-// eslint-disable-next-line react-refresh/only-export-components
-export enum Views {
-  GLOBAL = "GLOBAL",
-  ABOUT = "ABOUT",
-  PROJECTS = "PROJECTS",
-  SKILLS = "SKILLS",
-  CONTACT = "CONTACT",
-  EXPERIENCE = "EXPERIENCE",
-}
-
-export interface NavigationView {
-  view: Views;
+export interface RouteMetadata {
   verticalTranslation: string;
   horizontalTranslation: string;
 }
 
-const viewsMap = new Map<Views, NavigationView>();
-viewsMap.set(Views.ABOUT, {
-  view: Views.ABOUT,
-  horizontalTranslation: "-100vw",
-  verticalTranslation: "-100vh",
-});
-viewsMap.set(Views.SKILLS, {
-  view: Views.SKILLS,
-  horizontalTranslation: "0vw",
-  verticalTranslation: "0vh",
-});
-viewsMap.set(Views.PROJECTS, {
-  view: Views.PROJECTS,
-  horizontalTranslation: "-200vw",
-  verticalTranslation: "0vh",
-});
-viewsMap.set(Views.EXPERIENCE, {
-  view: Views.EXPERIENCE,
-  horizontalTranslation: "0vw",
-  verticalTranslation: "-200vh",
-});
-viewsMap.set(Views.CONTACT, {
-  view: Views.CONTACT,
-  horizontalTranslation: "-200vw",
-  verticalTranslation: "-200vh",
-});
-
 interface NavigationContext {
-  currentView: NavigationView;
-  setCurrentView: (view: Views) => void;
+  currentView: RouteMetadata;
   isGlobalView: boolean;
   setIsGlobalView: (value: boolean) => void;
   isMoving: boolean;
@@ -53,8 +15,10 @@ interface NavigationContext {
 }
 
 const initialValue: NavigationContext = {
-  currentView: viewsMap.get(Views.ABOUT)!,
-  setCurrentView() {},
+  currentView: {
+    horizontalTranslation: "-100vw",
+    verticalTranslation: "-100vh",
+  },
   isGlobalView: false,
   setIsGlobalView() {},
   isMoving: false,
@@ -64,23 +28,34 @@ const initialValue: NavigationContext = {
 export const NavigationContext = createContext(initialValue);
 
 export function NavigationProvider({ children }: PropsWithChildren) {
-  const [currentView, setCurrentViewState] = useState<NavigationView>(
-    initialValue.currentView
-  );
   const [isMoving, setIsMoving] = useState<boolean>(initialValue.isMoving);
   const [isGlobalView, setIsGlobalView] = useState<boolean>(
     initialValue.isGlobalView
   );
 
-  const setCurrentView = (view: Views) => {
-    setCurrentViewState(viewsMap.get(view) as NavigationView);
-  };
+  const isAboutRoute = useMatch("/");
+  const isSkillsRoute = useMatch("/skills");
+  const isProjectsRoute = useMatch("/projects");
+  const isExperienceRoute = useMatch("/experience");
+  const isContacRoute = useMatch("/contact");
+
+  const getMetadata = (): RouteMetadata =>
+    isAboutRoute
+      ? { horizontalTranslation: "-100vw", verticalTranslation: "-100vh" }
+      : isSkillsRoute
+      ? { horizontalTranslation: "0vw", verticalTranslation: "0vh" }
+      : isProjectsRoute
+      ? { horizontalTranslation: "-200vw", verticalTranslation: "0vh" }
+      : isExperienceRoute
+      ? { horizontalTranslation: "0vw", verticalTranslation: "-200vh" }
+      : isContacRoute
+      ? { horizontalTranslation: "-200vw", verticalTranslation: "-200vh" }
+      : initialValue.currentView;
 
   return (
     <NavigationContext.Provider
       value={{
-        currentView,
-        setCurrentView,
+        currentView: getMetadata(),
         isGlobalView,
         setIsGlobalView,
         isMoving,
