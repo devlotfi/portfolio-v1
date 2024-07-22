@@ -3,6 +3,11 @@ import { NavigationContext, Views } from "./context/navigation.context";
 import TransitionLoading from "./components/transition-loading/transition-loading.component";
 import { EmptyView } from "./layout/empty-view.component";
 import { cn } from "./utils/cn";
+import ContactView from "./views/contact.component";
+import AboutView from "./views/home.component";
+import ProjectsView from "./views/projects.component";
+import SkillsView from "./views/skills.component";
+import ExperienceView from "./views/experience.component";
 import NavbarOverlay from "./layout/navbar-overlay.component";
 import {
   faAt,
@@ -13,7 +18,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ViewLayout from "./layout/view-layout.component";
 import { ProjectListProvider } from "./context/project-list.context";
-import { Outlet } from "react-router-dom";
 
 const getShouldOffset = () => {
   return window.matchMedia("(min-width: 1024px)");
@@ -101,32 +105,28 @@ export default function App() {
             isMoving && "duration-700"
           )}
         >
-          <ViewLayout path="/skills" view={Views.SKILLS} icon={faStar}>
-            <Outlet></Outlet>
+          <ViewLayout view={Views.SKILLS} icon={faStar}>
+            <SkillsView></SkillsView>
           </ViewLayout>
           <EmptyView></EmptyView>
-          <ViewLayout path="/projects" view={Views.PROJECTS} icon={faListCheck}>
+          <ViewLayout view={Views.PROJECTS} icon={faListCheck}>
             <ProjectListProvider>
-              <Outlet></Outlet>
+              <ProjectsView></ProjectsView>
             </ProjectListProvider>
           </ViewLayout>
 
           <EmptyView></EmptyView>
-          <ViewLayout path="/" view={Views.ABOUT} icon={faUser}>
-            <Outlet></Outlet>
+          <ViewLayout view={Views.ABOUT} icon={faUser}>
+            <AboutView></AboutView>
           </ViewLayout>
           <EmptyView></EmptyView>
 
-          <ViewLayout
-            path="/experience"
-            view={Views.EXPERIENCE}
-            icon={faBriefcase}
-          >
-            <Outlet></Outlet>
+          <ViewLayout view={Views.EXPERIENCE} icon={faBriefcase}>
+            <ExperienceView></ExperienceView>
           </ViewLayout>
           <EmptyView></EmptyView>
-          <ViewLayout path="/contact" view={Views.CONTACT} icon={faAt}>
-            <Outlet></Outlet>
+          <ViewLayout view={Views.CONTACT} icon={faAt}>
+            <ContactView></ContactView>
           </ViewLayout>
         </div>
       </div>
