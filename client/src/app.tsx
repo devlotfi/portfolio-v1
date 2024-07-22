@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavigationContext, Views } from "./context/navigation.context";
 import TransitionLoading from "./components/transition-loading/transition-loading.component";
 import { EmptyView } from "./layout/empty-view.component";
@@ -18,14 +18,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ViewLayout from "./layout/view-layout.component";
 import { ProjectListProvider } from "./context/project-list.context";
+import Cursor from "./components/cursor/cursor.component";
 
 const getShouldOffset = () => {
   return window.matchMedia("(min-width: 1024px)");
 };
 
 export default function App() {
-  const cursorRef = useRef<HTMLDivElement>(null);
-  const [isMouseDown, setIsMouseDown] = useState<boolean>(false);
   const { currentView, isMoving, isGlobalView } = useContext(NavigationContext);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(
     getShouldOffset().matches
@@ -42,47 +41,13 @@ export default function App() {
     };
   }, []);
 
-  useEffect(() => {
-    const mouseMoveHandler = (e: MouseEvent) => {
-      if (cursorRef.current) {
-        cursorRef.current.style.top = `${e.clientY}px`;
-        cursorRef.current.style.left = `${e.clientX}px`;
-      }
-    };
-
-    const mouseDownHandler = () => {
-      setIsMouseDown(true);
-    };
-
-    const mouseUpHandler = () => {
-      setIsMouseDown(false);
-    };
-
-    window.addEventListener("mousemove", mouseMoveHandler);
-    window.addEventListener("mousedown", mouseDownHandler);
-    window.addEventListener("mouseup", mouseUpHandler);
-
-    return () => {
-      window.removeEventListener("mousemove", mouseMoveHandler);
-      window.removeEventListener("mousedown", mouseDownHandler);
-      window.removeEventListener("mouseup", mouseUpHandler);
-    };
-  }, []);
-
   return (
     <div className="group/cursor">
       <TransitionLoading></TransitionLoading>
       <NavbarOverlay></NavbarOverlay>
 
       <div className="flex h-screen w-screen bg-base-100 flex-1 main-background bg-center overflow-hidden duration-1000 bg-[length:3rem_3rem]">
-        <div
-          ref={cursorRef}
-          id="cursor"
-          className={cn(
-            "hidden fixed group-hover/cursor:flex origin-center h-[1rem] w-[1rem] duration-75 transition-[height,width] bg-edge-100 border-base-100 border z-[1000] pointer-events-none",
-            isMouseDown && "h-[1.5rem] w-[1.5rem]"
-          )}
-        ></div>
+        <Cursor></Cursor>
 
         <div
           style={{
