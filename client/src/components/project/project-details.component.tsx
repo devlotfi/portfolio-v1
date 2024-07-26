@@ -47,7 +47,7 @@ export default function ProjectDetails() {
           </div>
 
           <div className="flex flex-col-reverse items-end sm:items-start space-y-1 space-y-reverse sm:space-y-0 sm:space-x-2 sm:flex-row">
-            <a href={selectedProject.repository}>
+            <a href={selectedProject.repository} target="_blank">
               <Button>
                 <ButtonContent>
                   <ButtonIcon>

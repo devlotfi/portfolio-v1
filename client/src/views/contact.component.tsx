@@ -41,6 +41,7 @@ import LoadingIndicator from "../components/loading-indicator/loading-indicator.
 import Alert from "../components/alert/alert.component";
 import AlertIcon from "../components/alert/alert-icon.component";
 import AlertText from "../components/alert/alert-text.component";
+import LinkedinSVG from "../components/svg/linkedin.component";
 
 const validationSchema = yup.object({
   email: yup.string().email().required(),
@@ -104,6 +105,17 @@ export default function ContactView() {
                 animationDelay: `${SOCIALS_ANIMATION_DELAY * 3}s`,
                 animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
               }}
+              href="https://www.linkedin.com/in/lotfi-debbal-64489a2ba/"
+              target="_blank"
+            >
+              <LinkedinSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></LinkedinSVG>
+            </Social>
+            <Social
+              className="animate-[fadeInLeft_ease] fill-mode-backward"
+              style={{
+                animationDelay: `${SOCIALS_ANIMATION_DELAY * 4}s`,
+                animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
+              }}
               href="https://www.facebook.com/lotfi.debbal/"
               target="_blank"
             >
@@ -112,7 +124,7 @@ export default function ContactView() {
             <Social
               className="animate-[fadeInLeft_ease] fill-mode-backward"
               style={{
-                animationDelay: `${SOCIALS_ANIMATION_DELAY * 4}s`,
+                animationDelay: `${SOCIALS_ANIMATION_DELAY * 5}s`,
                 animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
               }}
               href="https://www.instagram.com/lotfi_debbal/"
