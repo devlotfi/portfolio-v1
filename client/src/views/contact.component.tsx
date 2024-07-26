@@ -77,7 +77,7 @@ export default function ContactView() {
     <ViewContent>
       <div className="flex flex-1 justify-center md:items-center pt-[1rem]">
         <div className="flex flex-col pb-[3rem] md:flex-row md:justify-center items-center space-y-5 md:space-y-0 md:space-x-5 w-full">
-          <div className="flex md:flex-col space-x-3 md:space-x-0 md:space-y-3">
+          <div className="flex flex-wrap justify-center md:flex-col space-x-3 gap-3 md:space-x-0 md:space-y-3">
             <Social
               className="animate-[fadeInLeft_ease] fill-mode-backward"
               style={{
