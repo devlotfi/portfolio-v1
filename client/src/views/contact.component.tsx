@@ -1,7 +1,7 @@
 import Social from "../components/social/social.component";
 import GmailSVG from "../components/svg/gmail.component";
 import GithubSVG from "../components/svg/github.component";
-import FacebookSVG from "../components/svg/facebook.component";
+import XSVG from "../components/svg/x.component";
 import InstagramSVG from "../components/svg/instagram.component";
 import ViewContent from "../layout/view-content.component";
 import {
@@ -116,10 +116,10 @@ export default function ContactView() {
                 animationDelay: `${SOCIALS_ANIMATION_DELAY * 4}s`,
                 animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
               }}
-              href="https://www.facebook.com/lotfi.debbal/"
+              href="https://x.com/LDebbal"
               target="_blank"
             >
-              <FacebookSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></FacebookSVG>
+              <XSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></XSVG>
             </Social>
             <Social
               className="animate-[fadeInLeft_ease] fill-mode-backward"
