@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+<img height="100px" width="100px" src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/logo.svg">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# portfolio-v1
+My developer portfolio
 
-Currently, two official plugins are available:
+ ## Preview
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-1.png">
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-2.png">
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-3.png">
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-4.png">
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-5.png">
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-6.png">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Setup
 
-## Expanding the ESLint configuration
+### Install
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Make sure you have "Poetry" package manager installed or run
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+$ pip install poetry
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Then install the dependencies 
+
+```bash
+$ poetry install --no-root
+```
+
+### Development
+
+```bash
+$ poetry run python src/manage.py runserver
+```
