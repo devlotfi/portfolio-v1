@@ -11,15 +11,6 @@ My developer portfolio
 # 💻 Tech stack
 <img src="https://skillicons.dev/icons?i=html,css,tailwind,typescript,react,python,django,postgres&perline=5" />
 
-# 📷 Preview
-
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-1.png">
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-2.png">
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-3.png">
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-4.png">
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-5.png">
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-6.png">
-
 # 📂 Project Setup
 
 ## Requirements
@@ -47,3 +38,12 @@ $ poetry run python manage.py runserver
 # Run in client folder
 $ yarn run dev
 ```
+
+# 📷 Preview
+
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-1.png">
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-2.png">
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-3.png">
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-4.png">
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-5.png">
+<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-6.png">
