@@ -5,8 +5,8 @@ My developer portfolio
 
 # 📌 Contents
 - [Tech stack](#-tech-stack)
-- [Preview](#-preview)
 - [Project setup](#-project-setup)
+- [Preview](#-preview)
 
 # 💻 Tech stack
 <img src="https://skillicons.dev/icons?i=html,css,tailwind,typescript,react,python,django,postgres&perline=5" />
