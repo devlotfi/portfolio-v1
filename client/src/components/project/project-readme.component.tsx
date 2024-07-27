@@ -21,16 +21,14 @@ export default function ProjectReadme({ className, project, ...props }: Props) {
 
   return (
     <PageLoading loading={isLoading}>
-      <div className="flex overflow-x-auto p-[1.5rem] w-full max-w-[980px]">
-        <div
-          dangerouslySetInnerHTML={{
-            __html: DOMPurify.sanitize(data!),
-          }}
-          data-theme={theme}
-          className={cn("markdown-body", className)}
-          {...props}
-        ></div>
-      </div>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: DOMPurify.sanitize(data!),
+        }}
+        data-theme={theme}
+        className={cn("markdown-body p-[1.5rem] max-w-[980px]", className)}
+        {...props}
+      ></div>
     </PageLoading>
   );
 }

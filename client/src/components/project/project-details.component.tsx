@@ -20,7 +20,7 @@ export default function ProjectDetails() {
 
   if (selectedProject)
     return (
-      <div className="flex flex-col items-center w-full animate-[fadeInRight_0.7s_ease]">
+      <div className="flex lg:items-center flex-col w-full animate-[fadeInRight_0.7s_ease]">
         <div className="flex w-full bg-base-100 justify-between items-center p-[0.7rem] sticky top-0 border-b border-edge-100">
           <div className="flex flex-col sm:flex-row animate-[flipInX_0.7s_0.2s_ease] fill-mode-backward items-start sm:items-start sm:space-x-3 sm:justify-start">
             <div className="flex border border-edge-100">
