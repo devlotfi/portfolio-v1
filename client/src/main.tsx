@@ -7,7 +7,6 @@ import "animate.css";
 import { ThemeProvider } from "./context/theme.context.tsx";
 import { NavigationProvider } from "./context/navigation.context.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 const queryClient = new QueryClient();
 
@@ -16,11 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <NavigationProvider>
-          <GoogleReCaptchaProvider
-            reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-          >
-            <App />
-          </GoogleReCaptchaProvider>
+          <App />
         </NavigationProvider>
       </ThemeProvider>
     </QueryClientProvider>

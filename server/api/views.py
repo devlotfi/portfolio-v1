@@ -27,7 +27,7 @@ class ProjectListView(ListAPIView):
     pagination_class = StandardPagination
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ["categories"]
-    search_fields = ["name"]
+    search_fields = ['name']
 
 
 class ContactView(APIView):
@@ -41,7 +41,7 @@ class ContactView(APIView):
         },
     )
     def post(self, request: Request):
-        serializer = ContactSerializer(data=request.data, context={"request": request})
+        serializer = ContactSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         send_mail(
             subject=f"{serializer.validated_data["subject"]} ({serializer.validated_data["email"]})",

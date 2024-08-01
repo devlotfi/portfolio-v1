@@ -61,7 +61,6 @@ export interface components {
             email: string;
             subject: string;
             message: string;
-            recaptcha: string;
         };
         PaginatedProjectSerilizerList: {
             /** @example 123 */

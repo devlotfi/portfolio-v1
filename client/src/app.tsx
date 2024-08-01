@@ -18,6 +18,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ViewLayout from "./layout/view-layout.component";
 import { ProjectListProvider } from "./context/project-list.context";
+import Cursor from "./components/cursor/cursor.component";
 
 const getShouldOffset = () => {
   return window.matchMedia("(min-width: 1024px)");
@@ -46,6 +47,8 @@ export default function App() {
       <NavbarOverlay></NavbarOverlay>
 
       <div className="flex h-screen w-screen bg-base-100 flex-1 main-background bg-center overflow-hidden duration-1000 bg-[length:3rem_3rem]">
+        <Cursor></Cursor>
+
         <div
           style={{
             transform: `translateX(${
