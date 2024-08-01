@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "api",
     "rest_framework",
     "drf_spectacular",
+    "drf_recaptcha",
 ]
 
 REST_FRAMEWORK = {
@@ -70,6 +71,8 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }
+
+DRF_RECAPTCHA_SECRET_KEY = env.str("DRF_RECAPTCHA_SECRET_KEY")
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

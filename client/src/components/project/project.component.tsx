@@ -25,7 +25,7 @@ export default function Project({ className, project, ...props }: Props) {
       ref={projectRef}
       onClick={handleCardClick}
       className={cn(
-        "flex w-full md:w-[48%] mb-[1rem] border bg-edge-100 border-edge-100 duration-300",
+        "flex w-full md:w-[48%] mb-[1rem] border bg-edge-100 border-edge-100 duration-300 cursor-pointer",
         className
       )}
       {...props}
