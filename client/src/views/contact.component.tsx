@@ -43,6 +43,7 @@ import AlertIcon from "../components/alert/alert-icon.component";
 import AlertText from "../components/alert/alert-text.component";
 import LinkedinSVG from "../components/svg/linkedin.component";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import RecaptchaLogo from "../assets/svg/recaptcha.svg";
 
 const validationSchema = yup.object({
   email: yup.string().email().required(),
@@ -241,6 +242,37 @@ export default function ContactView() {
                 </TextAreaContent>
               </TextArea>
 
+              <div
+                className="animate-[fadeInRight_ease] flex items-start space-x-3 fill-mode-backward mb-[1rem] text-edge-100"
+                style={{
+                  animationDelay: `${FORM_ANIMATION_DELAY * 4}s`,
+                  animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                }}
+              >
+                <img
+                  className="h-[5rem] bg-base-100 border border-edge-100"
+                  src={RecaptchaLogo}
+                  alt="recaptcha"
+                />
+                <div className="bg-base-100">
+                  This site is protected by reCAPTCHA and the Google{" "}
+                  <a
+                    className="text-primary-100 underline"
+                    href="https://policies.google.com/privacy"
+                  >
+                    Privacy Policy
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    className="text-primary-100 underline"
+                    href="https://policies.google.com/terms"
+                  >
+                    Terms of Service
+                  </a>{" "}
+                  apply.
+                </div>
+              </div>
+
               {isSuccess ? (
                 <Alert className="mb-[1rem]" variant="success">
                   <AlertIcon>
@@ -265,7 +297,7 @@ export default function ContactView() {
                 type="submit"
                 className="w-full animate-[fadeInRight_ease] fill-mode-backward"
                 style={{
-                  animationDelay: `${FORM_ANIMATION_DELAY * 4}s`,
+                  animationDelay: `${FORM_ANIMATION_DELAY * 5}s`,
                   animationDuration: `${FORM_ANIMATION_DURATION}s`,
                 }}
               >
