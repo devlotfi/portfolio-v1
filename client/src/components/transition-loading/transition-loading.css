@@ -1,17 +1,14 @@
 @keyframes transitionLoading {
   0% {
     width: 0;
-    height: 0;
     opacity: 0;
   }
   50% {
     width: 50vw;
-    height: 0.3rem;
     opacity: 1;
   }
   100% {
     width: 100vw;
-    height: 0;
     opacity: 0;
   }
 }
