@@ -99,6 +99,20 @@ files = [
 Django = ">=4.2"
 
 [[package]]
+name = "django-ipware"
+version = "7.0.1"
+description = "A Django application to retrieve user's IP address"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django-ipware-7.0.1.tar.gz", hash = "sha256:d9ec43d2bf7cdf216fed8d494a084deb5761a54860a53b2e74346a4f384cff47"},
+    {file = "django_ipware-7.0.1-py2.py3-none-any.whl", hash = "sha256:db16bbee920f661ae7f678e4270460c85850f03c6761a4eaeb489bdc91f64709"},
+]
+
+[package.dependencies]
+python-ipware = ">=2.0.3"
+
+[[package]]
 name = "djangorestframework"
 version = "3.15.2"
 description = "Web APIs for Django, made easy."
@@ -111,6 +125,22 @@ files = [
 
 [package.dependencies]
 django = ">=4.2"
+
+[[package]]
+name = "drf-recaptcha"
+version = "3.1.0"
+description = "Django rest framework recaptcha field serializer."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "drf_recaptcha-3.1.0-py3-none-any.whl", hash = "sha256:ea4aa82118522eb9b0069f663da7b21861207f287d948ff19e91645fe6bd2ce7"},
+    {file = "drf_recaptcha-3.1.0.tar.gz", hash = "sha256:c5b1896baa9627003a787913aea101ee465adb3a37a81a382976ec7b7fbfa937"},
+]
+
+[package.dependencies]
+django = ">=3.2"
+django-ipware = ">=2.1"
+djangorestframework = ">=3.11"
 
 [[package]]
 name = "drf-spectacular"
@@ -281,6 +311,20 @@ files = [
     {file = "psycopg_binary-3.2.1-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:21927f41c4d722ae8eb30d62a6ce732c398eac230509af5ba1749a337f8a63e2"},
     {file = "psycopg_binary-3.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:921f0c7f39590763d64a619de84d1b142587acc70fd11cbb5ba8fa39786f3073"},
 ]
+
+[[package]]
+name = "python-ipware"
+version = "3.0.0"
+description = "A Python package to retrieve user's IP address"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "python_ipware-3.0.0-py3-none-any.whl", hash = "sha256:fc936e6e7ec9fcc107f9315df40658f468ac72f739482a707181742882e36b60"},
+    {file = "python_ipware-3.0.0.tar.gz", hash = "sha256:9117b1c4dddcb5d5ca49e6a9617de2fc66aec2ef35394563ac4eecabdf58c062"},
+]
+
+[package.extras]
+dev = ["coverage[toml]", "coveralls (>=3.3,<4.0)", "ruff", "twine"]
 
 [[package]]
 name = "pyyaml"
@@ -530,4 +574,4 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "db8cfa9309d4ca81609998b37ff3888e63194cfa97f9d85a9f590b5e900c9980"
+content-hash = "efefeecbef3526e2ba12103c2787aa8e4c86e59fd706d26e6eb4ce19b25fe73c"

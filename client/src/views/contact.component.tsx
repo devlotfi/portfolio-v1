@@ -42,6 +42,7 @@ import Alert from "../components/alert/alert.component";
 import AlertIcon from "../components/alert/alert-icon.component";
 import AlertText from "../components/alert/alert-text.component";
 import LinkedinSVG from "../components/svg/linkedin.component";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const validationSchema = yup.object({
   email: yup.string().email().required(),
@@ -56,22 +57,37 @@ const FORM_ANIMATION_DELAY = 0.2;
 const FORM_ANIMATION_DURATION = 0.5;
 
 export default function ContactView() {
-  const { mutate, isPending, isSuccess, isError } = useMutation({
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const { mutateAsync, isSuccess, isError } = useMutation({
     mutationFn: CONTACT,
   });
 
-  const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
-    useFormik({
-      initialValues: {
-        email: "",
-        subject: "",
-        message: "",
-      },
-      validationSchema,
-      onSubmit(values) {
-        mutate(values);
-      },
-    });
+  const {
+    handleSubmit,
+    handleChange,
+    handleBlur,
+    values,
+    errors,
+    touched,
+    isSubmitting,
+  } = useFormik({
+    initialValues: {
+      email: "",
+      subject: "",
+      message: "",
+    },
+    validationSchema,
+    async onSubmit(values) {
+      if (executeRecaptcha) {
+        const recaptcha = await executeRecaptcha("contact_form");
+        await mutateAsync({
+          ...values,
+          recaptcha,
+        });
+      }
+    },
+  });
 
   return (
     <ViewContent>
@@ -258,7 +274,7 @@ export default function ContactView() {
                     <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
                   </ButtonIcon>
                   <ButtonText>
-                    {isPending ? (
+                    {isSubmitting ? (
                       <LoadingIndicator
                         dotProps={{
                           variant: "base-100",
