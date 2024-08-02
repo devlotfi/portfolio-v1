@@ -16,6 +16,7 @@ My developer portfolio
 ## Requirements
 - Python
 - Poetry
+- PostgreSQL
 - Node JS
 - Yarn
 
