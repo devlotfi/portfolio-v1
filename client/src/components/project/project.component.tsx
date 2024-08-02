@@ -25,7 +25,7 @@ export default function Project({ className, project, ...props }: Props) {
       ref={projectRef}
       onClick={handleCardClick}
       className={cn(
-        "flex w-full md:w-[48%] mb-[1rem] border bg-edge-100 border-edge-100 duration-300",
+        "flex w-full cursor-pointer md:w-[48%] mb-[1rem] border bg-edge-100 border-edge-100 duration-300",
         className
       )}
       {...props}
@@ -50,7 +50,7 @@ export default function Project({ className, project, ...props }: Props) {
             <div className="flex flex-col text-edge-100">
               <Heading>
                 <HeadingText className="pl-[0.3rem]">
-                  {project.name}
+                  {project.display_name}
                 </HeadingText>
               </Heading>
 

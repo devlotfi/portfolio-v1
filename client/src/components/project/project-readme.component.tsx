@@ -16,7 +16,7 @@ export default function ProjectReadme({ className, project, ...props }: Props) {
 
   const { data, isLoading } = useQuery({
     queryFn: README,
-    queryKey: [README.name, project.name],
+    queryKey: [README.name, project.repository_name],
   });
 
   return (

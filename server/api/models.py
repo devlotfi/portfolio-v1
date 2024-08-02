@@ -14,7 +14,8 @@ class Category(models.Model):
 class Project(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     categories = models.ManyToManyField(Category, related_name="categories")
-    name = models.CharField(max_length=512)
+    repository_name = models.CharField(max_length=512)
+    display_name = models.CharField(max_length=512)
     description = models.TextField()
     icon = models.URLField()
     thumbnail = models.URLField()
@@ -22,4 +23,4 @@ class Project(models.Model):
     deployment = models.URLField(null=True, blank=True)
 
     def __str__(self) -> str:
-        return self.name
+        return self.repository_name

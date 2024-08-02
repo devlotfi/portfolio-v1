@@ -81,7 +81,8 @@ export interface components {
         ProjectSerilizer: {
             /** Format: uuid */
             readonly id: string;
-            name: string;
+            repository_name: string;
+            display_name: string;
             description: string;
             /** Format: uri */
             icon: string;

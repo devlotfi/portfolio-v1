@@ -40,7 +40,7 @@ export default function ProjectDetails() {
             <div className="flex flex-col text-edge-100">
               <Heading>
                 <HeadingText className="pl-[0.3rem]">
-                  {selectedProject.name}
+                  {selectedProject.display_name}
                 </HeadingText>
               </Heading>
             </div>
