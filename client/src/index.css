@@ -3,29 +3,29 @@
 @tailwind utilities;
 
 * {
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-[data-theme="LIGHT"] {
+[data-theme='LIGHT'] {
   --base-100: #ffffff;
   --primary-100: #00b3ff;
   --error-100: #da5555;
   --warning-100: #ebd557;
   --success-100: #1cad59;
   --edge-100: #0d1f31;
-  --edge-200: #a2b4c7;
+  --edge-200: #e1e7ec;
 }
 
-[data-theme="DARK"] {
+[data-theme='DARK'] {
   --base-100: #0d1f31;
   --primary-100: #00b3ff;
   --error-100: #da5555;
   --warning-100: #ebd557;
   --success-100: #1cad59;
   --edge-100: #ffffff;
-  --edge-200: #728aa3;
+  --edge-200: #3a4a5e;
 }
 
 ::selection {
@@ -72,10 +72,8 @@
 .main-background {
   background-color: var(--base-100);
   transition-property: background-size;
-  background-image: radial-gradient(
-    var(--edge-200) 0.1rem,
-    var(--base-100) 0.1rem
-  );
+  background-image: linear-gradient(var(--edge-200) 1px, transparent 1px),
+    linear-gradient(to right, var(--edge-200) 1px, var(--base-100) 1px);
 }
 
 .fill-mode-backward {

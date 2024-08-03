@@ -47,8 +47,8 @@ export default function App() {
 
       <div
         className={cn(
-          'flex h-screen w-screen bg-base-100 flex-1 main-background bg-center overflow-hidden duration-1000 bg-[length:3rem_3rem]',
-          isGlobalView && 'bg-[length:1.7rem_1.7rem]',
+          'flex h-screen w-screen bg-base-100 flex-1 main-background bg-center overflow-hidden duration-1000 bg-[length:5rem_5rem]',
+          isGlobalView && 'bg-[length:2.5rem_2.5rem]',
         )}
       >
         <div
