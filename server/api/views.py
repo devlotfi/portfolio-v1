@@ -27,7 +27,7 @@ class ProjectListView(ListAPIView):
     pagination_class = StandardPagination
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ["categories"]
-    search_fields = ["name"]
+    search_fields = ["display_name"]
 
 
 class ContactView(APIView):
