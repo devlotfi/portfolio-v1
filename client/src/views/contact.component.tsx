@@ -1,327 +1,87 @@
-import Social from "../components/social/social.component";
-import GmailSVG from "../components/svg/gmail.component";
-import GithubSVG from "../components/svg/github.component";
-import XSVG from "../components/svg/x.component";
-import InstagramSVG from "../components/svg/instagram.component";
-import ViewContent from "../layout/view-content.component";
-import {
-  faAt,
-  faEnvelope,
-  faPen,
-  faFileText,
-  faTimes,
-  faCheck,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ButtonContent from "../components/button/button-content.component";
-import ButtonIcon from "../components/button/button-icon.component";
-import ButtonSlider from "../components/button/button-slider.component";
-import ButtonText from "../components/button/button-text.component";
-import Button from "../components/button/button.component";
-import HeadingIcon from "../components/heading/heading-icon.component";
-import HeadingText from "../components/heading/heading-text.component";
-import Heading from "../components/heading/heading.component";
-import TextInputContent from "../components/text-input/text-input-content.component";
-import TextInputField from "../components/text-input/text-input-field.component";
-import TextInputIcon from "../components/text-input/text-input-icon.component";
-import TextInputLabel from "../components/text-input/text-input-label.component";
-import TextInputMessage from "../components/text-input/text-input-message.component";
-import TextInput from "../components/text-input/text-input.component";
-import TextAreaContent from "../components/text-area/text-area-content.component";
-import TextAreaField from "../components/text-area/text-area-field.component";
-import TextAreaIcon from "../components/text-area/text-area-icon.component";
-import TextAreaLabel from "../components/text-area/text-area-label.component";
-import TextAreaMessage from "../components/text-area/text-area-message.component";
-import TextArea from "../components/text-area/text-area.component";
-import * as yup from "yup";
-import { useFormik } from "formik";
-import { useMutation } from "@tanstack/react-query";
-import { CONTACT } from "../react-query/mutations";
-import LoadingIndicator from "../components/loading-indicator/loading-indicator.component";
-import Alert from "../components/alert/alert.component";
-import AlertIcon from "../components/alert/alert-icon.component";
-import AlertText from "../components/alert/alert-text.component";
-import LinkedinSVG from "../components/svg/linkedin.component";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import RecaptchaLogo from "../assets/svg/recaptcha.svg";
-
-const validationSchema = yup.object({
-  email: yup.string().email().required(),
-  subject: yup.string().min(3).max(512).required(),
-  message: yup.string().min(3).max(2048).required(),
-});
+import Social from '../components/social/social.component';
+import GmailSVG from '../components/svg/gmail.component';
+import GithubSVG from '../components/svg/github.component';
+import XSVG from '../components/svg/x.component';
+import InstagramSVG from '../components/svg/instagram.component';
+import ViewContent from '../layout/view-content.component';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import HeadingIcon from '../components/heading/heading-icon.component';
+import HeadingText from '../components/heading/heading-text.component';
+import Heading from '../components/heading/heading.component';
+import LinkedinSVG from '../components/svg/linkedin.component';
 
 const SOCIALS_ANIMATION_DELAY = 0.2;
 const SOCIALS_ANIMATION_DURATION = 0.5;
 
-const FORM_ANIMATION_DELAY = 0.2;
-const FORM_ANIMATION_DURATION = 0.5;
-
 export default function ContactView() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
-
-  const { mutateAsync, isSuccess, isError } = useMutation({
-    mutationFn: CONTACT,
-  });
-
-  const {
-    handleSubmit,
-    handleChange,
-    handleBlur,
-    values,
-    errors,
-    touched,
-    isSubmitting,
-  } = useFormik({
-    initialValues: {
-      email: "",
-      subject: "",
-      message: "",
-    },
-    validationSchema,
-    async onSubmit(values) {
-      if (executeRecaptcha) {
-        const recaptcha = await executeRecaptcha("contact_form");
-        await mutateAsync({
-          ...values,
-          recaptcha,
-        });
-      }
-    },
-  });
-
   return (
     <ViewContent>
       <div className="flex flex-1 justify-center md:items-center pt-[1rem]">
         <div className="flex flex-col pb-[3rem] md:flex-row md:justify-center items-center space-y-5 md:space-y-0 md:space-x-5 w-full">
-          <div className="flex flex-wrap justify-center md:flex-col space-x-3 gap-3 md:space-x-0 md:space-y-3">
-            <Social
-              className="animate-[fadeInLeft_ease] fill-mode-backward"
-              style={{
-                animationDelay: `${SOCIALS_ANIMATION_DELAY * 1}s`,
-                animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
-              }}
-              href="mailto:debbal.lotfi.dev@gmail.com"
-            >
-              <GmailSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GmailSVG>
-            </Social>
-            <Social
-              className="animate-[fadeInLeft_ease] fill-mode-backward"
-              style={{
-                animationDelay: `${SOCIALS_ANIMATION_DELAY * 2}s`,
-                animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
-              }}
-              href="https://github.com/devlotfi"
-              target="_blank"
-            >
-              <GithubSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GithubSVG>
-            </Social>
-            <Social
-              className="animate-[fadeInLeft_ease] fill-mode-backward"
-              style={{
-                animationDelay: `${SOCIALS_ANIMATION_DELAY * 3}s`,
-                animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
-              }}
-              href="https://www.linkedin.com/in/lotfi-debbal-64489a2ba/"
-              target="_blank"
-            >
-              <LinkedinSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></LinkedinSVG>
-            </Social>
-            <Social
-              className="animate-[fadeInLeft_ease] fill-mode-backward"
-              style={{
-                animationDelay: `${SOCIALS_ANIMATION_DELAY * 4}s`,
-                animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
-              }}
-              href="https://x.com/LDebbal"
-              target="_blank"
-            >
-              <XSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></XSVG>
-            </Social>
-            <Social
-              className="animate-[fadeInLeft_ease] fill-mode-backward"
-              style={{
-                animationDelay: `${SOCIALS_ANIMATION_DELAY * 5}s`,
-                animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
-              }}
-              href="https://www.instagram.com/lotfi_debbal/"
-              target="_blank"
-            >
-              <InstagramSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></InstagramSVG>
-            </Social>
-          </div>
-          <div className="flex w-full max-w-[38rem] flex-col md:border-b md:border-l border-edge-100">
-            <form className="p-[1rem]" onSubmit={handleSubmit}>
-              <Heading className="text-[20pt] mb-[1rem]" variant="primary">
-                <HeadingIcon>
-                  <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                </HeadingIcon>
-                <HeadingText>Contact me</HeadingText>
-              </Heading>
-
-              <TextInput
-                className="animate-[fadeInRight_ease] fill-mode-backward"
+          <div className="flex p-[1rem] flex-col md:border-b md:border-l border-edge-100">
+            <Heading className="text-[20pt] mb-[1rem]" variant="primary">
+              <HeadingIcon>
+                <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
+              </HeadingIcon>
+              <HeadingText>Contact me</HeadingText>
+            </Heading>
+            <div className="flex justify-center gap-3 flex-wrap">
+              <Social
+                className="animate-[fadeInLeft_ease] fill-mode-backward"
                 style={{
-                  animationDelay: `${FORM_ANIMATION_DELAY * 1}s`,
-                  animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                  animationDelay: `${SOCIALS_ANIMATION_DELAY * 1}s`,
+                  animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
                 }}
-                variant={errors.email && touched.email ? "error" : "edge-100"}
+                href="mailto:debbal.lotfi.dev@gmail.com"
               >
-                <TextInputLabel>E-mail</TextInputLabel>
-                <TextInputContent>
-                  <TextInputIcon>
-                    <FontAwesomeIcon icon={faAt}></FontAwesomeIcon>
-                  </TextInputIcon>
-                  <TextInputField
-                    placeholder="E-mail"
-                    name="email"
-                    value={values.email}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  ></TextInputField>
-
-                  {errors.email && touched.email ? (
-                    <TextInputMessage>{errors.email}</TextInputMessage>
-                  ) : null}
-                </TextInputContent>
-              </TextInput>
-              <TextInput
-                className="animate-[fadeInRight_ease] fill-mode-backward"
+                <GmailSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GmailSVG>
+              </Social>
+              <Social
+                className="animate-[fadeInLeft_ease] fill-mode-backward"
                 style={{
-                  animationDelay: `${FORM_ANIMATION_DELAY * 2}s`,
-                  animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                  animationDelay: `${SOCIALS_ANIMATION_DELAY * 2}s`,
+                  animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
                 }}
-                variant={
-                  errors.subject && touched.subject ? "error" : "edge-100"
-                }
+                href="https://github.com/devlotfi"
+                target="_blank"
               >
-                <TextInputLabel>Subject</TextInputLabel>
-                <TextInputContent>
-                  <TextInputIcon>
-                    <FontAwesomeIcon icon={faPen}></FontAwesomeIcon>
-                  </TextInputIcon>
-                  <TextInputField
-                    placeholder="Subject"
-                    name="subject"
-                    value={values.subject}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  ></TextInputField>
-                  {errors.subject && touched.subject ? (
-                    <TextInputMessage>{errors.subject}</TextInputMessage>
-                  ) : null}
-                </TextInputContent>
-              </TextInput>
-              <TextArea
-                className="animate-[fadeInRight_ease] fill-mode-backward"
+                <GithubSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></GithubSVG>
+              </Social>
+              <Social
+                className="animate-[fadeInLeft_ease] fill-mode-backward"
                 style={{
-                  animationDelay: `${FORM_ANIMATION_DELAY * 3}s`,
-                  animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                  animationDelay: `${SOCIALS_ANIMATION_DELAY * 3}s`,
+                  animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
                 }}
-                variant={
-                  errors.message && touched.message ? "error" : "edge-100"
-                }
+                href="https://www.linkedin.com/in/lotfi-debbal-64489a2ba/"
+                target="_blank"
               >
-                <TextAreaLabel>Message</TextAreaLabel>
-                <TextAreaContent>
-                  <TextAreaIcon>
-                    <FontAwesomeIcon icon={faFileText}></FontAwesomeIcon>
-                  </TextAreaIcon>
-                  <TextAreaField
-                    rows={5}
-                    placeholder="Message"
-                    name="message"
-                    value={values.message}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  ></TextAreaField>
-
-                  {errors.message && touched.message ? (
-                    <TextAreaMessage>{errors.message}</TextAreaMessage>
-                  ) : null}
-                </TextAreaContent>
-              </TextArea>
-
-              <div
-                className="animate-[fadeInRight_ease] flex items-start space-x-3 fill-mode-backward mb-[1rem] text-edge-100"
+                <LinkedinSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></LinkedinSVG>
+              </Social>
+              <Social
+                className="animate-[fadeInLeft_ease] fill-mode-backward"
                 style={{
-                  animationDelay: `${FORM_ANIMATION_DELAY * 4}s`,
-                  animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                  animationDelay: `${SOCIALS_ANIMATION_DELAY * 4}s`,
+                  animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
                 }}
+                href="https://x.com/LDebbal"
+                target="_blank"
               >
-                <img
-                  className="h-[5rem] bg-base-100 border border-edge-100"
-                  src={RecaptchaLogo}
-                  alt="recaptcha"
-                />
-                <div className="bg-base-100">
-                  This site is protected by reCAPTCHA and the Google{" "}
-                  <a
-                    className="text-primary-100 underline"
-                    href="https://policies.google.com/privacy"
-                  >
-                    Privacy Policy
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    className="text-primary-100 underline"
-                    href="https://policies.google.com/terms"
-                  >
-                    Terms of Service
-                  </a>{" "}
-                  apply.
-                </div>
-              </div>
-
-              {isSuccess ? (
-                <Alert className="mb-[1rem]" variant="success">
-                  <AlertIcon>
-                    <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
-                  </AlertIcon>
-                  <AlertText>Operation successful</AlertText>
-                </Alert>
-              ) : null}
-
-              {isError ? (
-                <Alert className="mb-[1rem]" variant="error">
-                  <AlertIcon>
-                    <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-                  </AlertIcon>
-                  <AlertText>Error occured</AlertText>
-                </Alert>
-              ) : null}
-
-              <Button
-                inverted
-                variant="primary"
-                type="submit"
-                className="w-full animate-[fadeInRight_ease] fill-mode-backward"
+                <XSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></XSVG>
+              </Social>
+              <Social
+                className="animate-[fadeInLeft_ease] fill-mode-backward"
                 style={{
-                  animationDelay: `${FORM_ANIMATION_DELAY * 5}s`,
-                  animationDuration: `${FORM_ANIMATION_DURATION}s`,
+                  animationDelay: `${SOCIALS_ANIMATION_DELAY * 5}s`,
+                  animationDuration: `${SOCIALS_ANIMATION_DURATION}s`,
                 }}
+                href="https://www.instagram.com/lotfi_debbal/"
+                target="_blank"
               >
-                <ButtonContent>
-                  <ButtonIcon>
-                    <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                  </ButtonIcon>
-                  <ButtonText>
-                    {isSubmitting ? (
-                      <LoadingIndicator
-                        dotProps={{
-                          variant: "base-100",
-                          className: "group-hover/button:bg-primary-100",
-                        }}
-                      ></LoadingIndicator>
-                    ) : (
-                      "Send"
-                    )}
-                  </ButtonText>
-
-                  <ButtonSlider></ButtonSlider>
-                </ButtonContent>
-              </Button>
-            </form>
+                <InstagramSVG fillColor="fill-edge-100 group-hover/button:fill-base-100"></InstagramSVG>
+              </Social>
+            </div>
           </div>
         </div>
       </div>

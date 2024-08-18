@@ -15,22 +15,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/contact/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["api_contact_create"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/api/projects/": {
         parameters: {
             query?: never;
@@ -55,13 +39,6 @@ export interface components {
             /** Format: uuid */
             readonly id: string;
             name: string;
-        };
-        Contact: {
-            /** Format: email */
-            email: string;
-            subject: string;
-            message: string;
-            recaptcha: string;
         };
         PaginatedProjectSerilizerList: {
             /** @example 123 */
@@ -119,30 +96,6 @@ export interface operations {
                 content: {
                     "application/json": components["schemas"]["CategorySerilizer"][];
                 };
-            };
-        };
-    };
-    api_contact_create: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["Contact"];
-                "application/x-www-form-urlencoded": components["schemas"]["Contact"];
-                "multipart/form-data": components["schemas"]["Contact"];
-            };
-        };
-        responses: {
-            /** @description No response body */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
             };
         };
     };

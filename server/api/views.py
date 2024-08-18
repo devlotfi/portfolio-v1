@@ -28,26 +28,3 @@ class ProjectListView(ListAPIView):
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ["categories"]
     search_fields = ["display_name"]
-
-
-class ContactView(APIView):
-    throttle_classes = [ContactThrottle]
-    serializer_class = ContactSerializer
-
-    @extend_schema(
-        request=ContactSerializer,
-        responses={
-            status.HTTP_200_OK: None,
-        },
-    )
-    def post(self, request: Request):
-        serializer = ContactSerializer(data=request.data, context={"request": request})
-        serializer.is_valid(raise_exception=True)
-        send_mail(
-            subject=f"{serializer.validated_data["subject"]} ({serializer.validated_data["email"]})",
-            message=serializer.validated_data["message"],
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[settings.EMAIL_RECIPIENT],
-            fail_silently=False,
-        )
-        return Response(data=None, status=status.HTTP_200_OK)
