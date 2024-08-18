@@ -85,7 +85,3 @@
 .fill-mode-backward {
   animation-fill-mode: backwards;
 }
-
-.grecaptcha-badge {
-  visibility: hidden;
-}
