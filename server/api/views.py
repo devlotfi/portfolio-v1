@@ -1,18 +1,9 @@
-from django.shortcuts import render
 from rest_framework.generics import ListAPIView
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.request import Request
-from rest_framework import status
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
-from .throttling import ContactThrottle
 from .pagination import StandardPagination
-from .serializers import CategorySerilizer, ContactSerializer, ProjectSerilizer
+from .serializers import CategorySerilizer, ProjectSerilizer
 from .models import Category, Project
-from django.core.mail import send_mail
-from django.conf import settings
-from drf_spectacular.utils import extend_schema
 
 
 # Create your views here.
