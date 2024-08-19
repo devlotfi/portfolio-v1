@@ -41,34 +41,36 @@ export default function App() {
   }, []);
 
   return (
-    <div className="group/cursor">
+    <>
       <TransitionLoading></TransitionLoading>
       <NavbarOverlay></NavbarOverlay>
 
       <div
         className={cn(
-          'flex h-screen w-screen bg-base-100 flex-1 main-background bg-center overflow-hidden duration-1000',
+          'flex h-screen w-screen bg-base-100 flex-1 main-background bg-center overflow-hidden duration-1000 transition-[background-size] will-change-[background-size]',
           isGlobalView && 'main-background-global-view',
         )}
       >
         <div
           style={{
-            transform: `translateX(${
+            transform: `translate3d(${
               !isGlobalView
                 ? currentView.horizontalTranslation
                 : isLargeScreen
                 ? 'calc(-100vw + 2.2rem)'
                 : '-100vw'
-            }) translateY(${
+            }, ${
               !isGlobalView
                 ? currentView.verticalTranslation
                 : isLargeScreen
                 ? '-100vh'
                 : 'calc(-100vh + 2rem)'
-            }) scale(${isGlobalView ? '25%' : '100%'})`,
+            }, 0) scale3d(${isGlobalView ? '25%' : '100%'}, ${
+              isGlobalView ? '25%' : '100%'
+            }, 100%)`,
           }}
           className={cn(
-            'grid grid-cols-3 min-h-[300vh] min-w-[300vw]',
+            'grid grid-cols-3 min-h-[300vh] min-w-[300vw] transition-[transform] will-change-[transform]',
             isMoving && 'duration-700',
           )}
         >
@@ -97,6 +99,6 @@ export default function App() {
           </ViewLayout>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -71,7 +71,6 @@
 
 .main-background {
   background-color: var(--base-100);
-  transition-property: background-size;
   background-image: radial-gradient(transparent, var(--base-100) 80%),
     linear-gradient(var(--edge-200) 1px, transparent 1px),
     linear-gradient(to right, var(--edge-200) 1px, var(--base-100) 1px);
