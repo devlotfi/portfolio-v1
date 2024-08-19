@@ -1,18 +1,18 @@
-import { BaseHTMLAttributes, useContext } from "react";
-import { cn } from "../../utils/cn";
-import { components } from "../../__generated__/schema";
-import { useQuery } from "@tanstack/react-query";
-import { README } from "../../react-query/queries";
-import PageLoading from "../page-loading/page-loading.component";
-import DOMPurify from "dompurify";
-import { ThemeContext } from "../../context/theme.context";
+import { BaseHTMLAttributes, useContext } from 'react';
+import { cn } from '../../utils/cn';
+import { components } from '../../__generated__/schema';
+import { useQuery } from '@tanstack/react-query';
+import { README } from '../../react-query/queries';
+import PageLoading from '../page-loading/page-loading.component';
+import DOMPurify from 'dompurify';
+import { ThemeContext } from '../../context/theme.context';
 
 interface Props extends BaseHTMLAttributes<HTMLDivElement> {
-  project: components["schemas"]["ProjectSerilizer"];
+  project: components['schemas']['ProjectSerilizer'];
 }
 
 export default function ProjectReadme({ className, project, ...props }: Props) {
-  const { theme } = useContext(ThemeContext);
+  const { appliedTheme } = useContext(ThemeContext);
 
   const { data, isLoading } = useQuery({
     queryFn: README,
@@ -25,8 +25,8 @@ export default function ProjectReadme({ className, project, ...props }: Props) {
         dangerouslySetInnerHTML={{
           __html: DOMPurify.sanitize(data!),
         }}
-        data-theme={theme}
-        className={cn("markdown-body p-[1.5rem] max-w-[980px]", className)}
+        data-theme={appliedTheme}
+        className={cn('markdown-body p-[1.5rem] max-w-[980px]', className)}
         {...props}
       ></div>
     </PageLoading>

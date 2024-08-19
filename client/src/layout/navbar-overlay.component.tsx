@@ -15,11 +15,11 @@ import DropdownContent from '../components/dropdown/dropdown-content.component';
 import Dropdown from '../components/dropdown/dropdown.component';
 import { NavigationContext } from '../context/navigation.context';
 import { ThemeContext } from '../context/theme.context';
-import { Themes } from '../types/themes.type';
+import { ThemeOptions } from '../types/themes.type';
 import { cn } from '../utils/cn';
 
 export default function NavbarOverlay() {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { themeOption, setTheme } = useContext(ThemeContext);
   const { isGlobalView, setIsGlobalView, isMoving, setIsMoving } =
     useContext(NavigationContext);
 
@@ -105,9 +105,11 @@ export default function NavbarOverlay() {
         </Button>
         <DropdownContent tabIndex={0} className="w-[4rem]">
           <Button
-            onClick={() => setTheme(Themes.SYSTEM)}
-            variant={theme === Themes.SYSTEM ? 'primary' : 'edge-100'}
-            active={theme === Themes.SYSTEM}
+            onClick={() => setTheme(ThemeOptions.SYSTEM)}
+            variant={
+              themeOption === ThemeOptions.SYSTEM ? 'primary' : 'edge-100'
+            }
+            active={themeOption === ThemeOptions.SYSTEM}
             className="w-full"
           >
             <ButtonContent className="px-0 justify-center">
@@ -119,9 +121,11 @@ export default function NavbarOverlay() {
             </ButtonContent>
           </Button>
           <Button
-            onClick={() => setTheme(Themes.LIGHT)}
-            variant={theme === Themes.LIGHT ? 'primary' : 'edge-100'}
-            active={theme === Themes.LIGHT}
+            onClick={() => setTheme(ThemeOptions.LIGHT)}
+            variant={
+              themeOption === ThemeOptions.LIGHT ? 'primary' : 'edge-100'
+            }
+            active={themeOption === ThemeOptions.LIGHT}
             className="w-full"
           >
             <ButtonContent className="px-0 justify-center">
@@ -133,9 +137,9 @@ export default function NavbarOverlay() {
             </ButtonContent>
           </Button>
           <Button
-            onClick={() => setTheme(Themes.DARK)}
-            variant={theme === Themes.DARK ? 'primary' : 'edge-100'}
-            active={theme === Themes.DARK}
+            onClick={() => setTheme(ThemeOptions.DARK)}
+            variant={themeOption === ThemeOptions.DARK ? 'primary' : 'edge-100'}
+            active={themeOption === ThemeOptions.DARK}
             className="w-full"
           >
             <ButtonContent className="px-0 justify-center">
@@ -162,9 +166,11 @@ export default function NavbarOverlay() {
         </Button>
         <DropdownContent tabIndex={0} className="w-[4rem]">
           <Button
-            onClick={() => setTheme(Themes.SYSTEM)}
-            variant={theme === Themes.SYSTEM ? 'primary' : 'edge-100'}
-            active={theme === Themes.SYSTEM}
+            onClick={() => setTheme(ThemeOptions.SYSTEM)}
+            variant={
+              themeOption === ThemeOptions.SYSTEM ? 'primary' : 'edge-100'
+            }
+            active={themeOption === ThemeOptions.SYSTEM}
             className="w-full"
           >
             <ButtonContent className="px-0 justify-center">
@@ -176,9 +182,11 @@ export default function NavbarOverlay() {
             </ButtonContent>
           </Button>
           <Button
-            onClick={() => setTheme(Themes.LIGHT)}
-            variant={theme === Themes.LIGHT ? 'primary' : 'edge-100'}
-            active={theme === Themes.LIGHT}
+            onClick={() => setTheme(ThemeOptions.LIGHT)}
+            variant={
+              themeOption === ThemeOptions.LIGHT ? 'primary' : 'edge-100'
+            }
+            active={themeOption === ThemeOptions.LIGHT}
             className="w-full"
           >
             <ButtonContent className="px-0 justify-center">
@@ -190,9 +198,9 @@ export default function NavbarOverlay() {
             </ButtonContent>
           </Button>
           <Button
-            onClick={() => setTheme(Themes.DARK)}
-            variant={theme === Themes.DARK ? 'primary' : 'edge-100'}
-            active={theme === Themes.DARK}
+            onClick={() => setTheme(ThemeOptions.DARK)}
+            variant={themeOption === ThemeOptions.DARK ? 'primary' : 'edge-100'}
+            active={themeOption === ThemeOptions.DARK}
             className="w-full"
           >
             <ButtonContent className="px-0 justify-center">

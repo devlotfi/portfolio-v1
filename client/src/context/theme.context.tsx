@@ -1,64 +1,83 @@
 import { createContext, PropsWithChildren, useEffect, useState } from 'react';
-import { Themes } from '../types/themes.type';
+import { AppliedThemes, ThemeOptions } from '../types/themes.type';
 import { Constants } from '../constants';
 
 interface ThemeContext {
-  theme: Themes;
-  setTheme: (theme: Themes) => void;
+  themeOption: ThemeOptions;
+  appliedTheme: AppliedThemes;
+  setTheme: (theme: ThemeOptions) => void;
 }
 
 const initialValue: ThemeContext = {
-  theme: Themes.SYSTEM,
+  themeOption: ThemeOptions.SYSTEM,
+  appliedTheme: ThemeOptions.LIGHT,
   setTheme() {},
 };
 
 export const ThemeContext = createContext(initialValue);
 
-const getSystemTheme = (): Themes => {
+const getSystemTheme = (): AppliedThemes => {
   if (
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches
   ) {
-    return Themes.DARK;
+    return ThemeOptions.DARK;
   }
-  return Themes.LIGHT;
+  return ThemeOptions.LIGHT;
 };
 
-const applyTheme = (theme: Themes) => {
-  const element = document.getElementById('theme-provider') as HTMLElement;
-  if (theme === Themes.DARK || theme === Themes.LIGHT) {
-    element.dataset.theme = theme;
-  } else if (theme === Themes.SYSTEM) {
-    theme = getSystemTheme();
-    if (theme === Themes.LIGHT || theme === Themes.DARK) {
-      element.dataset.theme = theme;
-    }
+const initThemeOption = (): ThemeOptions => {
+  const theme = localStorage.getItem(Constants.THEME_STORAGE_KEY);
+  if (theme === ThemeOptions.SYSTEM) {
+    return getSystemTheme();
+  } else if (theme === ThemeOptions.LIGHT || theme === ThemeOptions.DARK) {
+    return theme;
+  } else {
+    return ThemeOptions.SYSTEM;
   }
-  localStorage.setItem(Constants.THEME_STORAGE_KEY, theme);
+};
+const initAppliedTheme = (): AppliedThemes => {
+  const theme = localStorage.getItem(Constants.THEME_STORAGE_KEY);
+  if (theme === ThemeOptions.SYSTEM) {
+    return getSystemTheme();
+  } else if (theme === ThemeOptions.LIGHT || theme === ThemeOptions.DARK) {
+    return theme;
+  } else {
+    return ThemeOptions.LIGHT;
+  }
 };
 
 export function ThemeProvider({ children }: PropsWithChildren) {
-  const initTheme = () => {
-    const theme = localStorage.getItem(Constants.THEME_STORAGE_KEY);
-    if (theme === Themes.SYSTEM) {
-      return getSystemTheme();
-    } else if (theme) {
-      return theme;
-    } else {
-      return Themes.SYSTEM;
+  const [themeOption, setThemeOption] = useState<ThemeOptions>(
+    initThemeOption(),
+  );
+  const [appliedTheme, setAppliedTheme] = useState<AppliedThemes>(
+    initAppliedTheme(),
+  );
+
+  const applyTheme = (theme: ThemeOptions) => {
+    const element = document.getElementById('theme-provider') as HTMLElement;
+    if (theme === ThemeOptions.DARK || theme === ThemeOptions.LIGHT) {
+      element.dataset.theme = theme;
+      setAppliedTheme(theme);
+    } else if (theme === ThemeOptions.SYSTEM) {
+      theme = getSystemTheme();
+      if (theme === ThemeOptions.LIGHT || theme === ThemeOptions.DARK) {
+        element.dataset.theme = theme;
+        setAppliedTheme(theme);
+      }
     }
+    localStorage.setItem(Constants.THEME_STORAGE_KEY, theme);
   };
 
-  const [theme, setTheme] = useState<Themes>(initTheme() as Themes);
-
   useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
+    applyTheme(themeOption);
+  }, [themeOption]);
 
   useEffect(() => {
     const handler = () => {
-      setTheme((theme) => {
-        if (theme === Themes.SYSTEM) {
+      setThemeOption((theme) => {
+        if (theme === ThemeOptions.SYSTEM) {
           applyTheme(getSystemTheme());
         }
         return theme;
@@ -71,13 +90,14 @@ export function ThemeProvider({ children }: PropsWithChildren) {
     return () => {
       themeMediaQuery.removeEventListener('change', handler);
     };
-  }, [theme]);
+  }, [themeOption]);
 
   return (
     <ThemeContext.Provider
       value={{
-        theme,
-        setTheme,
+        themeOption: themeOption,
+        appliedTheme: appliedTheme,
+        setTheme: setThemeOption,
       }}
     >
       {children}
