@@ -28,13 +28,14 @@ const getSystemTheme = (): AppliedThemes => {
 
 const initThemeOption = (): ThemeOptions => {
   const theme = localStorage.getItem(Constants.THEME_STORAGE_KEY);
-  if (theme === ThemeOptions.SYSTEM) {
-    return getSystemTheme();
-  } else if (theme === ThemeOptions.LIGHT || theme === ThemeOptions.DARK) {
+  if (
+    theme === ThemeOptions.LIGHT ||
+    theme === ThemeOptions.DARK ||
+    theme === ThemeOptions.SYSTEM
+  ) {
     return theme;
-  } else {
-    return ThemeOptions.SYSTEM;
   }
+  return ThemeOptions.SYSTEM;
 };
 const initAppliedTheme = (): AppliedThemes => {
   const theme = localStorage.getItem(Constants.THEME_STORAGE_KEY);
@@ -61,10 +62,13 @@ export function ThemeProvider({ children }: PropsWithChildren) {
       element.dataset.theme = theme;
       setAppliedTheme(theme);
     } else if (theme === ThemeOptions.SYSTEM) {
-      theme = getSystemTheme();
-      if (theme === ThemeOptions.LIGHT || theme === ThemeOptions.DARK) {
-        element.dataset.theme = theme;
-        setAppliedTheme(theme);
+      const systemTheme = getSystemTheme();
+      if (
+        systemTheme === ThemeOptions.LIGHT ||
+        systemTheme === ThemeOptions.DARK
+      ) {
+        element.dataset.theme = systemTheme;
+        setAppliedTheme(systemTheme);
       }
     }
     localStorage.setItem(Constants.THEME_STORAGE_KEY, theme);
