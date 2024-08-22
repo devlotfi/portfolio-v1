@@ -1,5 +1,5 @@
-import { BaseHTMLAttributes } from "react";
-import { cn } from "../../utils/cn";
+import { BaseHTMLAttributes } from 'react';
+import { cn } from '../../utils/cn';
 
 interface Props extends BaseHTMLAttributes<HTMLDivElement> {}
 
@@ -11,8 +11,8 @@ export default function ExperienceItem({
   return (
     <div
       className={cn(
-        "flex text-edge-100 ml-[1rem] items-center space-x-2",
-        className
+        'flex text-edge-100 ml-[1rem] items-center space-x-2',
+        className,
       )}
       {...props}
     >

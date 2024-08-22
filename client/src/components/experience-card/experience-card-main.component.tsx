@@ -1,5 +1,5 @@
-import { BaseHTMLAttributes } from "react";
-import { cn } from "../../utils/cn";
+import { BaseHTMLAttributes } from 'react';
+import { cn } from '../../utils/cn';
 
 interface Props extends BaseHTMLAttributes<HTMLDivElement> {
   date: string;
@@ -14,8 +14,8 @@ export default function ExperienceCardMain({
   return (
     <div
       className={cn(
-        "flex flex-col items-start my-[3.8rem] space-y-3",
-        className
+        'flex flex-col items-start my-[3.8rem] space-y-3',
+        className,
       )}
       {...props}
     >

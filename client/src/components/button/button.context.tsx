@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 interface ButtonContext {
   variant: string;
@@ -7,7 +7,7 @@ interface ButtonContext {
 }
 
 const initialValue: ButtonContext = {
-  variant: "edge-100",
+  variant: 'edge-100',
   active: false,
   inverted: false,
 };

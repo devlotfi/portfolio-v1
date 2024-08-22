@@ -1,20 +1,20 @@
-import { VariantProps, cva } from "class-variance-authority";
-import { BaseHTMLAttributes } from "react";
+import { VariantProps, cva } from 'class-variance-authority';
+import { BaseHTMLAttributes } from 'react';
 
-import { DropdownContext } from "./dropdown.context";
-import { cn } from "../../utils/cn";
+import { DropdownContext } from './dropdown.context';
+import { cn } from '../../utils/cn';
 
-const variants = cva("group/dropdown flex relative", {
+const variants = cva('group/dropdown flex relative', {
   variants: {
     position: {
-      "top-left": "",
-      "top-right": "",
-      "bottom-left": "",
-      "bottom-right": "",
+      'top-left': '',
+      'top-right': '',
+      'bottom-left': '',
+      'bottom-right': '',
     },
   },
   defaultVariants: {
-    position: "bottom-left",
+    position: 'bottom-left',
   },
 });
 

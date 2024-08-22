@@ -1,15 +1,15 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import HeadingIcon from "../components/heading/heading-icon.component";
-import Heading from "../components/heading/heading.component";
-import UsthbSVG from "../components/svg/usthb.component";
-import ViewContent from "../layout/view-content.component";
-import { faCode, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import HeadingText from "../components/heading/heading-text.component";
-import ExperienceCard from "../components/experience-card/experience-card.component";
-import ExperienceIcon from "../components/experience-card/experience-card-icon.component";
-import ExperienceCardContent from "../components/experience-card/experience-card-content.component";
-import ExperienceItem from "../components/experience-card/experience-card-item.component";
-import ExperienceCardMain from "../components/experience-card/experience-card-main.component";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import HeadingIcon from '../components/heading/heading-icon.component';
+import Heading from '../components/heading/heading.component';
+import UsthbSVG from '../components/svg/usthb.component';
+import ViewContent from '../layout/view-content.component';
+import { faCode, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import HeadingText from '../components/heading/heading-text.component';
+import ExperienceCard from '../components/experience-card/experience-card.component';
+import ExperienceIcon from '../components/experience-card/experience-card-icon.component';
+import ExperienceCardContent from '../components/experience-card/experience-card-content.component';
+import ExperienceItem from '../components/experience-card/experience-card-item.component';
+import ExperienceCardMain from '../components/experience-card/experience-card-main.component';
 
 const ANIMATION_DELAY = 0.3;
 const ANIMATION_DURATION = 0.7;

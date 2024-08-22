@@ -1,19 +1,19 @@
-import { VariantProps, cva } from "class-variance-authority";
-import { BaseHTMLAttributes } from "react";
-import { cn } from "../../utils/cn";
+import { VariantProps, cva } from 'class-variance-authority';
+import { BaseHTMLAttributes } from 'react';
+import { cn } from '../../utils/cn';
 
-const variants = cva("ml-[0.5rem]", {
+const variants = cva('ml-[0.5rem]', {
   variants: {
     variant: {
-      primary: "",
-      success: "",
-      error: "",
-      warning: "",
-      "edge-100": "",
+      primary: '',
+      success: '',
+      error: '',
+      warning: '',
+      'edge-100': '',
     },
   },
   defaultVariants: {
-    variant: "edge-100",
+    variant: 'edge-100',
   },
 });
 

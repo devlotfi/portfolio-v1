@@ -1,17 +1,17 @@
-import { BaseHTMLAttributes, useContext } from "react";
-import { cn } from "../../utils/cn";
-import { faCheckSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from "../button/button.component";
-import ButtonContent from "../button/button-content.component";
-import ButtonSlider from "../button/button-slider.component";
-import ButtonText from "../button/button-text.component";
-import ButtonIcon from "../button/button-icon.component";
-import { components } from "../../__generated__/schema";
-import { ProjectListContext } from "../../context/project-list.context";
+import { BaseHTMLAttributes, useContext } from 'react';
+import { cn } from '../../utils/cn';
+import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '../button/button.component';
+import ButtonContent from '../button/button-content.component';
+import ButtonSlider from '../button/button-slider.component';
+import ButtonText from '../button/button-text.component';
+import ButtonIcon from '../button/button-icon.component';
+import { components } from '../../__generated__/schema';
+import { ProjectListContext } from '../../context/project-list.context';
 
 interface Props extends BaseHTMLAttributes<HTMLButtonElement> {
-  category: components["schemas"]["CategorySerilizer"];
+  category: components['schemas']['CategorySerilizer'];
 }
 
 export default function ProjectSearchCategory({
@@ -34,7 +34,7 @@ export default function ProjectSearchCategory({
     <Button
       type="button"
       active={isCategorySelected(category.id)}
-      variant={isCategorySelected(category.id) ? "primary" : "edge-100"}
+      variant={isCategorySelected(category.id) ? 'primary' : 'edge-100'}
       onClick={handleClick}
       className={cn(className)}
       {...props}

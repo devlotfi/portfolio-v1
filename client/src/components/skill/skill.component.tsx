@@ -1,7 +1,7 @@
-import { PropsWithChildren } from "react";
-import ButtonContent from "../button/button-content.component";
-import ButtonSlider from "../button/button-slider.component";
-import Button from "../button/button.component";
+import { PropsWithChildren } from 'react';
+import ButtonContent from '../button/button-content.component';
+import ButtonSlider from '../button/button-slider.component';
+import Button from '../button/button.component';
 
 interface Props {
   name: string;

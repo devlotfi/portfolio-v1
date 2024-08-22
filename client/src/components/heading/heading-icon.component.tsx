@@ -1,21 +1,21 @@
-import { VariantProps, cva } from "class-variance-authority";
-import { BaseHTMLAttributes, useContext } from "react";
+import { VariantProps, cva } from 'class-variance-authority';
+import { BaseHTMLAttributes, useContext } from 'react';
 
-import { HeadingContext } from "./heading.context";
-import { cn } from "../../utils/cn";
+import { HeadingContext } from './heading.context';
+import { cn } from '../../utils/cn';
 
-const variants = cva("flex", {
+const variants = cva('flex', {
   variants: {
     variant: {
-      primary: "",
-      success: "",
-      error: "",
-      warning: "",
-      "edge-100": "",
+      primary: '',
+      success: '',
+      error: '',
+      warning: '',
+      'edge-100': '',
     },
   },
   defaultVariants: {
-    variant: "edge-100",
+    variant: 'edge-100',
   },
 });
 

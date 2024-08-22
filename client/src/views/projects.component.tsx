@@ -1,18 +1,18 @@
-import ViewContent from "../layout/view-content.component";
-import { useQuery } from "@tanstack/react-query";
-import { CATEGORIES, PROJECTS } from "../react-query/queries";
-import PageLoading from "../components/page-loading/page-loading.component";
-import Heading from "../components/heading/heading.component";
-import HeadingIcon from "../components/heading/heading-icon.component";
-import HeadingText from "../components/heading/heading-text.component";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faListCheck } from "@fortawesome/free-solid-svg-icons";
-import ProjectSearch from "../components/project/project-search.component";
-import Project from "../components/project/project.component";
-import { useContext, useEffect, useRef } from "react";
-import { ProjectListContext } from "../context/project-list.context";
-import ProjectPagination from "../components/project/project-pagination.component";
-import ProjectDetails from "../components/project/project-details.component";
+import ViewContent from '../layout/view-content.component';
+import { useQuery } from '@tanstack/react-query';
+import { CATEGORIES, PROJECTS } from '../react-query/queries';
+import PageLoading from '../components/page-loading/page-loading.component';
+import Heading from '../components/heading/heading.component';
+import HeadingIcon from '../components/heading/heading-icon.component';
+import HeadingText from '../components/heading/heading-text.component';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faListCheck } from '@fortawesome/free-solid-svg-icons';
+import ProjectSearch from '../components/project/project-search.component';
+import Project from '../components/project/project.component';
+import { useContext, useEffect, useRef } from 'react';
+import { ProjectListContext } from '../context/project-list.context';
+import ProjectPagination from '../components/project/project-pagination.component';
+import ProjectDetails from '../components/project/project-details.component';
 
 export default function ProjectsView() {
   const listRef = useRef<HTMLDivElement>(null);
@@ -39,7 +39,7 @@ export default function ProjectsView() {
   });
 
   useEffect(() => {
-    listRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+    listRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
   }, [page]);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function ProjectsView() {
             ></ProjectSearch>
 
             <PageLoading loading={isLoadingProjects}>
-              <div className={"flex flex-wrap justify-between"}>
+              <div className={'flex flex-wrap justify-between'}>
                 {dataProjects?.results.map((project) => {
                   return <Project key={project.id} project={project}></Project>;
                 })}

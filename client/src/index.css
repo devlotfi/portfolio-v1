@@ -74,11 +74,17 @@
   background-image: radial-gradient(transparent, var(--base-100) 80%),
     linear-gradient(var(--edge-200) 1px, transparent 1px),
     linear-gradient(to right, var(--edge-200) 1px, var(--base-100) 1px);
-  background-size: 100% 100%, 5rem 5rem, 5rem 5rem;
+  background-size:
+    100% 100%,
+    5rem 5rem,
+    5rem 5rem;
 }
 
 .main-background-global-view {
-  background-size: 100% 100%, 2rem 2rem, 2rem 2rem;
+  background-size:
+    100% 100%,
+    2rem 2rem,
+    2rem 2rem;
 }
 
 .fill-mode-backward {
