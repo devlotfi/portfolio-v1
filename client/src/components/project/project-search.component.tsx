@@ -1,25 +1,25 @@
-import { FormHTMLAttributes, useContext, useState } from 'react';
-import { cn } from '../../utils/cn';
-import { faCaretDown, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import TextInputContent from '../text-input/text-input-content.component';
-import TextInputField from '../text-input/text-input-field.component';
-import TextInputIcon from '../text-input/text-input-icon.component';
-import TextInputLabel from '../text-input/text-input-label.component';
-import TextInput from '../text-input/text-input.component';
-import * as yup from 'yup';
-import { useFormik } from 'formik';
-import Button from '../button/button.component';
-import ButtonContent from '../button/button-content.component';
-import ButtonSlider from '../button/button-slider.component';
-import ButtonText from '../button/button-text.component';
-import ButtonIcon from '../button/button-icon.component';
-import { components } from '../../__generated__/schema';
-import ProjectSearchCategory from './project-search-category.component';
-import { ProjectListContext } from '../../context/project-list.context';
+import { FormHTMLAttributes, useContext, useState } from "react";
+import { cn } from "../../utils/cn";
+import { faCaretDown, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import TextInputContent from "../text-input/text-input-content.component";
+import TextInputField from "../text-input/text-input-field.component";
+import TextInputIcon from "../text-input/text-input-icon.component";
+import TextInputLabel from "../text-input/text-input-label.component";
+import TextInput from "../text-input/text-input.component";
+import * as yup from "yup";
+import { useFormik } from "formik";
+import Button from "../button/button.component";
+import ButtonContent from "../button/button-content.component";
+import ButtonSlider from "../button/button-slider.component";
+import ButtonText from "../button/button-text.component";
+import ButtonIcon from "../button/button-icon.component";
+import { components } from "../../__generated__/schema";
+import ProjectSearchCategory from "./project-search-category.component";
+import { ProjectListContext } from "../../context/project-list.context";
 
 interface Props extends FormHTMLAttributes<HTMLFormElement> {
-  categories: Array<components['schemas']['CategorySerilizer']>;
+  categories: Array<components["schemas"]["CategorySerilizer"]>;
 }
 
 const validationSchema = yup.object({
@@ -36,7 +36,7 @@ export default function ProjectSearch({
 
   const { values, handleChange, handleSubmit } = useFormik({
     initialValues: {
-      search: '',
+      search: "",
     },
     validationSchema,
     onSubmit(values) {
@@ -47,7 +47,7 @@ export default function ProjectSearch({
   return (
     <form
       onSubmit={handleSubmit}
-      className={cn('flex flex-col', className)}
+      className={cn("flex flex-col", className)}
       {...props}
     >
       <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
@@ -74,7 +74,7 @@ export default function ProjectSearch({
           <ButtonContent>
             <ButtonIcon>
               <FontAwesomeIcon
-                className={cn('duration-300', showCategories && 'rotate-180')}
+                className={cn("duration-300", showCategories && "rotate-180")}
                 icon={faCaretDown}
               ></FontAwesomeIcon>
             </ButtonIcon>
@@ -86,8 +86,8 @@ export default function ProjectSearch({
 
       <div
         className={cn(
-          'hidden mt-[1.5rem] flex-wrap gap-3',
-          showCategories && 'flex ',
+          "hidden mt-[1.5rem] flex-wrap gap-3",
+          showCategories && "flex "
         )}
       >
         {categories?.map((category) => (

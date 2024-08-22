@@ -5,31 +5,31 @@ import {
   faServer,
   faStar,
   faWrench,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CssSVG from '../components/svg/css.component';
-import DjangoSVG from '../components/svg/django.component';
-import FigmaSVG from '../components/svg/figma.component';
-import GitSVG from '../components/svg/git.component';
-import GraphqlSVG from '../components/svg/graphql.component';
-import HtmlSVG from '../components/svg/html.component';
-import JavaSVG from '../components/svg/java.component';
-import LinuxSVG from '../components/svg/linux.component';
-import NestSVG from '../components/svg/nest.component';
-import NodeSVG from '../components/svg/node.component';
-import PostmanSVG from '../components/svg/postman.component';
-import PythonSVG from '../components/svg/python.component';
-import ReactSVG from '../components/svg/react.component';
-import SpringBootSVG from '../components/svg/spring-boot.component';
-import TailwindSVG from '../components/svg/tailwind.component';
-import TypescriptSVG from '../components/svg/typescript.component';
-import VscodeSVG from '../components/svg/vscode.component';
-import HeadingIcon from '../components/heading/heading-icon.component';
-import HeadingText from '../components/heading/heading-text.component';
-import Heading from '../components/heading/heading.component';
-import SkillCategory from '../components/skill-category/skill-category.component';
-import Skill from '../components/skill/skill.component';
-import ViewContent from '../layout/view-content.component';
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CssSVG from "../components/svg/css.component";
+import DjangoSVG from "../components/svg/django.component";
+import FigmaSVG from "../components/svg/figma.component";
+import GitSVG from "../components/svg/git.component";
+import GraphqlSVG from "../components/svg/graphql.component";
+import HtmlSVG from "../components/svg/html.component";
+import JavaSVG from "../components/svg/java.component";
+import LinuxSVG from "../components/svg/linux.component";
+import NestSVG from "../components/svg/nest.component";
+import NodeSVG from "../components/svg/node.component";
+import PostmanSVG from "../components/svg/postman.component";
+import PythonSVG from "../components/svg/python.component";
+import ReactSVG from "../components/svg/react.component";
+import SpringBootSVG from "../components/svg/spring-boot.component";
+import TailwindSVG from "../components/svg/tailwind.component";
+import TypescriptSVG from "../components/svg/typescript.component";
+import VscodeSVG from "../components/svg/vscode.component";
+import HeadingIcon from "../components/heading/heading-icon.component";
+import HeadingText from "../components/heading/heading-text.component";
+import Heading from "../components/heading/heading.component";
+import SkillCategory from "../components/skill-category/skill-category.component";
+import Skill from "../components/skill/skill.component";
+import ViewContent from "../layout/view-content.component";
 
 const ANIMATION_DELAY = 0.3;
 const ANIMATION_DURATION = 0.7;

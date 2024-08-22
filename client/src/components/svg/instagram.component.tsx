@@ -1,8 +1,8 @@
-import { VariantProps, cva } from 'class-variance-authority';
-import { SVGProps } from 'react';
-import { cn } from '../../utils/cn';
+import { VariantProps, cva } from "class-variance-authority";
+import { SVGProps } from "react";
+import { cn } from "../../utils/cn";
 
-const variants = cva('flex');
+const variants = cva("flex");
 
 interface Props extends SVGProps<SVGSVGElement>, VariantProps<typeof variants> {
   fillColor: string;

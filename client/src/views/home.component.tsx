@@ -1,20 +1,20 @@
 import {
   faAngleDoubleDown,
   faInfoCircle,
-} from '@fortawesome/free-solid-svg-icons';
-import Developer from '../assets/svg/developer.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ButtonContent from '../components/button/button-content.component';
-import ButtonIcon from '../components/button/button-icon.component';
-import ButtonSlider from '../components/button/button-slider.component';
-import Button from '../components/button/button.component';
-import Profile from '../assets/img/profile.jpg';
-import ViewContent from '../layout/view-content.component';
-import HeadingIcon from '../components/heading/heading-icon.component';
-import HeadingText from '../components/heading/heading-text.component';
-import Heading from '../components/heading/heading.component';
-import { useRef } from 'react';
-import ButtonText from '../components/button/button-text.component';
+} from "@fortawesome/free-solid-svg-icons";
+import Developer from "../assets/svg/developer.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ButtonContent from "../components/button/button-content.component";
+import ButtonIcon from "../components/button/button-icon.component";
+import ButtonSlider from "../components/button/button-slider.component";
+import Button from "../components/button/button.component";
+import Profile from "../assets/img/profile.jpg";
+import ViewContent from "../layout/view-content.component";
+import HeadingIcon from "../components/heading/heading-icon.component";
+import HeadingText from "../components/heading/heading-text.component";
+import Heading from "../components/heading/heading.component";
+import { useRef } from "react";
+import ButtonText from "../components/button/button-text.component";
 
 export default function AboutView() {
   const aboutSectionRef = useRef<HTMLDivElement>(null);
@@ -44,7 +44,7 @@ export default function AboutView() {
                   onClick={() => {
                     if (aboutSectionRef.current) {
                       aboutSectionRef.current.scrollIntoView({
-                        behavior: 'smooth',
+                        behavior: "smooth",
                       });
                     }
                   }}
@@ -105,7 +105,7 @@ export default function AboutView() {
               </div>
               <div>
                 I hold a Bachelor's degree in Information Systems and Software
-                Engineering from{' '}
+                Engineering from{" "}
                 <a
                   className="inline text-primary-100 underline"
                   href="https://www.usthb.dz/"

@@ -49,10 +49,12 @@ const initAppliedTheme = (): AppliedThemes => {
 };
 
 export function ThemeProvider({ children }: PropsWithChildren) {
-  const [themeOption, setThemeOption] =
-    useState<ThemeOptions>(initThemeOption());
-  const [appliedTheme, setAppliedTheme] =
-    useState<AppliedThemes>(initAppliedTheme());
+  const [themeOption, setThemeOption] = useState<ThemeOptions>(
+    initThemeOption(),
+  );
+  const [appliedTheme, setAppliedTheme] = useState<AppliedThemes>(
+    initAppliedTheme(),
+  );
 
   const applyTheme = (theme: ThemeOptions) => {
     const element = document.getElementById('theme-provider') as HTMLElement;

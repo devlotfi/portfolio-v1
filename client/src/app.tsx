@@ -57,14 +57,14 @@ export default function App() {
               !isGlobalView
                 ? currentView.horizontalTranslation
                 : isLargeScreen
-                  ? 'calc(-100vw + 2.2rem)'
-                  : '-100vw'
+                ? 'calc(-100vw + 2.2rem)'
+                : '-100vw'
             }, ${
               !isGlobalView
                 ? currentView.verticalTranslation
                 : isLargeScreen
-                  ? '-100vh'
-                  : 'calc(-100vh + 2rem)'
+                ? '-100vh'
+                : 'calc(-100vh + 2rem)'
             }, 0) scale3d(${isGlobalView ? '25%' : '100%'}, ${
               isGlobalView ? '25%' : '100%'
             }, 100%)`,

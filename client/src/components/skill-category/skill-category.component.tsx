@@ -1,8 +1,8 @@
-import { VariantProps, cva } from 'class-variance-authority';
-import { BaseHTMLAttributes } from 'react';
-import { cn } from '../../utils/cn';
+import { VariantProps, cva } from "class-variance-authority";
+import { BaseHTMLAttributes } from "react";
+import { cn } from "../../utils/cn";
 
-const variants = cva('flex border border-edge-100 mt-[1rem]');
+const variants = cva("flex border border-edge-100 mt-[1rem]");
 
 interface Props
   extends BaseHTMLAttributes<HTMLDivElement>,

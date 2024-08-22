@@ -1,16 +1,16 @@
-import { createContext, PropsWithChildren, useState } from 'react';
-import { components } from '../__generated__/schema';
+import { createContext, PropsWithChildren, useState } from "react";
+import { components } from "../__generated__/schema";
 
 interface ProjectListContext {
-  selectedProject: components['schemas']['ProjectSerilizer'] | null;
+  selectedProject: components["schemas"]["ProjectSerilizer"] | null;
   setSelectedProject: (
-    project: components['schemas']['ProjectSerilizer'] | null,
+    project: components["schemas"]["ProjectSerilizer"] | null
   ) => void;
 
   search: string;
   setSearch: (value: string) => void;
-  categories: Array<components['schemas']['CategorySerilizer']>;
-  addCategory: (category: components['schemas']['CategorySerilizer']) => void;
+  categories: Array<components["schemas"]["CategorySerilizer"]>;
+  addCategory: (category: components["schemas"]["CategorySerilizer"]) => void;
   deleteCategory: (id: string) => void;
   isCategorySelected: (id: string) => boolean;
   page: number;
@@ -20,7 +20,7 @@ interface ProjectListContext {
 const initialValues: ProjectListContext = {
   selectedProject: null,
   setSelectedProject() {},
-  search: '',
+  search: "",
   setSearch() {},
   categories: [],
   addCategory() {},
@@ -36,16 +36,16 @@ export const ProjectListContext = createContext(initialValues);
 
 export function ProjectListProvider({ children }: PropsWithChildren) {
   const [selectedProject, setSelectedProject] = useState<
-    components['schemas']['ProjectSerilizer'] | null
+    components["schemas"]["ProjectSerilizer"] | null
   >(initialValues.selectedProject);
   const [search, setSearch] = useState<string>(initialValues.search);
   const [categories, setCategories] = useState<
-    Array<components['schemas']['CategorySerilizer']>
+    Array<components["schemas"]["CategorySerilizer"]>
   >(initialValues.categories);
   const [page, setPage] = useState<number>(1);
 
   const addCategory = (
-    category: components['schemas']['CategorySerilizer'],
+    category: components["schemas"]["CategorySerilizer"]
   ) => {
     setCategories([...categories, category]);
   };
@@ -53,7 +53,7 @@ export function ProjectListProvider({ children }: PropsWithChildren) {
     const arr = [...categories];
     arr.splice(
       arr.findIndex((category) => category.id === id),
-      1,
+      1
     );
     setCategories(arr);
   };

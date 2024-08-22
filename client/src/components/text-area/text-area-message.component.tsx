@@ -1,20 +1,20 @@
-import { VariantProps, cva } from 'class-variance-authority';
-import { BaseHTMLAttributes, useContext } from 'react';
-import { cn } from '../../utils/cn';
-import { TextAreaContext } from './text-area.context';
+import { VariantProps, cva } from "class-variance-authority";
+import { BaseHTMLAttributes, useContext } from "react";
+import { cn } from "../../utils/cn";
+import { TextAreaContext } from "./text-area.context";
 
-const variants = cva('flex absolute bottom-[-1.5rem] text-[9pt]', {
+const variants = cva("flex absolute bottom-[-1.5rem] text-[9pt]", {
   variants: {
     variant: {
-      primary: 'text-primary-100',
-      success: 'text-success-100',
-      error: 'text-error-100',
-      warning: 'text-warning-100',
-      'edge-100': 'text-edge-100',
+      primary: "text-primary-100",
+      success: "text-success-100",
+      error: "text-error-100",
+      warning: "text-warning-100",
+      "edge-100": "text-edge-100",
     },
   },
   defaultVariants: {
-    variant: 'edge-100',
+    variant: "edge-100",
   },
 });
 

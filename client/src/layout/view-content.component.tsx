@@ -1,9 +1,9 @@
-import { VariantProps, cva } from 'class-variance-authority';
-import { BaseHTMLAttributes } from 'react';
-import { cn } from '../utils/cn';
+import { VariantProps, cva } from "class-variance-authority";
+import { BaseHTMLAttributes } from "react";
+import { cn } from "../utils/cn";
 
 const variants = cva(
-  'flex flex-col h-screen w-screen pl-0 pt-[3.8rem] lg:pt-0 lg:pl-[5rem] overflow-y-auto overflow-x-hidden z-10',
+  "flex flex-col h-screen w-screen pl-0 pt-[3.8rem] lg:pt-0 lg:pl-[5rem] overflow-y-auto overflow-x-hidden z-10"
 );
 
 interface Props
