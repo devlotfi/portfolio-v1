@@ -55,7 +55,13 @@ export default function ProjectsView() {
               })}
           </div>
 
-          <ProjectPagination count={projects.length}></ProjectPagination>
+          <ProjectPagination
+            count={
+              projects.filter((project) =>
+                project.displayName.toLowerCase().includes(search),
+              ).length
+            }
+          ></ProjectPagination>
         </div>
       )}
     </ViewContent>
