@@ -9,34 +9,23 @@ My developer portfolio
 - [Preview](#-preview)
 
 # 💻 Tech stack
-<img src="https://skillicons.dev/icons?i=html,css,tailwind,typescript,react,python,django,postgres&perline=5" />
+<img src="https://skillicons.dev/icons?i=html,css,tailwind,typescript,react&perline=5" />
 
 # 📂 Project Setup
 
 ## Requirements
-- Python
-- Poetry
-- PostgreSQL
 - Node JS
 - Yarn
 
 ## Install
 
 ```bash
-# Run in server folder
-$ poetry install --no-root
-
-# Run in client folder
 $ yarn
 ```
 
 ## Development
 
 ```bash
-# Run in server folder
-$ poetry run python manage.py runserver
-
-# Run in client folder
 $ yarn run dev
 ```
 
