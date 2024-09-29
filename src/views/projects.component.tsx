@@ -45,7 +45,9 @@ export default function ProjectsView() {
           <div className={'flex flex-wrap justify-between'}>
             {projects
               .filter((project) =>
-                project.displayName.toLowerCase().includes(search),
+                project.displayName
+                  .toLowerCase()
+                  .includes(search.toLowerCase()),
               )
               .slice(10 * (page - 1), 10 * page)
               .map((project) => {
@@ -58,7 +60,9 @@ export default function ProjectsView() {
           <ProjectPagination
             count={
               projects.filter((project) =>
-                project.displayName.toLowerCase().includes(search),
+                project.displayName
+                  .toLowerCase()
+                  .includes(search.toLowerCase()),
               ).length
             }
           ></ProjectPagination>
