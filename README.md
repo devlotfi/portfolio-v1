@@ -9,7 +9,7 @@ My developer portfolio
 - [Preview](#-preview)
 
 # 💻 Tech stack
-<img src="https://skillicons.dev/icons?i=html,css,tailwind,typescript,react&perline=5" />
+<img src="https://skillicons.dev/icons?i=html,css,typescript,tailwind,react&perline=5" />
 
 # 📂 Project Setup
 
