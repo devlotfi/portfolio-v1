@@ -16,6 +16,18 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    repositoryName: 'js-chat',
+    displayName: 'Js Chat',
+    description: 'A simple chat that uses google accounts',
+    iconURL:
+      'https://raw.githubusercontent.com/devlotfi/js-chat/main/github-assets/logo.svg',
+    thumbnailURL:
+      'https://raw.githubusercontent.com/devlotfi/js-chat/main/github-assets/preview-2.png',
+    repositoryURL: 'https://github.com/devlotfi/js-chat',
+    deploymentURL: null,
+  },
+  {
+    id: 3,
     repositoryName: 'local-todolist',
     displayName: 'Local Todolist',
     description:
@@ -28,7 +40,7 @@ export const projects: Project[] = [
     deploymentURL: null,
   },
   {
-    id: 3,
+    id: 4,
     repositoryName: 'portfolio-v1',
     displayName: 'Portfolio V1',
     description: 'My developer portfolio',
@@ -40,7 +52,7 @@ export const projects: Project[] = [
     deploymentURL: null,
   },
   {
-    id: 4,
+    id: 5,
     repositoryName: 'connect-4',
     displayName: 'Connect 4',
     description:
