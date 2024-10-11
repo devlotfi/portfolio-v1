@@ -28,6 +28,20 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    repositoryName: 'webetu-progres-web-client-preview',
+    displayName: 'Progres Web Client',
+    description:
+      'An unofficial web client for the api used by the webetu progres app',
+    iconURL:
+      'https://raw.githubusercontent.com/devlotfi/webetu-progres-web-client-preview/main/github-assets/logo.svg',
+    thumbnailURL:
+      'https://raw.githubusercontent.com/devlotfi/webetu-progres-web-client-preview/main/github-assets/preview-5.png',
+    repositoryURL:
+      'https://github.com/devlotfi/webetu-progres-web-client-preview',
+    deploymentURL: null,
+  },
+  {
+    id: 4,
     repositoryName: 'local-todolist',
     displayName: 'Local Todolist',
     description:
@@ -40,7 +54,7 @@ export const projects: Project[] = [
     deploymentURL: null,
   },
   {
-    id: 4,
+    id: 5,
     repositoryName: 'portfolio-v1',
     displayName: 'Portfolio V1',
     description: 'My developer portfolio',
@@ -52,7 +66,7 @@ export const projects: Project[] = [
     deploymentURL: null,
   },
   {
-    id: 5,
+    id: 6,
     repositoryName: 'connect-4',
     displayName: 'Connect 4',
     description:
