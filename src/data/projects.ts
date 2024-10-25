@@ -28,16 +28,15 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    repositoryName: 'webetu-progres-web-client-preview',
+    repositoryName: 'webetu-progres-web-client',
     displayName: 'Progres Web Client',
     description:
       'An unofficial web client for the api used by the webetu progres app',
     iconURL:
-      'https://raw.githubusercontent.com/devlotfi/webetu-progres-web-client-preview/main/github-assets/logo.svg',
+      'https://raw.githubusercontent.com/devlotfi/webetu-progres-web-client/main/github-assets/logo.svg',
     thumbnailURL:
-      'https://raw.githubusercontent.com/devlotfi/webetu-progres-web-client-preview/main/github-assets/preview-5.png',
-    repositoryURL:
-      'https://github.com/devlotfi/webetu-progres-web-client-preview',
+      'https://raw.githubusercontent.com/devlotfi/webetu-progres-web-client/main/github-assets/preview-5.png',
+    repositoryURL: 'https://github.com/devlotfi/webetu-progres-web-client',
     deploymentURL: null,
   },
   {
