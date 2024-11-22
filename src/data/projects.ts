@@ -41,6 +41,19 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    repositoryName: 'etu-access',
+    displayName: 'Etu Access',
+    description:
+      'An automatic student attendance system using student ID cards',
+    iconURL:
+      'https://raw.githubusercontent.com/devlotfi/etu-access/main/github-assets/logo.svg',
+    thumbnailURL:
+      'https://raw.githubusercontent.com/devlotfi/etu-access/main/github-assets/access-point/preview-4.png',
+    repositoryURL: 'https://github.com/devlotfi/etu-access',
+    deploymentURL: null,
+  },
+  {
+    id: 5,
     repositoryName: 'local-todolist',
     displayName: 'Local Todolist',
     description:
@@ -53,7 +66,7 @@ export const projects: Project[] = [
     deploymentURL: null,
   },
   {
-    id: 5,
+    id: 6,
     repositoryName: 'portfolio-v1',
     displayName: 'Portfolio V1',
     description: 'My developer portfolio',
@@ -65,7 +78,7 @@ export const projects: Project[] = [
     deploymentURL: null,
   },
   {
-    id: 6,
+    id: 7,
     repositoryName: 'connect-4',
     displayName: 'Connect 4',
     description:
