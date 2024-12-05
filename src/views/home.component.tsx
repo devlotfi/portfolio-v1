@@ -1,20 +1,19 @@
 import {
   faAngleDoubleDown,
   faInfoCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import Developer from "../assets/svg/developer.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ButtonContent from "../components/button/button-content.component";
-import ButtonIcon from "../components/button/button-icon.component";
-import ButtonSlider from "../components/button/button-slider.component";
-import Button from "../components/button/button.component";
-import Profile from "../assets/img/profile.jpg";
-import ViewContent from "../layout/view-content.component";
-import HeadingIcon from "../components/heading/heading-icon.component";
-import HeadingText from "../components/heading/heading-text.component";
-import Heading from "../components/heading/heading.component";
-import { useRef } from "react";
-import ButtonText from "../components/button/button-text.component";
+} from '@fortawesome/free-solid-svg-icons';
+import Developer from '../assets/svg/developer.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ButtonContent from '../components/button/button-content.component';
+import ButtonIcon from '../components/button/button-icon.component';
+import ButtonSlider from '../components/button/button-slider.component';
+import Button from '../components/button/button.component';
+import ViewContent from '../layout/view-content.component';
+import HeadingIcon from '../components/heading/heading-icon.component';
+import HeadingText from '../components/heading/heading-text.component';
+import Heading from '../components/heading/heading.component';
+import { useRef } from 'react';
+import ButtonText from '../components/button/button-text.component';
 
 export default function AboutView() {
   const aboutSectionRef = useRef<HTMLDivElement>(null);
@@ -44,7 +43,7 @@ export default function AboutView() {
                   onClick={() => {
                     if (aboutSectionRef.current) {
                       aboutSectionRef.current.scrollIntoView({
-                        behavior: "smooth",
+                        behavior: 'smooth',
                       });
                     }
                   }}
@@ -74,48 +73,40 @@ export default function AboutView() {
         ref={aboutSectionRef}
       >
         <div className="flex md:border border-edge-100 md:max-w-[90%] xl:max-w-[55rem]">
-          <div className="flex flex-col p-[1rem] translate-x-[0.5rem] translate-y-[-0.5rem] bg-base-100 items-start lg:flex-row md:border border-edge-100 space-y-5 lg:space-y-0 lg:space-x-5 text-edge-100">
-            <img
-              className="h-[15rem] min-w-[15rem] border border-edge-100 bg-base-100"
-              src={Profile}
-              alt="profile"
-            />
-            <div className="flex flex-col space-y-3">
-              <Heading className="text-[23pt]" variant="primary">
-                <HeadingIcon>
-                  <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>
-                </HeadingIcon>
-                <HeadingText>About me</HeadingText>
-              </Heading>
-              <div>
-                I am a passionate full-stack web developer with a comprehensive
-                background in both front-end and back-end development, as well
-                as mobile development. Throughout my career, I have worked on a
-                diverse range of projects, building robust and scalable web and
-                mobile applications. My expertise spans designing intuitive user
-                interfaces, developing efficient server-side logic
-              </div>
-              <div>
-                I am committed to continuous learning and staying updated with
-                the latest industry trends to deliver high-quality and
-                innovative solutions. Whether working on a solo project or
-                collaborating with a team, I strive to create user-centric
-                applications that meet business objectives and provide
-                exceptional user experiences.
-              </div>
-              <div>
-                I hold a Bachelor's degree in Information Systems and Software
-                Engineering from{" "}
-                <a
-                  className="inline text-primary-100 underline"
-                  href="https://www.usthb.dz/"
-                  target="_blank"
-                >
-                  USTHB University
-                </a>
-                , where I developed a strong foundation in software engineering
-                principles.
-              </div>
+          <div className="flex flex-col p-[1rem] pt-[2rem] translate-x-[0.5rem] translate-y-[-0.5rem] bg-base-100 items-start md:border border-edge-100 space-y-5 text-edge-100">
+            <Heading className="text-[23pt]" variant="primary">
+              <HeadingIcon>
+                <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>
+              </HeadingIcon>
+              <HeadingText>About me</HeadingText>
+            </Heading>
+            <div>
+              I am a passionate full-stack web developer with a comprehensive
+              background in both front-end and back-end development, as well as
+              mobile development. Throughout my career, I have worked on a
+              diverse range of projects, building robust and scalable web and
+              mobile applications. My expertise spans designing intuitive user
+              interfaces, developing efficient server-side logic
+            </div>
+            <div>
+              I am committed to continuous learning and staying updated with the
+              latest industry trends to deliver high-quality and innovative
+              solutions. Whether working on a solo project or collaborating with
+              a team, I strive to create user-centric applications that meet
+              business objectives and provide exceptional user experiences.
+            </div>
+            <div>
+              I hold a Bachelor's degree in Information Systems and Software
+              Engineering from{' '}
+              <a
+                className="inline text-primary-100 underline"
+                href="https://www.usthb.dz/"
+                target="_blank"
+              >
+                USTHB University
+              </a>
+              , where I developed a strong foundation in software engineering
+              principles.
             </div>
           </div>
         </div>
