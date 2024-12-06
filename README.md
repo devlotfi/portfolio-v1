@@ -9,7 +9,6 @@ My developer portfolio
 - [Preview](#-preview)
 
 # 💻 Tech stack
-<img src="https://skillicons.dev/icons?i=html,css,typescript,tailwind,react&perline=5" />
 
 <p float="left">
   <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/html.svg">
