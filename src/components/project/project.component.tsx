@@ -1,29 +1,18 @@
-import { BaseHTMLAttributes, useContext, useRef } from 'react';
+import { AnchorHTMLAttributes } from 'react';
 import { cn } from '../../utils/cn';
-import { ProjectListContext } from '../../context/project-list.context';
 import Heading from '../heading/heading.component';
 import HeadingText from '../heading/heading-text.component';
 import { Project } from '../../types/project';
 
-interface Props extends BaseHTMLAttributes<HTMLDivElement> {
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   project: Project;
 }
 
 export default function ProjectItem({ className, project, ...props }: Props) {
-  const projectRef = useRef<HTMLDivElement>(null);
-  const { selectedProject, setSelectedProject } =
-    useContext(ProjectListContext);
-
-  const handleCardClick = () => {
-    if (selectedProject?.id !== project.id) {
-      setSelectedProject(project);
-    }
-  };
-
   return (
-    <div
-      ref={projectRef}
-      onClick={handleCardClick}
+    <a
+      href={project.repositoryURL}
+      target="_blank"
       className={cn(
         'flex w-full cursor-pointer md:w-[48%] mb-[1rem] border bg-edge-100 border-edge-100 duration-300',
         className,
@@ -69,6 +58,6 @@ export default function ProjectItem({ className, project, ...props }: Props) {
           />
         </div>
       </div>
-    </div>
+    </a>
   );
 }
