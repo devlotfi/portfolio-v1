@@ -11,6 +11,14 @@ My developer portfolio
 # 💻 Tech stack
 <img src="https://skillicons.dev/icons?i=html,css,typescript,tailwind,react&perline=5" />
 
+<p float="left">
+  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/html.svg">
+  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/css.svg">
+  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/ts.svg">
+  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/tailwind.svg">
+  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/react.svg">
+</p>
+
 # 📂 Project Setup
 
 ## Requirements
