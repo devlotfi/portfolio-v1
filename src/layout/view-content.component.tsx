@@ -12,12 +12,7 @@ interface Props
   reactRef?: React.RefObject<HTMLDivElement | null>;
 }
 
-const ViewContent = ({
-  className,
-  children,
-  reactRef,
-  ...props
-}: Props): JSX.Element => {
+const ViewContent = ({ className, children, reactRef, ...props }: Props) => {
   return (
     <div ref={reactRef} className={cn(variants({ className }))} {...props}>
       {children}
