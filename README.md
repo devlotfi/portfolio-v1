@@ -11,12 +11,12 @@ My developer portfolio
 # 💻 Tech stack
 
 <p float="left">
-  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/html.svg">
-  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/css.svg">
-  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/ts.svg">
-  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/tailwind.svg">
-  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/vite.svg">
-  <img height="50px" src="https://github.com/devlotfi/stack-icons/blob/main/icons/react.svg">
+  <img height="50px" src="https://devlotfi.github.io/stack-icons/icons/html.svg">
+  <img height="50px" src="https://devlotfi.github.io/stack-icons/icons/css.svg">
+  <img height="50px" src="https://devlotfi.github.io/stack-icons/icons/ts.svg">
+  <img height="50px" src="https://devlotfi.github.io/stack-icons/icons/tailwind.svg">
+  <img height="50px" src="https://devlotfi.github.io/stack-icons/icons/vite.svg">
+  <img height="50px" src="https://devlotfi.github.io/stack-icons/icons/react.svg">
 </p>
 
 # 📂 Project Setup
