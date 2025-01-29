@@ -1,4 +1,4 @@
-<img height="100px" width="100px" src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/logo.svg">
+<img height="100px" width="100px" src="https://raw.githubusercontent.com/devlotfi/portfolio-v1/main/github-assets/logo.svg">
 
 # 📜 portfolio-v1
 My developer portfolio
@@ -39,9 +39,9 @@ $ pnpm run dev
 
 # 📷 Preview
 
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-1.png">
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-2.png">
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-3.png">
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-4.png">
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-5.png">
-<img src="https://github.com/devlotfi/portfolio-v1/blob/main/github-assets/preview-6.png">
+<img src="https://raw.githubusercontent.com/devlotfi/portfolio-v1/main/github-assets/preview-1.png">
+<img src="https://raw.githubusercontent.com/devlotfi/portfolio-v1/main/github-assets/preview-2.png">
+<img src="https://raw.githubusercontent.com/devlotfi/portfolio-v1/main/github-assets/preview-3.png">
+<img src="https://raw.githubusercontent.com/devlotfi/portfolio-v1/main/github-assets/preview-4.png">
+<img src="https://raw.githubusercontent.com/devlotfi/portfolio-v1/main/github-assets/preview-5.png">
+<img src="https://raw.githubusercontent.com/devlotfi/portfolio-v1/main/github-assets/preview-6.png">
